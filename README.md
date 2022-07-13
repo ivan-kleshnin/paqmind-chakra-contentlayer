@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quest for a good UI library
 
-## Getting Started
+Quick notes for myself.
 
-First, run the development server:
+### MUI
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Emotion based :memo:
+- Large ecosystem :thumbsup:
+- A lot of components :thumbsup:
+- Also hooks and utils :thumbsup:
+- The most overused UI in history :fearful:
+- Typography handling is abysmal. Single component for every text piece = tons of tag noise :fearful:
+- Propose to bundle a markup parser to style markdown- or html-sourced tags :scream:
+- Text components are composable :thumbsup:
+- Typed props :thumbsup:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Mantine
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Emotion based :memo:
+- Some ecosystem :neutral_face:
+- A lot of components :thumbsup:
+- Also hooks and utils :thumbsup:
+- Fresh look, no focus borders :thumbsup:
+- Provides the `Typography` wrapper which is a proper way to solve MUI's problem :thumbsup:
+- Component styles are inconsistent, a lot of minor visual bugs :disappointed:
+- Text components are not composable :scream:
+- Theme API feels unfinished, different hacks are necessary to override different pieces :thumbsdown:
+- Typed props :thumbsup:
+- A lot of bugs caused by multiple style-passing modes `sx`, `style`, `styles`. 
+Sometimes props are merged, sometimes – completely replace defaults. In the same circumstances, without any visible system. :fearful:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Tailwind
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- No deps :thumbsup:
+- Large ecosystem :thumbsup:
+- Simple working model, upfront compatible with every new framework :thumbsup:
+- Abysmal API, class soup :vomiting_face:
+- All CSS props are renamed to fit class-based system, have to learn hundreds of new names and shortcuts (instead of 10-20 components) :fearful:
+- Unlike props, classes are just untyped strings :thumbsdown:
 
-## Learn More
+### Chakra
 
-To learn more about Next.js, take a look at the following resources:
+- Emotion based :memo:
+- Some ecosystem :neutral_face:
+- Simple component-based API (the best of the above IMO) :thumbsup:
+- Typed props :thumbsup:
+- ...Exploration in progress...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Hatelist
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Non-composable text components. For example when `<Code><Anchor href="#">test</Anchor></Code>` produces
+a link with non-monospaced font. `Anchor` should NOT set font weight, font family, etc! Mantine suffers from 
+this issue.
 
-## Deploy on Vercel
+2. Bloated theme objects. Everything high-level gets very subjective. E.g. the library forces you to
+define `textFontFamily`, `headerFontFamily` but then you need a different blockquote font family
+and it's now defined in the component (at best) so it's styled differently from other typographic pieces
+and it 100% will cause bugs are waste your time at some point in the future.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. When spacing or numeric constants are required. Mantine suffers from it. Why people prefer `size={16}`
+or (worse) `size="sm"` over `size="1rem"`?! The latter is universally readable, auto-scalable and
+extendable. If at some point you realize you need `1.25rem` size – you just use it. With constants
+you'll have to extend scale table and then, potentially replace thousands of values like `sm -> md`
+because the list was shifted :scream: At the end you'll end up with shitty names like `5xl` or `xxxxl`.
+MUI and Chakra partially suffer from it as well.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Overriden `Flex` and `Grid`. Library authors, I beg you not to substitute standard CSS layout names
+with your own ~smarter~ stupid components `Grid columns={4}` – if this `Grid` does not support `templateRows="repeat(4, 1fr)`.
+You can make a higher-level `Grid` component with simple API. Just don't call it `Grid.` MUI and Mantine suffer from it. 
+:vomiting_face: Same goes for flex-based grids. Wake up, it's 2022 and flex `gap` is supported almost everywhere!
