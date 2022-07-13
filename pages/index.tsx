@@ -28,7 +28,6 @@ import * as React from "react"
 const Home: NextPage = () => {
   const theme = useTheme()
   const [opened, setOpened] = React.useState(false)
-  console.log("theme.fonts.heading:", theme.fonts.heading)
 
   return <>
     {opened &&
@@ -43,7 +42,7 @@ const Home: NextPage = () => {
       </Box>
     }
     <Grid templateRows="auto 1fr auto">
-      <Box as="header" background="gray" height="5rem" position="sticky" top="0">
+      <Box as="header" background="gray" height="5rem" position="sticky" top="0" zIndex="1">
         <Container maxW="5xl" background="lightblue" height="100%" p="1.5rem">
           <Flex justify="space-between" align="center" height="100%">
             LOGO
