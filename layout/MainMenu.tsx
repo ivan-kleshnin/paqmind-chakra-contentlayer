@@ -75,13 +75,7 @@ function RightMenu({opened, setOpened}: any): JSX.Element {
       </Link>
       <Box display={["block", "block", "none"]}>
         <BurgerIcon opened={opened} setOpened={setOpened}/>
-        {opened &&
-          <Box zIndex="1" position="fixed" top="5rem" left="0" width="100%" height="calc(100vh - 5rem)">
-            <WidthHolder>
-              <MobileMenu/>
-            </WidthHolder>
-          </Box>
-        }
+        <MobileMenu opened={opened}/>
       </Box>
     </Flex>
   </>
@@ -95,29 +89,43 @@ function BurgerIcon({opened, setOpened}: {opened: boolean, setOpened: any}): JSX
 }
 
 // MobileMenu
-function MobileMenu() {
+type MobileMenuProps = {
+  opened: boolean
+}
+
+function MobileMenu({opened}: MobileMenuProps): JSX.Element {
+  if (!opened) return <></>
+
   return <>
-    <Flex direction="column" gap="1rem" mt="1rem">
-      <Link href="/about" asText>About</Link>
-      <Divider variant="dashed"/>
-      <Link href="/blog" asText>Blog</Link>
-      <Divider variant="dashed"/>
-      <Link href="/links" asText>Link</Link>
-    </Flex>
+    <Box
+      background="white"
+      height="calc(100vh - 5rem)"
+      left="0"
+      position="fixed"
+      top="5rem"
+      width="100%"
+      zIndex="1"
+    >
+      <WidthHolder>
+        <Flex direction="column" gap="1rem" mt="1rem">
+          <Link href="/about" asText>About</Link>
+          <Divider variant="dashed"/>
+          <Link href="/blog" asText>Blog</Link>
+          <Divider variant="dashed"/>
+          <Link href="/links" asText>Link</Link>
+        </Flex>
+      </WidthHolder>
+    </Box>
   </>
 }
 
 // Logo
 function Logo() {
-  // <Link href="/" asText>
-  //   <Title mr="3rem" order={logoOrder}>PAQMIND</Title>
-  // </Link>
-
   const theme = useTheme()
 
   return <Heading as="div" size="sm" sx={{
     letterSpacing: theme.letterSpacings.wide,
   }}>
-    PAQMIND
+    <Link href="/" asText>PAQMIND</Link>
   </Heading>
 }
