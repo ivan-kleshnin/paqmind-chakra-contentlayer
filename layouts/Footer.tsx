@@ -1,6 +1,7 @@
 import {Box, Container, Heading, Grid, List, ListItem} from "@chakra-ui/react"
 import {BrandYoutube, BrandTelegram, BrandLinkedin} from "tabler-icons-react"
 import * as React from "react"
+import {Link} from "components"
 
 // Footer
 export function Footer(): JSX.Element {
@@ -13,7 +14,7 @@ export function Footer(): JSX.Element {
               &copy; Paqmind Team, 2022
             </Heading>
             <List spacing=".75rem">
-              <ListItem><a href="/terms-of-use">Terms of use</a></ListItem>
+              <ListItem><Link href="/terms-of-use">Terms of Use</Link></ListItem>
               {/*<ListItem>Privacy policy</ListItem>*/}
               {/*<ListItem>Offer</ListItem>*/}
               {/*<ListItem><a href="/links">Thank you</a></ListItem>*/}
@@ -25,15 +26,15 @@ export function Footer(): JSX.Element {
               <ListItem>WIP</ListItem>
               {/*<ListItem>Mentors</ListItem>*/}
               {/*<ListItem>Tutorials</ListItem>*/}
-              <ListItem><a href="/links">Useful Links</a></ListItem>
+              <ListItem><Link href="/links">Useful Links</Link></ListItem>
             </List>
           </div>
           <div>
             <Heading as="h4" size="sm" mb="1rem">PROJECT</Heading>
             <List spacing=".75rem">
-              <ListItem><a href="/about">About</a></ListItem>
-              <ListItem><a href="/blog">Blog</a></ListItem>
-              <ListItem><a href="/testimonials">Testimonials</a></ListItem>
+              <ListItem><Link href="/about">About</Link></ListItem>
+              <ListItem><Link href="/blog">Blog</Link></ListItem>
+              <ListItem><Link href="/testimonials">Testimonials</Link></ListItem>
               {/*<ListItem>Feedback</ListItem>*/}
             </List>
           </div>
