@@ -1,4 +1,6 @@
 import {ChakraProvider, extendTheme} from "@chakra-ui/react"
+import {CacheProvider} from "@emotion/react"
+import createCache from "@emotion/cache"
 import type {AppProps} from "next/app"
 import "@fontsource/source-sans-pro/400.css"
 import "@fontsource/source-serif-pro/400.css"
@@ -7,6 +9,7 @@ const theme = extendTheme({
   fonts: {
     heading: `'Source Serif Pro', sans-serif`,
     body: `'Source Sans Pro', sans-serif`,
+    mono: `'Source Code Pro', monospace`,
   },
 
   components: {
@@ -43,16 +46,16 @@ const theme = extendTheme({
         },
       }
     },
-    // Paragraph: {
-    //
-    // }
   },
 })
 
-// console.log("theme:", theme)
+const cache = createCache({key: "q"})
+cache.compat = true
 
 export default function MyApp({Component, pageProps}: AppProps) {
   return <ChakraProvider theme={theme}>
-    <Component {...pageProps} />
+    <CacheProvider value={cache}>
+      <Component {...pageProps} />
+    </CacheProvider>
   </ChakraProvider>
 }

@@ -1,0 +1,32 @@
+module.exports = {
+  extends: [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  rules: {
+    "@next/next/no-img-element": "off",
+    "@next/next/google-font-display": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "jsx-a11y/alt-text": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "react/jsx-no-target-blank": "off",
+    "react/no-unescaped-entities": ["error", {forbid: [">", "}"]}],
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/no-extra-semi": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": ["error",
+      {"argsIgnorePattern": "^_", "varsIgnorePattern": "^_|React"}
+    ],
+    "space-infix-ops": "off",
+    "@typescript-eslint/space-infix-ops": ["error", {}],
+    "key-spacing": ["error", {"beforeColon": false, "afterColon": true}],
+    "comma-spacing": "off",
+    "@typescript-eslint/comma-spacing": ["error", {"before": false, "after": true}],
+  },
+  ignorePatterns: ["/ignore/"],
+}
