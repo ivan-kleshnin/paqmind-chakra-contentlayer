@@ -1,5 +1,5 @@
 {
-  "name": "mychakra",
+  "name": "paqmind-v2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.3",
@@ -16,10 +19,27 @@
     "@fontsource/source-code-pro": "^4.5.10",
     "@fontsource/source-sans-pro": "^4.5.10",
     "@fontsource/source-serif-pro": "^4.5.8",
+    "@types/react-lazyload": "^3.2.0",
+    "contentlayer": "^0.2.5",
+    "embla-carousel-react": "6.x.x",
     "framer-motion": "^6.4.3",
     "next": "12.2.2",
+    "next-contentlayer": "^0.2.5",
+    "rambda": "^7.1.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-lazyload": "^3.2.0",
+    "rehype-code-titles": "^1.1.0",
+    "rehype-prism-plus": "^1.4.2",
+    "remark-emoji": "^3.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-textr": "^5.0.1",
+    "remark-unwrap-images": "^3.0.1",
+    "tabler-icons-react": "^1.52.0",
+    "typographic-apostrophes": "^1.1.1",
+    "typographic-apostrophes-for-possessive-plurals": "^1.0.5",
+    "typographic-ellipses": "^1.0.11",
+    "typographic-quotes": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "18.0.3",

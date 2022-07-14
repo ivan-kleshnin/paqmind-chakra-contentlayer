@@ -1,10 +1,21 @@
 import {CloseIcon, HamburgerIcon} from "@chakra-ui/icons"
-import {Box, Container, Flex, Grid} from "@chakra-ui/react"
+import {Box, Container, Flex} from "@chakra-ui/react"
+import {useRouter} from "next/router"
 import * as React from "react"
 
 // MainMenu
 export function MainMenu() {
   const [opened, setOpened] = React.useState(false)
+
+  const router = useRouter()
+  React.useEffect(() => {
+    const close = () => setOpened(false)
+
+    router.events.on("routeChangeStart", close)
+    return () => {
+      router.events.off("routeChangeStart", close)
+    }
+  }, [])
 
   return <>
     <Box as="header" background="gray" height="5rem" position="sticky" top="0" zIndex="1">

@@ -1,0 +1,10 @@
+html, body, #__next {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Various fixed for MDX parsing which adds tons on unexpected paragraphs! */
+blockquote > p {
+	margin: 0 !important;
+}
