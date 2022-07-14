@@ -37,6 +37,8 @@ export default function TypographyPage(): JSX.Element {
 
 // CONTENT /////////////////////////////////////////////////////////////////////////////////////////
 
+// TODO https://github.com/chakra-ui/chakra-ui/discussions/6325
+
 // HeadingsPanel
 function HeadingsPanel() {
   return <>
@@ -50,16 +52,16 @@ function HeadingsPanel() {
       <Heading as="h1" size="2xl">
         Heading H1, Size: 2xl, 16 &times; 1.25<sup>5</sup>
       </Heading>
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="lg">
         Heading H1, Size: xl, 16 &times; 1.25<sup>4</sup>
       </Heading>
-      <Heading as="h2" size="lg">
+      <Heading as="h2" size="md">
         Heading H2, Size: lg, 16 &times; 1.25<sup>3</sup>
       </Heading>
-      <Heading as="h3" size="md">
+      <Heading as="h3" size="sm">
         Heading H3, Size: md, 16 &times; 1.25<sup>2</sup>
       </Heading>
-      <Heading as="h4" size="sm">
+      <Heading as="h4" size="xs">
         Heading H4, Size: sm, 16 &times; 1.25<sup>1</sup>
       </Heading>
       <Text as="p">
@@ -151,10 +153,10 @@ function HtmlTagsPanel() {
       <h3>Basic h3</h3>
       <h4>Basic h4</h4>
 
-      <Heading as="h1" size="xl">Component h1</Heading>
-      <Heading as="h2" size="lg">Component h2</Heading>
-      <Heading as="h3" size="md">Component h3</Heading>
-      <Heading as="h4" size="sm">Component h4</Heading>
+      <Heading as="h1" size="lg">Component h1</Heading>
+      <Heading as="h2" size="md">Component h2</Heading>
+      <Heading as="h3" size="sm">Component h3</Heading>
+      <Heading as="h4" size="xs">Component h4</Heading>
     </Typography>
   </>
 }

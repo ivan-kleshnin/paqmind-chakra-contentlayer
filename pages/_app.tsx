@@ -4,6 +4,7 @@ import createCache from "@emotion/cache"
 import "@fontsource/source-sans-pro/400.css"
 import "@fontsource/source-serif-pro/400.css"
 import "@fontsource/source-serif-pro/600.css"
+import "@fontsource/source-code-pro/400.css"
 import type {AppProps} from "next/app"
 import Head from "next/head"
 import {Layout} from "layout"
@@ -88,23 +89,21 @@ const theme = extendTheme({
           fontSize: "39.06px", // 16 * 1.25 ^ 4
         },
         "lg": {
-          fontSize: "31.25px", // 16 * 1.25 ^ 3
+          fontSize: "31.25px", // 16 * 1.25 ^ 3 | h1
         },
         "md": {
-          fontSize: "25px", // 16 * 1.25 ^ 2
+          fontSize: "25px", // 16 * 1.25 ^ 2 | h2
         },
         "sm": {
-          fontSize: "20px", // 16 * 1.25 ^ 1
+          fontSize: "20px", // 16 * 1.25 ^ 1 | h3
         },
         "xs": {
-          fontSize: "16px", // 16 * 1.25 ^ 0
+          fontSize: "16px", // 16 * 1.25 ^ 0 | h4 – p size, but bold & serif
         },
       }
     },
   },
 })
-
-console.log("theme:", theme)
 
 const cache = createCache({key: "q"})
 cache.compat = true

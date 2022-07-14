@@ -1,4 +1,4 @@
-import {Box, Divider, Heading, Text} from "@chakra-ui/react"
+import {Box, Divider, Flex, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Post, type Testimonial,
   allAccounts, allPages, allPosts, allTestimonials,
@@ -10,12 +10,12 @@ import {useMDXComponent} from "next-contentlayer/hooks"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
 import * as U from "lib/utils"
-import {Typography, WidthHolder} from "components"
+import {Link, HorizontalCard, Typography, WidthHolder} from "components"
 
 // HomePage
 type HomePageProps = Payload // & some Next stuff
 
-export default function HomePage({home}: HomePageProps): JSX.Element {
+export default function HomePage({accounts, home, recentPosts}: HomePageProps): JSX.Element {
   return <>
     <Head>
       <title>{home.seoTitle || home.title}</title>
@@ -23,7 +23,7 @@ export default function HomePage({home}: HomePageProps): JSX.Element {
     <main>
       <Content home={home}/>
       <Divider/>
-      <RecentPosts/>
+      <RecentPosts accounts={accounts} recentPosts={recentPosts}/>
       <Divider/>
       <StudentsMap/>
       <Divider/>
@@ -40,7 +40,7 @@ function Content({home}: any): JSX.Element {
     <Box as="section" background="lightgray">
       <WidthHolder main background="white">
         <Typography>
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="lg">
             {home.title}
           </Heading>
           <MDXContent/>
@@ -51,14 +51,31 @@ function Content({home}: any): JSX.Element {
 }
 
 // RecentPosts
-function RecentPosts(): JSX.Element {
+type RecentPostsProps = {
+  accounts: Account[]
+  recentPosts: Post[]
+}
+
+function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
   return <>
     <Box as="section" background="lightgray">
-      <WidthHolder main background="coral">
-        <Heading as="h2" size="lg" mb="1rem">Recent Posts</Heading>
-        <Box mt="1rem">
-          TODO
-        </Box>
+      <WidthHolder main border="1px white solid">
+        <Heading as="h2" size="md" mb="1rem">Recent Posts</Heading>
+        <Flex gap="1rem" direction="column">
+          {recentPosts.flatMap((post, i) =>
+            <HorizontalCard
+              key={i + "-2"}
+              title={post.title}
+              intro={post.intro.html}
+              postedAt={post.createdAt}
+              tags={post.tags}
+              url={post.url}
+            />
+          )}
+        </Flex>
+        <Text mt="1.25rem">
+          &#128073; Check more on the <Link href="/blog">Blog page</Link>.
+        </Text>
       </WidthHolder>
     </Box>
   </>
@@ -69,7 +86,7 @@ function RecentTestimonials(): JSX.Element {
   return <>
     <Box as="section" background="lightgray">
       <WidthHolder main background="coral">
-        <Heading as="h2" size="lg" mb="1rem">Recent Testimonials</Heading>
+        <Heading as="h2" size="md" mb="1rem">Recent Testimonials</Heading>
         <Box mt="1rem">
           TODO
         </Box>
@@ -82,8 +99,8 @@ function RecentTestimonials(): JSX.Element {
 function StudentsMap(): JSX.Element {
   return <>
     <Box as="section" background="lightgray">
-      <WidthHolder main background="pink">
-        <Heading as="h2" size="lg" mb="1rem">The map of our Students</Heading>
+      <WidthHolder main background="white">
+        <Heading as="h2" size="md" mb="1rem">The map of our Students</Heading>
         <LazyLoad>
           <img src="/index/map-of-students.webp" width="100%"/>
         </LazyLoad>

@@ -1,3 +1,5 @@
+export * from "./HorizontalCard"
 export * from "./Link"
+export * from "./Tags"
 export * from "./Typography"
 export * from "./WidthHolder"

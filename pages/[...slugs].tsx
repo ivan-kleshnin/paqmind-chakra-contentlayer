@@ -23,7 +23,7 @@ export default function AnyPage({page} : AnyPageProps): JSX.Element {
     </Head>
     <main>
       <Box as="section" background="lightgray">
-        <WidthHolder main background="white">
+        <WidthHolder main maxW="2xl" background="white">
           {/*<OrderedList>
             <ListItem>
               <Link href="#">Tutorials</Link>
@@ -41,7 +41,7 @@ export default function AnyPage({page} : AnyPageProps): JSX.Element {
             </ListItem>
           </UnorderedList>*/}
           <Typography>
-            <Heading as="h1" size="xl">
+            <Heading as="h1" size="lg">
               {page.title}
             </Heading>
             <MDXContent/>

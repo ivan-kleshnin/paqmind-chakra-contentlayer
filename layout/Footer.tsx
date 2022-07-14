@@ -8,6 +8,7 @@ import {Link, WidthHolder} from "components"
 
 // Footer
 export function Footer(): JSX.Element {
+  // TODO automate calc(1.2 * 20px)
   return <>
     <Box
       as="footer"
@@ -17,8 +18,8 @@ export function Footer(): JSX.Element {
       <WidthHolder>
         <Grid gap="2rem" templateColumns={["1fr 1fr", "1fr 1fr", "4fr 3fr 3fr 2fr"]}>
           <div>
-            <Heading as="h4" size="xs" mb="1rem" lineHeight="20px">
-              &copy; Paqmind Team, 2022
+            <Heading as="h4" size="xs" mb="1rem" lineHeight="calc(1.2 * 20px)">
+              &copy; Paqmind, 2022
             </Heading>
             <List spacing=".75rem">
               <ListItem>
