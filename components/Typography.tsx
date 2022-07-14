@@ -4,10 +4,10 @@ import * as React from "react"
 // Typography
 export function Typography({children, ...rest}: any): JSX.Element {
   const theme = useTheme()
-  const {Code, Heading, Link} = theme.components
+  const {Code, Heading, Link, List} = theme.components
 
-  // className="typography"
   return <Box
+    className="typography"
     {...rest}
     sx={{
       "& a:not(.chakra-link)": {
@@ -47,6 +47,27 @@ export function Typography({children, ...rest}: any): JSX.Element {
         mt: "1em",
         mb: "1rem",
         lineHeight: "1em",
+      },
+      "& p": {
+        hyphens: "auto",
+        textAlign: "justify",
+      },
+      "& ul": {
+        listStyle: "none",
+        ...List.baseStyle.container,
+      },
+      "& ul li::before": {
+        fontSize: "1em",
+        verticalAlign: "center",
+        content: '"•"',
+        display: "inline-block",
+        width: "0.75em",
+      },
+      "& ol": {
+        ...List.baseStyle.container,
+      },
+      "& li": {
+        ...List.baseStyle.item,
       },
       // TODO not chakra text, list, etc.
       "& p, & blockquote, & ul, & ol, & pre": {

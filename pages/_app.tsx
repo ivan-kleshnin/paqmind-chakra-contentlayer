@@ -39,6 +39,35 @@ const theme = extendTheme({
       },
     },
 
+    // https://github.com/chakra-ui/chakra-ui/discussions/6323
+    // List: {
+    //   baseStyle: {
+    //     item: {
+    //       listStyle: "none",
+    //       color: "red",
+    //       _before: {
+    //         fontSize: "1em",
+    //         verticalAlign: "center",
+    //         content: '"•"',
+    //         display: "inline-block",
+    //         width: "0.75em",
+    //       }
+    //     }
+    //   }
+    // },
+
+     // "& ul": {
+     //    listStyle: "none",
+     //    ...List.baseStyle.container,
+     //  },
+     //  "& ul li::before": {
+     //    fontSize: "1em",
+     //    verticalAlign: "center",
+     //    content: '"•"',
+     //    display: "inline-block",
+     //    width: "0.75em",
+     //  },
+
     // https://type-scale.com/ 1.25 => "Major Third" scale
     Heading: {
       baseStyle: {
@@ -74,6 +103,8 @@ const theme = extendTheme({
     },
   },
 })
+
+console.log("theme:", theme)
 
 const cache = createCache({key: "q"})
 cache.compat = true

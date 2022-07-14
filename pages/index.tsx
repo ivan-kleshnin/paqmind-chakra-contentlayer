@@ -1,14 +1,14 @@
 import {Box, Divider, Heading, Text} from "@chakra-ui/react"
+import {
+  type Account, type Page, type Post, type Testimonial,
+  allAccounts, allPages, allPosts, allTestimonials,
+} from "contentlayer/generated"
 import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps} from "next"
 import Head from "next/head"
 import {useMDXComponent} from "next-contentlayer/hooks"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
-import {
-  type Account, type Page, type Post, type Testimonial,
-  allAccounts, allPages, allPosts, allTestimonials,
-} from "contentlayer/generated"
 import * as U from "lib/utils"
 import {Typography, WidthHolder} from "components"
 
@@ -40,7 +40,9 @@ function Content({home}: any): JSX.Element {
     <Box as="section" background="lightgray">
       <WidthHolder main background="white">
         <Typography>
-          <Heading as="h1" size="xl">{home.title}</Heading>
+          <Heading as="h1" size="xl">
+            {home.title}
+          </Heading>
           <MDXContent/>
         </Typography>
       </WidthHolder>
