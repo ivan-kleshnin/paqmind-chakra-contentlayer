@@ -1,10 +1,14 @@
 import {ChakraProvider, extendTheme} from "@chakra-ui/react"
 import {CacheProvider} from "@emotion/react"
 import createCache from "@emotion/cache"
-import type {AppProps} from "next/app"
 import "@fontsource/source-sans-pro/400.css"
 import "@fontsource/source-serif-pro/400.css"
 import "@fontsource/source-serif-pro/600.css"
+import type {AppProps} from "next/app"
+import Head from "next/head"
+import {Layout} from "layout"
+import "styles/reset.css"
+import "styles/prisma.css"
 
 const theme = extendTheme({
   fonts: {
@@ -52,6 +56,11 @@ const theme = extendTheme({
           fontWeight: "semibold",
           lineHeight: "1em",
         },
+        xs: {
+          fontSize: "16px", // 16 * 1.25 ^ 0
+          fontWeight: "semibold",
+          lineHeight: "1em",
+        },
       }
     },
   },
@@ -62,9 +71,15 @@ cache.compat = true
 
 export default function MyApp({Component, pageProps}: AppProps) {
   return <>
+    <Head>
+      <title>Paqmind</title>
+      {/*<meta name="viewport" content="minimum-scale=1, initial-scale=1.25, width=device-width"/>*/}
+    </Head>
     <ChakraProvider theme={theme}>
       <CacheProvider value={cache}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps}/>
+        </Layout>
       </CacheProvider>
     </ChakraProvider>
   </>

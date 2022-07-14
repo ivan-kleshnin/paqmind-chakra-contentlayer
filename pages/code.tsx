@@ -1,24 +1,13 @@
-import {Box, Code, Container, Grid, Tabs, Tab, TabList, TabPanels, TabPanel, useTheme} from "@chakra-ui/react"
+import {Box, Code, Tabs, Tab, TabList, TabPanels, TabPanel, useTheme} from "@chakra-ui/react"
 import * as React from "react"
-import {Footer, MainMenu} from "layouts"
+import {WidthHolder} from "components"
 import {Typography} from "./typography"
 
 // CodePage
 export default function CodePage(): JSX.Element {
   return <>
-    <Grid templateRows="auto 1fr auto" minHeight="100vh">
-      <MainMenu/>
-      <Main/>
-      <Footer/>
-    </Grid>
-  </>
-}
-
-// Main
-function Main() {
-  return <>
     <Box as="main" background="lightgray">
-      <Container maxW="5xl" background="coral" p="1.5rem" height="100%">
+      <WidthHolder main background="coral">
         <Tabs>
           <TabList>
             <Tab>Components</Tab>
@@ -38,7 +27,7 @@ function Main() {
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </Container>
+      </WidthHolder>
     </Box>
   </>
 }

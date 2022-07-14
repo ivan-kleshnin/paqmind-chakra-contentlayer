@@ -1,23 +1,12 @@
-import {Box, Container, Grid, Heading, Tabs, Tab, TabList, TabPanels, TabPanel, Text, useTheme} from "@chakra-ui/react"
+import {Box, Heading, Tabs, Tab, TabList, TabPanels, TabPanel, Text, useTheme} from "@chakra-ui/react"
 import * as React from "react"
-import {Footer, MainMenu} from "layouts"
+import {WidthHolder} from "components"
 
 // TypographyPage
 export default function TypographyPage(): JSX.Element {
   return <>
-    <Grid templateRows="auto 1fr auto" minHeight="100vh">
-      <MainMenu/>
-      <Main/>
-      <Footer/>
-    </Grid>
-  </>
-}
-
-// Main
-function Main() {
-  return <>
     <Box as="main" background="lightgray">
-      <Container maxW="5xl" background="coral" p="1.5rem" height="100%">
+      <WidthHolder main background="coral">
         <Tabs>
           <TabList className="list">
             <Tab>Headings</Tab>
@@ -41,7 +30,7 @@ function Main() {
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </Container>
+      </WidthHolder>
     </Box>
   </>
 }
