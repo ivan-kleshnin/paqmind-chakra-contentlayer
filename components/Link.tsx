@@ -6,19 +6,25 @@ import * as React from "react"
 // Link
 export type LinkProps = React.PropsWithChildren<
   NextLinkProps & Omit<Chakra.LinkProps, "as">
->
+> & {
+  asText?: boolean
+}
 
 export function Link(props: LinkProps): JSX.Element {
   const {
     href,
     as,
+    asText = false,
     replace,
     scroll,
     shallow,
     prefetch,
     children,
+    variant,
     ...rest
   } = props
+
+  const variant2 = asText ? "text" : variant
 
   return (
     <NextLink
@@ -30,7 +36,7 @@ export function Link(props: LinkProps): JSX.Element {
       scroll={scroll}
       shallow={shallow}
     >
-      <Chakra.Link {...rest}>
+      <Chakra.Link {...rest} variant={variant2}>
         {children}
       </Chakra.Link>
     </NextLink>

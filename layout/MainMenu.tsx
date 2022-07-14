@@ -51,13 +51,13 @@ function LeftMenu() {
   return <Flex gap="3rem" align="center">
     <Logo/>
     <Flex gap="2rem" align="center" display={["none", "none", "flex"]}>
-      <Link href="/about">
+      <Link href="/about" asText>
         About
       </Link>
-      <Link href="/testimonials">
+      <Link href="/testimonials" asText>
         Testimonials
       </Link>
-      <Link href="/blog">
+      <Link href="/blog" asText>
         Blog
       </Link>
     </Flex>
@@ -68,7 +68,7 @@ function LeftMenu() {
 function RightMenu({opened, setOpened}: any): JSX.Element {
   return <>
     <Flex alignItems="center" gap="2rem">
-      <Link href="#">
+      <Link href="#" asText>
         <span onClick={() => alert("This functionality is temporarily unavailable!")}>
           Sign In / Sign Up
         </span>
@@ -98,11 +98,11 @@ function BurgerIcon({opened, setOpened}: {opened: boolean, setOpened: any}): JSX
 function MobileMenu() {
   return <>
     <Flex direction="column" gap="1rem" mt="1rem">
-      <Link href="/about">About</Link>
+      <Link href="/about" asText>About</Link>
       <Divider variant="dashed"/>
-      <span>Blog</span>
+      <Link href="/blog" asText>Blog</Link>
       <Divider variant="dashed"/>
-      <span>Links</span>
+      <Link href="/links" asText>Link</Link>
     </Flex>
   </>
 }

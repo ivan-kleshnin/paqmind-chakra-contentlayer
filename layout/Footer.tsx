@@ -21,7 +21,9 @@ export function Footer(): JSX.Element {
               &copy; Paqmind Team, 2022
             </Heading>
             <List spacing=".75rem">
-              <ListItem><Link href="/terms-of-use">Terms of Use</Link></ListItem>
+              <ListItem>
+                <Link href="/terms-of-use" asText>Terms of Use</Link>
+              </ListItem>
               {/*<ListItem>Privacy policy</ListItem>*/}
               {/*<ListItem>Offer</ListItem>*/}
               {/*<ListItem><a href="/links">Thank you</a></ListItem>*/}
@@ -33,24 +35,38 @@ export function Footer(): JSX.Element {
               <ListItem>WIP</ListItem>
               {/*<ListItem>Mentors</ListItem>*/}
               {/*<ListItem>Tutorials</ListItem>*/}
-              <ListItem><Link href="/links">Useful Links</Link></ListItem>
+              <ListItem>
+                <Link href="/links" asText>Useful Links</Link>
+              </ListItem>
             </List>
           </div>
           <div>
             <GroupHeading>PROJECT</GroupHeading>
             <List spacing=".75rem">
-              <ListItem><Link href="/about">About</Link></ListItem>
-              <ListItem><Link href="/blog">Blog</Link></ListItem>
-              <ListItem><Link href="/testimonials">Testimonials</Link></ListItem>
+              <ListItem>
+                <Link href="/about" asText>About</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="/blog" asText>Blog</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="/testimonials" asText>Testimonials</Link>
+              </ListItem>
               {/*<ListItem>Feedback</ListItem>*/}
             </List>
           </div>
           <div>
             <GroupHeading>COMMUNITY</GroupHeading>
             <List spacing=".75rem">
-              <ListItem><BrandYoutube strokeWidth={1} style={{display: "block"}}/></ListItem>
-              <ListItem><BrandTelegram strokeWidth={1} style={{display: "block"}}/></ListItem>
-              <ListItem><BrandLinkedin strokeWidth={1} style={{display: "block"}}/></ListItem>
+              <ListItem>
+                <BrandYoutube strokeWidth={1} style={{display: "block"}}/>
+              </ListItem>
+              <ListItem>
+                <BrandTelegram strokeWidth={1} style={{display: "block"}}/>
+              </ListItem>
+              <ListItem>
+                <BrandLinkedin strokeWidth={1} style={{display: "block"}}/>
+              </ListItem>
             </List>
           </div>
         </Grid>

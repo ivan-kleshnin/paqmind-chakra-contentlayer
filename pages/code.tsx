@@ -1,7 +1,6 @@
 import {Box, Code, Tabs, Tab, TabList, TabPanels, TabPanel, useTheme} from "@chakra-ui/react"
 import * as React from "react"
-import {WidthHolder} from "components"
-import {Typography} from "./typography"
+import {Typography, WidthHolder} from "components"
 
 // CodePage
 export default function CodePage(): JSX.Element {

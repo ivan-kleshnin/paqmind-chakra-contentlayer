@@ -10,8 +10,7 @@ import {
   allAccounts, allPages, allPosts, allTestimonials,
 } from "contentlayer/generated"
 import * as U from "lib/utils"
-import {Typography} from "pages/typography"
-import {WidthHolder} from "components"
+import {Typography, WidthHolder} from "components"
 
 // HomePage
 type HomePageProps = Payload // & some Next stuff
@@ -39,7 +38,7 @@ function Content({home}: any): JSX.Element {
 
   return <>
     <Box as="section" background="lightgray">
-      <WidthHolder main background="coral">
+      <WidthHolder main background="white">
         <Typography>
           <Heading as="h1" size="xl">{home.title}</Heading>
           <MDXContent/>
