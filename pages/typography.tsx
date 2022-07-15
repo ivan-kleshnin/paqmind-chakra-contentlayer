@@ -38,6 +38,7 @@ export default function TypographyPage(): JSX.Element {
 // CONTENT /////////////////////////////////////////////////////////////////////////////////////////
 
 // TODO https://github.com/chakra-ui/chakra-ui/discussions/6325
+// TODO https://github.com/chakra-ui/chakra-ui-docs/discussions/469
 
 // HeadingsPanel
 function HeadingsPanel() {

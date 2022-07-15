@@ -25,28 +25,33 @@ export function Typography({children, ...rest}: any): JSX.Element {
       },
       "& h1:not(.chakra-heading)": {
         ...Heading.baseStyle,
-        fontSize: Heading.sizes.xl.fontSize,
-        lineHeight: Heading.sizes.xl.lineHeight,
-      },
-      "& h2:not(.chakra-heading)": {
-        ...Heading.baseStyle,
         fontSize: Heading.sizes.lg.fontSize,
         lineHeight: Heading.sizes.lg.lineHeight,
       },
-      "& h3:not(.chakra-heading)": {
+      "& h2:not(.chakra-heading)": {
         ...Heading.baseStyle,
         fontSize: Heading.sizes.md.fontSize,
         lineHeight: Heading.sizes.md.lineHeight,
       },
-      "& h4:not(.chakra-heading)": {
+      "& h3:not(.chakra-heading)": {
         ...Heading.baseStyle,
         fontSize: Heading.sizes.sm.fontSize,
         lineHeight: Heading.sizes.sm.lineHeight,
       },
+      "& h4:not(.chakra-heading)": {
+        ...Heading.baseStyle,
+        fontSize: Heading.sizes.xs.fontSize,
+        lineHeight: Heading.sizes.xs.lineHeight,
+      },
       "& h1, & h2, & h3, & h4": {
         mt: "1em",
         mb: "1rem",
-        lineHeight: "1em",
+        lineHeight: "1.2em",
+      },
+      "& h1:after, & h2:after, & h3:after, & h4:after": {
+        content: "''",
+        marginBottom: "-.2em",
+        display: "table",
       },
       "& p": {
         hyphens: "auto",
@@ -69,7 +74,6 @@ export function Typography({children, ...rest}: any): JSX.Element {
       "& li": {
         ...List.baseStyle.item,
       },
-      // TODO not chakra text, list, etc.
       "& p, & blockquote, & ul, & ol, & pre": {
         my: "1rem",
       },

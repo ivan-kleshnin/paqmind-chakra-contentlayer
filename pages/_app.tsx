@@ -73,7 +73,12 @@ const theme = extendTheme({
     Heading: {
       baseStyle: {
         fontWeight: "semibold",
-        lineHeight: "1em",
+        lineHeight: "1.2em",
+        _after: {
+          content: "''",
+          marginBottom: "-.2em",
+          display: "table",
+        },
       },
       sizes: {
         "4xl": {
