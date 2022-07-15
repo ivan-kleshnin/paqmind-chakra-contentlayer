@@ -3,17 +3,62 @@ import {
   Box, Divider, Flex, Heading,
   useTheme,
 } from "@chakra-ui/react"
+import useScrollPosition from "@react-hook/window-scroll"
+import * as R from "rambda"
 import {useRouter} from "next/router"
 import * as React from "react"
 import {Link, WidthHolder} from "components"
 
-// const [scroll] = [{y: 0}]  // useWindowScroll() -- SSR incompatible
-// const logoOrder = (scroll.y > 16 * 8) ? 3 : 2
-// const itemSize = (scroll.y > 16 * 8) ? "md" : "lg"
-// const headerHeight = (scroll.y > 16 * 8) ? "3.5rem" : "5rem"
+////////////////////////////////////////////////////////////////////////////////////////////////////
+function useScrollYs(): [number[], -1 | 0 | 1] {
+  // Modifying the following constants will affect fidelity
+  const frameRate = 5    // -- affects slow scrolling
+  const stackLength = 10 // -- affects slow scrolling
+  const threshold = 16 * 10 // in px -- affects fast scrolling
+
+  // Algorithm
+  const scrollY = useScrollPosition(frameRate)
+  const scrollLogRef = React.useRef<number[]>([])
+
+  scrollLogRef.current = scrollLogRef.current.length < stackLength
+    ? [...scrollLogRef.current, scrollY]
+    : [...scrollLogRef.current, scrollY].slice(1, stackLength + 1)
+
+  const ys = scrollLogRef.current
+  const sortedYs = R.sortBy(Number, ys)
+  const sortedYsRev = R.reverse(R.sortBy(Number, ys))
+
+  if (sortedYs.length > 0) {
+    const min = R.reduce(R.min, Infinity, sortedYs) as number
+    const max = R.reduce(R.max, 0, sortedYsRev) as number
+
+    // For slow scrolling
+    if (sortedYs.length == 10 && R.equals(ys, sortedYs)) {
+      return [ys, 1]
+    } else if (sortedYs.length == 10 && R.equals(ys, sortedYsRev)) {
+      return [ys, -1]
+    }
+    // For fast scrolling
+    if (scrollY - min > threshold) {
+      return [ys, 1]
+    } else if (max - scrollY > threshold) {
+      return [ys, -1]
+    }
+    return [ys, 0]
+  } else {
+    return [ys, 0]
+  }
+}
+
+function useScrollDirection(): -1 | 0 | 1 {
+  const [_, direction] = useScrollYs()
+  return direction
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // MainMenu
 export function MainMenu() {
+  const scrollDirection = useScrollDirection()
   const [opened, setOpened] = React.useState(false)
 
   const router = useRouter()
@@ -26,14 +71,22 @@ export function MainMenu() {
     }
   }, [])
 
+  const menuHeight = React.useRef<string>("5rem")
+  if (scrollDirection == 1) {
+    menuHeight.current = "4rem"
+  } else if (scrollDirection == -1) {
+    menuHeight.current = "5rem"
+  }
+
   return <>
     <Box
       as="header"
       background="white"
       borderBottom="1px solid lightgray"
-      height="5rem"
+      height={menuHeight.current}
       position="sticky"
       top="0"
+      transition="height .25s"
       zIndex="1"
     >
       <WidthHolder>
