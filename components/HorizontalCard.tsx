@@ -1,4 +1,4 @@
-import {Box, Heading, Text} from "@chakra-ui/react"
+import {Box, Flex} from "@chakra-ui/react"
 import {useRouter} from "next/router"
 import React from "react"
 import {Link, Tags, Typography} from "components"
@@ -17,6 +17,7 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
   return <>
     <Box
       background="white"
+      borderRadius="4px"
       p="1.5rem"
       border="1px solid lightgray"
       sx={{
@@ -32,21 +33,24 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
         // },
       }}
     >
-      <Heading as="h3" size="sm">
-        {url ?
-          <Link asText href={url}>{title}</Link> :
-          <>{title}</>
-        }
-      </Heading>
-      <Text color="gray">
-        Posted: {new Date(postedAt).toLocaleDateString()}
-      </Text>
-      <Typography
-        mt="0.5rem"
-        mb="1rem"
-        dangerouslySetInnerHTML={{__html: intro}}
-      />
-      <Tags tags={tags} selectedTag={router.query.tag as string | undefined}/>
+      <Typography>
+        <h3>
+          {url ?
+            <Link asText href={url}>{title}</Link> :
+            <>{title}</>
+          }
+        </h3>
+        <Flex gap=".5rem" color="gray" mt="-1rem" mb=".5rem">
+          {/*<span>By Ivan Kleshnin</span><span>&bull;</span>*/}<span>{new Date(postedAt).toLocaleDateString()}</span>
+        </Flex>
+        <Box
+          dangerouslySetInnerHTML={{__html: intro}}
+        />
+      </Typography>
+      {(tags && tags.length)
+        ? <Tags mt="1rem" tags={tags} selectedTag={router.query.tag as string | undefined}/>
+        : <></>
+      }
     </Box>
   </>
 }

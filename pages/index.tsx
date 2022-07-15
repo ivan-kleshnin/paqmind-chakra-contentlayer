@@ -37,7 +37,7 @@ function Content({home}: any): JSX.Element {
   const MDXContent = useMDXComponent(home.body.code)
 
   return <>
-    <Box as="section" background="lightgray">
+    <Box as="section" background="white">
       <WidthHolder main background="white">
         <Typography>
           <Heading as="h1" size="lg">
@@ -58,8 +58,8 @@ type RecentPostsProps = {
 
 function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
   return <>
-    <Box as="section" background="lightgray">
-      <WidthHolder main border="1px white solid">
+    <Box as="section" background="#eee">
+      <WidthHolder main>
         <Heading as="h2" size="md" mb="1rem">Recent Posts</Heading>
         <Flex gap="1rem" direction="column">
           {recentPosts.flatMap((post, i) =>
@@ -84,7 +84,7 @@ function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
 // RecentTestimonials
 function RecentTestimonials(): JSX.Element {
   return <>
-    <Box as="section" background="lightgray">
+    <Box as="section" background="#eee">
       <WidthHolder main background="coral">
         <Heading as="h2" size="md" mb="1rem">Recent Testimonials</Heading>
         <Box mt="1rem">
@@ -98,7 +98,7 @@ function RecentTestimonials(): JSX.Element {
 // StudentsMap
 function StudentsMap(): JSX.Element {
   return <>
-    <Box as="section" background="lightgray">
+    <Box as="section" background="white">
       <WidthHolder main background="white">
         <Heading as="h2" size="md" mb="1rem">The map of our Students</Heading>
         <LazyLoad>

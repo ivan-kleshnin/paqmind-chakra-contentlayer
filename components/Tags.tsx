@@ -3,16 +3,17 @@ import * as React from "react"
 import {Link} from "components"
 
 export type TagsProps = {
+  mt?: string
   tags?: string[]
   selectedTag?: string
 }
 
-export function Tags({tags, selectedTag}: TagsProps): JSX.Element {
+export function Tags({mt, tags, selectedTag}: TagsProps): JSX.Element {
   if (!tags || !tags.length) {
     return <></>
   }
 
-  return <Flex gap="1rem">
+  return <Flex gap="1rem" mt={mt}>
     {
       tags.map((tag, i) =>
         <strong key={i}>
