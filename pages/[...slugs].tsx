@@ -22,7 +22,7 @@ export default function AnyPage({page} : AnyPageProps): JSX.Element {
       <title>{page.seoTitle || page.title}</title>
     </Head>
     <main>
-      <Box as="section" background="lightgray">
+      <Box as="section" background="#eee">
         <WidthHolder main maxW="2xl" background="white">
           {/*<OrderedList>
             <ListItem>

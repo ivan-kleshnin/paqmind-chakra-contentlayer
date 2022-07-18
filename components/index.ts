@@ -1,3 +1,5 @@
+export * from "./CommentCard"
+export * from "./CommentCarousel"
 export * from "./HorizontalCard"
 export * from "./Link"
 export * from "./Tags"

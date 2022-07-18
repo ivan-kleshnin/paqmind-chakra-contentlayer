@@ -10,12 +10,12 @@ import {useMDXComponent} from "next-contentlayer/hooks"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
 import * as U from "lib/utils"
-import {Link, HorizontalCard, Typography, WidthHolder} from "components"
+import {CommentCarousel, Link, HorizontalCard, Typography, WidthHolder} from "components"
 
 // HomePage
 type HomePageProps = Payload // & some Next stuff
 
-export default function HomePage({accounts, home, recentPosts}: HomePageProps): JSX.Element {
+export default function HomePage({accounts, home, recentPosts, recentTestimonials}: HomePageProps): JSX.Element {
   return <>
     <Head>
       <title>{home.seoTitle || home.title}</title>
@@ -27,7 +27,7 @@ export default function HomePage({accounts, home, recentPosts}: HomePageProps): 
       <Divider/>
       <StudentsMap/>
       <Divider/>
-      <RecentTestimonials/>
+      <RecentTestimonials accounts={accounts} recentTestimonials={recentTestimonials}/>
     </main>
   </>
 }
@@ -82,14 +82,31 @@ function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
 }
 
 // RecentTestimonials
-function RecentTestimonials(): JSX.Element {
+type RecentTestimonialsProps = {
+  accounts: Account[]
+  recentTestimonials: Testimonial[]
+}
+
+function RecentTestimonials({accounts, recentTestimonials}: RecentTestimonialsProps): JSX.Element {
+  const enrichedTestimonials = recentTestimonials.flatMap(testimonial => {
+    const author = accounts.find(account => account.id == testimonial.fromAccountId)
+    if (!author) return []
+    return [{
+      ...testimonial,
+      body: testimonial.body.html,
+      createdAt: testimonial.createdAt,
+      author,
+    }]
+  })
+
   return <>
     <Box as="section" background="#eee">
-      <WidthHolder main background="coral">
+      <WidthHolder main>
         <Heading as="h2" size="md" mb="1rem">Recent Testimonials</Heading>
-        <Box mt="1rem">
-          TODO
-        </Box>
+        <CommentCarousel testimonials={enrichedTestimonials}/>
+        <Text mt="1.25rem">
+          &#128073; Check more on the <Link href="/testimonials">Testimonials page</Link>.
+        </Text>
       </WidthHolder>
     </Box>
   </>
