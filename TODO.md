@@ -10,7 +10,7 @@
 [x] Deploy to en.paqmind.com
 [x] Tags are not used for search
 [x] Auto-expandable/auto-retractable menu
-[ ] Map should have rounded corners
+[x] Map should have rounded corners
 [ ] Explore CSS grain effect, CSS blur effect
  
 ## Backlog

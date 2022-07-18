@@ -102,7 +102,7 @@ function StudentsMap(): JSX.Element {
       <WidthHolder main background="white">
         <Heading as="h2" size="md" mb="1rem">The map of our Students</Heading>
         <LazyLoad>
-          <img src="/index/map-of-students.webp" width="100%"/>
+          <img src="/index/map-of-students.webp" width="100%" style={{borderRadius: "4px"}}/>
         </LazyLoad>
         <Text mt="1rem">
           The map will be updated to English soon &#128521;
