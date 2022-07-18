@@ -1,0 +1,140 @@
+export default function Page() {
+  return null
+}
+
+// import {
+//   Box, Container, Group, Title,
+// } from "@mantine/core"
+// import {CommentCard} from "components"
+// import * as React from "react"
+// import {ChevronRight, ChevronLeft} from "tabler-icons-react"
+// // import {Global, css} from "@emotion/react"
+// ////////////////////////////////////////////////////////////////////////////////////////////////////
+// import useEmblaCarousel, {
+//   // EmblaCarouselType,
+//   // EmblaOptionsType,
+//   // EmblaPluginType,
+//   // EmblaEventType,
+//   // UseEmblaCarouselType,
+// } from 'embla-carousel-react'
+//
+// const body = `
+//   <p>
+//     I use <a href=\"https://heroku.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Heroku</a> to host my Node.js application, but MongoDB add-on appears to be too <strong>expensive</strong>. I consider switching to <a href=\"https://www.digitalocean.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Digital Ocean</a> VPS to save some cash.
+//   </p>
+// `
+//
+// export const EmblaCarousel = () => {
+//    const [emblaRef, emblaApi] = useEmblaCarousel()
+//
+//   const scrollPrev = React.useCallback(() => {
+//     if (emblaApi) emblaApi.scrollPrev()
+//   }, [emblaApi])
+//
+//   const scrollNext = React.useCallback(() => {
+//     if (emblaApi) emblaApi.scrollNext()
+//   }, [emblaApi])
+//
+//   return <>
+//     <Group position="apart">
+//       <Title order={2} mb=".5rem">Recent Testimonials</Title>
+//       <Group>
+//         <IconContainer hint="left" onClick={scrollPrev}>
+//           <ChevronLeft strokeWidth={1.5} size="1.5rem"/>
+//         </IconContainer>
+//         <IconContainer hint="right" onClick={scrollNext}>
+//           <ChevronRight strokeWidth={1.5} size="1.5rem"/>
+//         </IconContainer>
+//       </Group>
+//     </Group>
+//     <Box sx={{overflow: "hidden"}}>
+//       <Box className="viewport" ref={emblaRef}>
+//         <Box className="container" sx={{display: "flex"}}>
+//           <Box sx={{
+//             flexShrink: 0,
+//             flexBasis: "100%",
+//           }}>
+//             <CommentCard
+//               createdAt="2016-02-01"
+//               body={body}
+//               author={{
+//                 fullname: "Jacob Warnhalter",
+//                 title: "Developer",
+//                 contacts: {},
+//                 avatarUrl: "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
+//               }}
+//             />
+//           </Box>
+//           <Box sx={{
+//             flexShrink: 0,
+//             flexBasis: "100%",
+//           }}>
+//             <CommentCard
+//               createdAt="2017-03-11"
+//               body={body}
+//               author={{
+//                 fullname: "Jessica Rabbit",
+//                 title: "Developer",
+//                 contacts: {},
+//                 avatarUrl: "https://images.unsplash.com/photo-1624298357597-fd92dfbec01d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
+//               }}
+//             />
+//           </Box>
+//           <Box sx={{
+//             flexShrink: 0,
+//             flexBasis: "100%",
+//           }}>
+//             <SliderItem>3</SliderItem>
+//           </Box>
+//         </Box>
+//       </Box>
+//     </Box>
+//   </>
+// }
+//
+// export default function HomePage() {
+//   return <div>
+//     <Container>
+//       <EmblaCarousel/>
+//     </Container>
+//   </div>
+// }
+//
+// function SliderItem({children}: any) {
+//   return <Box sx={{backgroundColor: "red", height: "10rem"}}>
+//     {children}
+//   </Box>
+// }
+//
+// function IconContainer({children, hint, onClick} : any) {
+//   const side = 16 * 2
+//   return <Box
+//     onClick={onClick}
+//     sx={{
+//       cursor: "pointer",
+//       display: "flex",
+//       alignItems: "center",
+//       justifyContent: "center",
+//       borderRadius: "50%",
+//       backgroundColor: "lightcoral",
+//       height: side,
+//       width: side,
+//     }}
+//   >
+//     <RepositionSVG hint={hint}>
+//       {children}
+//     </RepositionSVG>
+//   </Box>
+// }
+//
+// function RepositionSVG({children, hint, offset = 2}: any) {
+//   return <Box sx={{
+//     position: "relative",
+//     left: (hint == "left" ? -1 : 1) * offset,
+//     "& > svg": {
+//       display: "block"
+//     }
+//   }}>
+//     {children}
+//   </Box>
+// }
