@@ -10,7 +10,11 @@ import {useScrollDirection} from "hooks"
 
 // MainMenu
 export function MainMenu() {
-  const scrollDirection = useScrollDirection()
+  const initialHeight = "5rem"
+  const reducedHeight = "4rem"
+  const scrollDirection = useScrollDirection({
+    startThreshold: parseInt(initialHeight) * 16,
+  })
   const [opened, setOpened] = React.useState(false)
 
   const router = useRouter()
@@ -22,11 +26,11 @@ export function MainMenu() {
     }
   }, [])
 
-  const menuHeight = React.useRef<string>("5rem")
+  const menuHeight = React.useRef<string>(initialHeight)
   if (scrollDirection == 1) {
-    menuHeight.current = "4rem"
+    menuHeight.current = reducedHeight
   } else if (scrollDirection == -1) {
-    menuHeight.current = "5rem"
+    menuHeight.current = initialHeight
   }
 
   return <>

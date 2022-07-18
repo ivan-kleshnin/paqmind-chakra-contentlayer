@@ -2,15 +2,26 @@ import useScrollPosition from "@react-hook/window-scroll"
 import * as R from "rambda"
 import * as React from "react"
 
-export function useScrollYs(): [number[], -1 | 0 | 1] {
-  // Modifying the following constants will affect fidelity
-  const frameRate = 5    // -- affects slow scrolling
-  const stackLength = 10 // -- affects slow scrolling
-  const thresholdDown = 16 * 10 // in px -- affects fast scrolling
-  const thresholdUp = 16 * 20 // in px -- affects fast scrolling
-  // Different constants for scrolling UP and DOWN
-  // because menu height increase is expensive while decrease isn't (position: static)
-  // The fidelity is 2x decreased for UP scrolls.
+export type UseScrollYsOptions = {
+  startThreshold?: number
+  downThreshold?: number
+  upThreshold?: number
+  frameRate?: number
+  stackLength?: number
+}
+
+export function useScrollYs(options: UseScrollYsOptions = {}): [number[], -1 | 0 | 1] {
+  const {
+    // FIDELITY
+    frameRate = 5,           // -- slow scrolling
+    stackLength = 10,        // -- slow scrolling
+    startThreshold = 16 * 5, // -- start area
+    downThreshold = 16 * 10, // -- fast scrolling
+    upThreshold = 16 * 20,   // -- fast scrolling
+    // ^ Intentionally different default constants for scrolling UP and DOWN
+    // E.g. menu height increase is expensive while decrease isn't (position: static)
+    // The fidelity is decreased 2x for scrolling UP.
+  } = options
 
   // Algorithm
   const scrollY = useScrollPosition(frameRate)
@@ -29,7 +40,7 @@ export function useScrollYs(): [number[], -1 | 0 | 1] {
     const max = R.reduce(R.max, 0, sortedYsRev) as number
 
     // Close to the top
-    if (scrollY < thresholdDown) {
+    if (scrollY < startThreshold) {
       return [ys, -1]
     }
     // For slow scrolling
@@ -39,9 +50,11 @@ export function useScrollYs(): [number[], -1 | 0 | 1] {
       return [ys, -1]
     }
     // For fast scrolling
-    if (scrollY - min > thresholdDown) {
+    if (scrollY - min > downThreshold) {
+      scrollLogRef.current = []
       return [ys, 1]
-    } else if (max - scrollY > thresholdUp) {
+    } else if (max - scrollY > upThreshold) {
+      scrollLogRef.current = []
       return [ys, -1]
     }
     return [ys, 0]
@@ -50,7 +63,7 @@ export function useScrollYs(): [number[], -1 | 0 | 1] {
   }
 }
 
-export function useScrollDirection(): -1 | 0 | 1 {
-  const [_, direction] = useScrollYs()
+export function useScrollDirection(options: UseScrollYsOptions = {}): -1 | 0 | 1 {
+  const [_, direction] = useScrollYs(options)
   return direction
 }
