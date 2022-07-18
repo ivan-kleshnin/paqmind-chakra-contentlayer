@@ -9,7 +9,9 @@ Personal site prototype.
 
 ---
 
-![Chakra UI](https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
+![Chakra UI](https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui)
 ![Contentlayer](https://img.shields.io/badge/Contentlayer-7c3aed?style=for-the-badge)
-![NextJS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Embla-Carousel](https://img.shields.io/badge/Embla--Carousel-7c3aed?style=for-the-badge)
+![NextJS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs)
+![Prism](https://img.shields.io/badge/Prism-000?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel)
