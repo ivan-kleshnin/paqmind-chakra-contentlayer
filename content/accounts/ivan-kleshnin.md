@@ -119,14 +119,14 @@ bonus: 0
 помогать студентам с трудоустройством. Многие из моих бывших студентов сейчас      
 работают в крупных компаниях на хороших должностях:      
   
-<Group spacing="1.5rem">      
+<Flex gap="1.5rem" wrap="wrap">      
   <div class="item"><img src="/content/assets/company-logos/yandex.png"/></div>      
   <div class="item"><img src="/content/assets/company-logos/privatbank.png"/></div>      
   <div class="item"><img src="/content/assets/company-logos/epam.png"/></div>      
   <div class="item"><img src="/content/assets/company-logos/alphabank.png"/></div>      
   <div class="item"><img src="/content/assets/company-logos/toptal.png"/></div>      
   <div class="item"><img src="/content/assets/company-logos/sberbank.png"/></div>      
-</Group>      
+</Flex>      
   
 Кто-то выбрал фриланс, кто-то переехал в США/Европу. Время от времени я контактирую      
 с бывшими студентами, т.к. меня искренне интересует развитие их карьеры.      

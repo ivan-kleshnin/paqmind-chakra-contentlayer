@@ -36,7 +36,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
         <ChevronRight strokeWidth={1} size="1.5rem"/>
       </IconContainer>
     </Flex>
-    <Box sx={{overflow: "hidden"}}>
+    <Box overflow="hidden">
       <Box className="viewport" ref={emblaRef}>
         <Flex className="container" alignItems="stretch">
           {testimonials.map((testimonial, i) => {
@@ -89,7 +89,7 @@ type RepositionSVGProps = {
 function RepositionSVG({children, hint, offset = 1}: RepositionSVGProps) {
   return <Box
     position="relative"
-    left={(hint == "left" ? -1 : 1) * offset + "px"}
+    left={(hint == "left" ? -1 : 1) * offset}
     sx={{
       "& > svg": {
         display: "block"

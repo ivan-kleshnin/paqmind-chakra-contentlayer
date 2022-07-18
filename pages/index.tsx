@@ -1,4 +1,4 @@
-import {Box, Divider, Flex, Heading, Text} from "@chakra-ui/react"
+import {Box, Flex, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Post, type Testimonial,
   allAccounts, allPages, allPosts, allTestimonials,
@@ -9,8 +9,8 @@ import Head from "next/head"
 import {useMDXComponent} from "next-contentlayer/hooks"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
-import * as U from "lib/utils"
 import {CommentCarousel, Link, HorizontalCard, Typography, WidthHolder} from "components"
+import * as U from "lib/utils"
 
 // HomePage
 type HomePageProps = Payload // & some Next stuff
@@ -22,18 +22,19 @@ export default function HomePage({accounts, home, recentPosts, recentTestimonial
     </Head>
     <main>
       <Content home={home}/>
-      <Divider/>
       <RecentPosts accounts={accounts} recentPosts={recentPosts}/>
-      <Divider/>
       <StudentsMap/>
-      <Divider/>
       <RecentTestimonials accounts={accounts} recentTestimonials={recentTestimonials}/>
     </main>
   </>
 }
 
 // Content
-function Content({home}: any): JSX.Element {
+type ContentProps = {
+  home: Page
+}
+
+function Content({home}: ContentProps): JSX.Element {
   const MDXContent = useMDXComponent(home.body.code)
 
   return <>
@@ -60,8 +61,10 @@ function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
   return <>
     <Box as="section" background="#eee">
       <WidthHolder main>
-        <Heading as="h2" size="md" mb="1rem">Recent Posts</Heading>
-        <Flex gap="1rem" direction="column">
+        <Heading as="h2" size="md" mb="1rem">
+          Recent Posts
+        </Heading>
+        <Flex direction="column" gap="1rem">
           {recentPosts.flatMap((post, i) =>
             <HorizontalCard
               key={i + "-2"}

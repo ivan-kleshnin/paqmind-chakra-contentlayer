@@ -13,7 +13,7 @@ export function Tags({mt, tags, selectedTag}: TagsProps): JSX.Element {
     return <></>
   }
 
-  return <Flex gap="1rem" mt={mt}>
+  return <Flex rowGap=".5rem" columnGap="1rem" mt={mt} wrap="wrap">
     {
       tags.map((tag, i) =>
         <strong key={i}>

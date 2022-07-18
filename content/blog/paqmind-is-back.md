@@ -49,7 +49,7 @@ One fast growing branch in this post-JavaScript world is... TypeScript framework
 Tell me about JS fatique one more time! Some good-ol players like Meteor and "modern classic" like NextJS
 are not going to lose their positions. And at least a couple of new ones, if we count only those with novel ideas, appear each quarter.
 
-<Group my="1.5rem">
+<Flex gap="1rem" my="1.5rem" wrap="wrap">
 ![Gatsby](https://img.shields.io/badge/Gatsby-%23663399.svg?style=for-the-badge&logo=gatsby&logoColor=white)
 ![Meteor JS](https://img.shields.io/badge/meteorjs-%23d74c4c.svg?style=for-the-badge&logo=meteor&logoColor=white)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
@@ -62,7 +62,7 @@ are not going to lose their positions. And at least a couple of new ones, if we 
 ![Redwood](https://img.shields.io/badge/redwood-blue?style=for-the-badge)
 ![Qwik](https://img.shields.io/badge/qwik-blue?style=for-the-badge)
 ![Vulcan](https://img.shields.io/badge/vulcan-blue?style=for-the-badge)
-</Group>
+</Flex>
 
 The above is what I personally find the most interesting. Your preferences may vary.
 
@@ -87,7 +87,7 @@ software product!
 
 I've spend the most time exploring Low Code & Headless CMS' topics so here are my top picks:
 
-<Group my="1.5rem">
+<Flex gap="1rem" my="1.5rem" wrap="wrap">
 ![Airtable](https://img.shields.io/badge/Airtable-18BFFF?style=for-the-badge&logo=Airtable&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 ![GraphCMS](https://img.shields.io/badge/GraphCMS-red?style=for-the-badge)
@@ -99,7 +99,7 @@ I've spend the most time exploring Low Code & Headless CMS' topics so here are m
 ![Prismic](https://img.shields.io/badge/Prismic-red?style=for-the-badge)
 ![Hasura](https://img.shields.io/badge/Hasura-red?style=for-the-badge)
 ![WunderGraph](https://img.shields.io/badge/WunderGraph-red?style=for-the-badge)
-</Group>
+</Flex>
 
 Again, some are well-known veterans of the industry and some are their challengers. I'd like 
 to say something smart about Web 3 and so on, but I'm simply not competent there.
@@ -111,14 +111,14 @@ similarities.
 
 Here are my personal watch-list of databases (and closely related things like ORMs, etc):
 
-<Group my="1.5rem">
+<Flex gap="1rem" my="1.5rem" wrap="wrap">
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 ![Neo4J](https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white)
 ![DGraph](https://img.shields.io/badge/DGraph-violet?style=for-the-badge)
 ![EdgeDB](https://img.shields.io/badge/EdgeDB-violet?style=for-the-badge)
 ![FaunaDB](https://img.shields.io/badge/FaunaDB-violet?style=for-the-badge)
 ![Nebula](https://img.shields.io/badge/Neo4j-violet?style=for-the-badge)
-</Group>
+</Flex>
 
 I'm happy to see that Neo4J gets official [GraphQL support](https://neo4j.com/developer/graphql/) in a form of library.
 I always liked Cypher and now (as I've seen new [monstrocities](shttps://www.sanity.io/docs/groq-syntax))

@@ -4,7 +4,7 @@ import * as React from "react"
 // Typography
 export function Typography({children, ...rest}: any): JSX.Element {
   const theme = useTheme()
-  const {Code, Heading, Link, List} = theme.components
+  const {Blockquote, Code, Heading, Link, List} = theme.components
 
   return <Box
     className="typography"
@@ -57,6 +57,15 @@ export function Typography({children, ...rest}: any): JSX.Element {
         hyphens: "auto",
         textAlign: "justify",
       },
+      "& blockquote": {
+        ...Blockquote.baseStyle,
+        "& cite": {
+          display: "block",
+          fontSize: "sm",
+          marginTop: ".5rem",
+          textAlign: "right",
+        },
+      },
       "& ul": {
         listStyle: "none",
         ...List.baseStyle.container,
@@ -77,10 +86,10 @@ export function Typography({children, ...rest}: any): JSX.Element {
       "& p, & blockquote, & ul, & ol, & pre": {
         my: "1rem",
       },
-      "& :first-child": {
+      "& > :first-child": {
         marginTop: 0,
       },
-      "& :last-child": {
+      "& > :last-child": {
         marginBottom: 0,
       }
     }}

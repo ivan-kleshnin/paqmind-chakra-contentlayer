@@ -12,7 +12,7 @@ export type CommentCardProps = {
 
 export function CommentCard({body, author}: CommentCardProps) {
   return <>
-    <Flex p="1.5rem" border="1px solid lightgray" borderRadius="4px">
+    <Flex p="1.5rem" border="1px solid lightgray" borderRadius="4px" background="white">
       <Flex direction={["column", "row"]} gap="1rem">
         <Avatar size="md" name="Dan Abrahmov" src={author.avatarUrl}/>
         <Typography>

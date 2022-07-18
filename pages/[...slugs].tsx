@@ -15,40 +15,35 @@ import {Typography, WidthHolder} from "components"
 type AnyPageProps = Payload // & some Next stuff
 
 export default function AnyPage({page} : AnyPageProps): JSX.Element {
-  const MDXContent = useMDXComponent(page.body.code)
-
   return <>
     <Head>
       <title>{page.seoTitle || page.title}</title>
     </Head>
     <main>
-      <Box as="section" background="#eee">
-        <WidthHolder main maxW="2xl" background="white">
-          {/*<OrderedList>
-            <ListItem>
-              <Link href="#">Tutorials</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">Useful Resources</Link>
-            </ListItem>
-          </OrderedList>
-          <UnorderedList>
-            <ListItem>
-              <Link href="#">Tutorials</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">Useful Resources</Link>
-            </ListItem>
-          </UnorderedList>*/}
-          <Typography>
-            <Heading as="h1" size="lg">
-              {page.title}
-            </Heading>
-            <MDXContent/>
-          </Typography>
-        </WidthHolder>
-      </Box>
+      <Content page={page}/>
     </main>
+  </>
+}
+
+// Content
+type ContentProps = {
+  page: Page
+}
+
+function Content({page}: ContentProps): JSX.Element {
+  const MDXContent = useMDXComponent(page.body.code)
+
+  return <>
+    <Box as="section" background="#eee">
+      <WidthHolder main maxW="2xl" background="white">
+        <Typography>
+          <Heading as="h1" size="lg">
+            {page.title}
+          </Heading>
+          <MDXContent/>
+        </Typography>
+      </WidthHolder>
+    </Box>
   </>
 }
 

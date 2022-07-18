@@ -11,10 +11,12 @@
 [x] Tags are not used for search
 [x] Auto-expandable/auto-retractable menu
 [x] Map should have rounded corners
+[x] Blog page
 [ ] Explore CSS grain effect, CSS blur effect
  
 ## Backlog
 
 [ ] Carousel height
 [ ] Student map is in russian
+[ ] Fix height for "no posts" case
 
