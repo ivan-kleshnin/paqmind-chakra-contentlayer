@@ -8,6 +8,14 @@ export const theme = extendTheme({
   },
 
   components: {
+    Code: {
+      baseStyle: {
+        p: ".5rem",
+      },
+    },
+
+    // CodeBlock?!
+
     Blockquote: {
       baseStyle: {
         backgroundColor: "#F8F0F0",
@@ -116,6 +124,17 @@ export const theme = extendTheme({
           fontSize: "16px", // 16 * 1.25 ^ 0 | h4 – p size, but bold & serif
         },
       }
+    },
+  },
+
+  styles: {
+    global: {
+      "pre": {
+        padding: "0 !important", // TODO priority issue
+      },
+      // "pre > code": {
+      //   py: "1rem !important", // TODO priority issue
+      // }
     },
   },
 })

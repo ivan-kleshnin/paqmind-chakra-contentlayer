@@ -1,6 +1,6 @@
-import {Box, Code, Tabs, Tab, TabList, TabPanels, TabPanel, useTheme} from "@chakra-ui/react"
+import {Box, Code, Tabs, Tab, TabList, TabPanels, TabPanel} from "@chakra-ui/react"
 import * as React from "react"
-import {Typography, WidthHolder} from "components"
+import {CodeBlock, Typography, WidthHolder} from "components"
 
 // CodePage
 export default function CodePage(): JSX.Element {
@@ -89,22 +89,4 @@ console.log("test")
       `}}
     />
   </>
-}
-
-// LIBRARY? ///
-
-export type CodeBlockProps = {
-  children: string
-}
-
-export function CodeBlock({children}: CodeBlockProps): JSX.Element {
-  const theme = useTheme()
-  const {Code} = theme.components
-  const styles = {
-    ...Code.baseStyle,
-    ...Code.variants[Code.defaultProps.variant]({theme, colorScheme: Code.defaultProps.colorScheme}),
-  }
-  return <Box as="pre" overflowX="scroll" sx={styles}>
-    {children}
-  </Box>
 }

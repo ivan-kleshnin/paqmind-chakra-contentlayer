@@ -23,6 +23,9 @@ export function Typography({children, ...rest}: any): JSX.Element {
         ...Code.baseStyle,
         ...Code.variants[Code.defaultProps.variant]({theme, colorScheme: Code.defaultProps.colorScheme}),
       },
+      "& pre > code:not(.chakra-code)": {
+        padding: "1rem", // TODO hack
+      },
       "& h1:not(.chakra-heading)": {
         ...Heading.baseStyle,
         fontSize: Heading.sizes.lg.fontSize,
@@ -43,11 +46,13 @@ export function Typography({children, ...rest}: any): JSX.Element {
         fontSize: Heading.sizes.xs.fontSize,
         lineHeight: Heading.sizes.xs.lineHeight,
       },
+
       "& h1, & h2, & h3, & h4": {
         mt: "1em",
         mb: "1rem",
-        lineHeight: "1.2em",
       },
+
+      // TODO dry
       "& h1:after, & h2:after, & h3:after, & h4:after": {
         content: "''",
         marginBottom: "-.2em",

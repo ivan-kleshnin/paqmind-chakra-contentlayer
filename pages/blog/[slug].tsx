@@ -8,7 +8,7 @@ import {GetStaticProps, GetStaticPaths} from "next"
 import Head from "next/head"
 import {useRouter} from "next/router"
 import {useMDXComponent} from "next-contentlayer/hooks"
-import {/*Link, */Tags, Typography, WidthHolder} from "components"
+import {Tags, Typography, WidthHolder} from "components"
 
 type PostPageProps = {
   post: Post

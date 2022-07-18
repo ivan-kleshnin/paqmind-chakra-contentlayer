@@ -1,22 +1,23 @@
 import {Box, useTheme} from "@chakra-ui/react"
 import * as React from "react"
 
-type BlockquoteProps = {
+export type BlockquoteProps = {
   children: React.ReactNode
 }
 
 export function Blockquote({children}: BlockquoteProps): JSX.Element {
-  const {Blockquote} = useTheme().components
-
-  return <Box as="blockquote" sx={{
+  const theme = useTheme()
+  const {Blockquote} = theme.components
+  const styles = {
     ...Blockquote.baseStyle,
     "& cite": {
       display: "block",
       fontSize: "sm",
       marginTop: ".5rem",
       textAlign: "right",
-    },
-  }}>
+    }
+  }
+  return <Box as="blockquote" sx={styles}>
     {children}
   </Box>
 }

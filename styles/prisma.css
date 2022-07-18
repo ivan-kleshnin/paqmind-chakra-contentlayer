@@ -43,19 +43,19 @@ pre[class*="language-"] > code {
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-	position: relative;
-	padding: .2em;
-	border-radius: 0.3em;
-	color: #c92c2c;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	display: inline;
-	white-space: normal;
-	/*background-color: #fdfdfd;*/
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
+/*:not(pre) > code[class*="language-"] {*/
+/*	position: relative;*/
+/*	padding: .2em;*/
+/*	border-radius: 0.3em;*/
+/*	color: #c92c2c;*/
+/*	border: 1px solid rgba(0, 0, 0, 0.1);*/
+/*	display: inline;*/
+/*	white-space: normal;*/
+/*	!*background-color: #fdfdfd;*!*/
+/*	-webkit-box-sizing: border-box;*/
+/*	-moz-box-sizing: border-box;*/
+/*	box-sizing: border-box;*/
+/*}*/
 
 .token.comment,
 .token.block-comment,

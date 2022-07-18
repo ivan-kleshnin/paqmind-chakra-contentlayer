@@ -1,4 +1,5 @@
 export * from "./Blockquote"
+export * from "./CodeBlock"
 export * from "./CommentCard"
 export * from "./CommentCarousel"
 export * from "./HorizontalCard"
