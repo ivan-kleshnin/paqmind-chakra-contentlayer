@@ -16,7 +16,10 @@
  
 ## Backlog
 
-[ ] Carousel height
-[ ] Student map is in russian
+[x] Carousel height
+[ ] Student map is in Russian
 [ ] Fix height for "no posts" case
+[ ] Fix carousel width (if possible)
+
+
 
