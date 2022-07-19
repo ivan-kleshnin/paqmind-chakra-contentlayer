@@ -19,7 +19,7 @@ export function WidthHolder({background, border, children, main, maxWidth = "3xl
       height="100%"
       maxWidth={maxWidth}
       position={position as any}
-      paddingX="4rem"
+      paddingX={["1rem", "2rem", "4rem"]}
       paddingTop={main ? "2rem" : "2rem"}
       paddingBottom={main ? "2.5rem" : "2rem"}
     >
@@ -27,4 +27,3 @@ export function WidthHolder({background, border, children, main, maxWidth = "3xl
     </Container>
   </>
 }
-
