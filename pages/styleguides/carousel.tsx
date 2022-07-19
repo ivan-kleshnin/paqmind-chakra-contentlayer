@@ -37,7 +37,7 @@ export default function Page() {
 //
 //   return <>
 //     <Group position="apart">
-//       <Title order={2} mb=".5rem">Recent Testimonials</Title>
+//       <Title order={2} marginBottom=".5rem">Recent Testimonials</Title>
 //       <Group>
 //         <IconContainer hint="left" onClick={scrollPrev}>
 //           <ChevronLeft strokeWidth={1.5} size="1.5rem"/>
@@ -101,7 +101,7 @@ export default function Page() {
 // }
 //
 // function SliderItem({children}: any) {
-//   return <Box sx={{backgroundColor: "red", height: "10rem"}}>
+//   return <Box background="red" height="10rem">
 //     {children}
 //   </Box>
 // }

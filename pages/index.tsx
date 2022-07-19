@@ -61,7 +61,7 @@ function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
   return <>
     <Box as="section" background="#eee">
       <WidthHolder main>
-        <Heading as="h2" size="md" mb="1rem">
+        <Heading as="h2" size="md" marginBottom="1rem">
           Recent Posts
         </Heading>
         <Flex direction="column" gap="1rem">
@@ -76,7 +76,7 @@ function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
             />
           )}
         </Flex>
-        <Text mt="1.25rem">
+        <Text marginTop="1.25rem">
           &#128073; Check more on the <Link href="/blog">Blog page</Link>.
         </Text>
       </WidthHolder>
@@ -105,9 +105,9 @@ function RecentTestimonials({accounts, recentTestimonials}: RecentTestimonialsPr
   return <>
     <Box as="section" background="#eee">
       <WidthHolder main>
-        <Heading as="h2" size="md" mb="1rem">Recent Testimonials</Heading>
+        <Heading as="h2" size="md" marginBottom="1rem">Recent Testimonials</Heading>
         <CommentCarousel testimonials={enrichedTestimonials}/>
-        <Text mt="1.25rem">
+        <Text marginTop="1.25rem">
           &#128073; Check more on the <Link href="/testimonials">Testimonials page</Link>.
         </Text>
       </WidthHolder>
@@ -120,11 +120,11 @@ function StudentsMap(): JSX.Element {
   return <>
     <Box as="section" background="white">
       <WidthHolder main background="white">
-        <Heading as="h2" size="md" mb="1rem">The map of our Students</Heading>
+        <Heading as="h2" size="md" marginBottom="1rem">The map of our Students</Heading>
         <LazyLoad>
           <img src="/index/map-of-students.webp" width="100%" style={{borderRadius: "4px"}}/>
         </LazyLoad>
-        <Text mt="1rem">
+        <Text marginTop="1rem">
           The map will be updated to English soon &#128521;
         </Text>
       </WidthHolder>

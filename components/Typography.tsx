@@ -48,8 +48,8 @@ export function Typography({children, ...rest}: any): JSX.Element {
       },
 
       "& h1, & h2, & h3, & h4": {
-        mt: "1em",
-        mb: "1rem",
+        marginTop: "1em",
+        marginBottom: "1rem",
       },
 
       // TODO dry

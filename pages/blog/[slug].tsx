@@ -36,21 +36,21 @@ function Content({post}: ContentProps): JSX.Element {
 
   return <>
     <Box as="section" background="#eee">
-      <WidthHolder position="relative" maxW="2xl" main background="white">
+      <WidthHolder position="relative" maxWidth="2xl" main background="white">
         <article>
           <Typography>
             <Heading as="h1" size="lg">
               {post.title}
             </Heading>
             <MDXContent components={{Flex}}/>
-            <Divider my="1rem" variant="dashed"/>
+            <Divider marginY="1rem" variant="dashed"/>
           </Typography>
           <Tags tags={post.tags} selectedTag={router.query.tag as string | undefined}/>
         </article>
         {/*<Box as="aside" top="calc(1rem - 2px)" right="-200px" position="absolute">
           <Typography>
             <h1>&nbsp;</h1>
-            <Text as="div" color="gray" border="1px dashed lightgray" p="1rem">
+            <Text as="div" color="gray" border="1px dashed lightgray" padding="1rem">
               Time to read: 15 mins<br/>
               Posted: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time><br/>
               Updated: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time><br/>

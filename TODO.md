@@ -12,7 +12,11 @@
 [x] Auto-expandable/auto-retractable menu
 [x] Map should have rounded corners
 [x] Blog page
-[ ] Explore CSS grain effect, CSS blur effect
+[x] Post page
+[x] Testimonials page
+[x] Fix FOUC
+[x] Deploy to Vercel
+[ ] Fix Carousel visual bugs
  
 ## Backlog
 
@@ -20,6 +24,7 @@
 [ ] Student map is in Russian
 [ ] Fix height for "no posts" case
 [ ] Fix carousel width (if possible)
+[ ] Explore CSS grain effect, CSS blur effect
 
 
 

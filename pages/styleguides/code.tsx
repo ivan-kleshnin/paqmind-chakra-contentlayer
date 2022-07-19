@@ -8,7 +8,7 @@ export default function Page() {
 // import {Typography} from "components"
 //
 // export default function TextPage() {
-//   return <Box m="2rem">
+//   return <Box margin="2rem">
 //     <Container>
 //       <Title order={2}>Standalone components</Title>
 //       <Text>p test <Code>console.log("test")</Code> continues</Text>

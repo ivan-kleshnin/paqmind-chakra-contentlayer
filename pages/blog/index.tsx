@@ -68,7 +68,7 @@ function Posts({posts}: PostsProps): JSX.Element {
   return <>
     <Box as="section" background="#eee">
       <WidthHolder main>
-        <Heading as="h2" size="md" mb="1rem">
+        <Heading as="h2" size="md" marginBottom="1rem">
           Posts
           {" "}
           {filteredPosts.length == posts.length ?
@@ -77,7 +77,7 @@ function Posts({posts}: PostsProps): JSX.Element {
           }
         </Heading>
         {allTags.length &&
-          <Box mb="1.5rem">
+          <Box marginBottom="1.5rem">
             <Tags tags={allTags} selectedTag={router.query.tag as string | undefined}/>
           </Box>
         }

@@ -75,7 +75,7 @@ function LeftMenu() {
 // RightMenu
 function RightMenu({opened, setOpened}: any): JSX.Element {
   return <>
-    <Flex alignItems="center" gap="2rem">
+    <Flex align="center" gap="2rem">
       <Link href="#" asText>
         <span onClick={() => alert("This functionality is temporarily unavailable!")}>
           Sign In / Sign Up
@@ -115,7 +115,7 @@ function MobileMenu({opened}: MobileMenuProps): JSX.Element {
       zIndex="1"
     >
       <WidthHolder>
-        <Flex direction="column" gap="1rem" mt="1rem">
+        <Flex direction="column" gap="1rem" marginTop="1rem">
           <Link href="/about" asText>About</Link>
           <Divider variant="dashed"/>
           <Link href="/blog" asText>Blog</Link>

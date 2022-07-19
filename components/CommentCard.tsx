@@ -12,7 +12,7 @@ export type CommentCardProps = {
 
 export function CommentCard({body, author}: CommentCardProps) {
   return <>
-    <Flex p="1.5rem" border="1px solid lightgray" borderRadius="4px" background="white">
+    <Flex padding="1.5rem" border="1px solid lightgray" borderRadius="4px" background="white">
       <Flex direction={["column", "row"]} gap="1rem">
         <Avatar size="md" name="Dan Abrahmov" src={author.avatarUrl}/>
         <Typography>
@@ -27,12 +27,12 @@ export function CommentCard({body, author}: CommentCardProps) {
               }
             </Text>
           </Heading>
-          <Text mt="-1rem!important" color="gray">
+          <Text marginTop="-1rem!important" color="gray">
             {author.title}
           </Text>
           <Text
             as="div"
-            mt=".5rem"
+            marginTop=".5rem"
             noOfLines={4}
             dangerouslySetInnerHTML={{__html: body}}
           />

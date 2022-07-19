@@ -7,21 +7,21 @@ export type WidthHolderProps = {
   border?: string
   children: React.ReactNode
   main?: boolean
-  maxW?: string
+  maxWidth?: string
   position?: string
 }
 
-export function WidthHolder({background, border, children, main, maxW = "3xl", position}: WidthHolderProps): JSX.Element {
+export function WidthHolder({background, border, children, main, maxWidth = "3xl", position}: WidthHolderProps): JSX.Element {
   return <>
     <Container
       background={background}
       border={border}
       height="100%"
-      maxW={maxW}
+      maxWidth={maxWidth}
       position={position as any}
-      px="4rem"
-      pt={main ? "2rem" : "2rem"}
-      pb={main ? "2.5rem" : "2rem"}
+      paddingX="4rem"
+      paddingTop={main ? "2rem" : "2rem"}
+      paddingBottom={main ? "2.5rem" : "2rem"}
     >
       {children}
     </Container>

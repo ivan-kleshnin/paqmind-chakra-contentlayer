@@ -23,7 +23,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
   return <Box className="commentCarousel" position="relative" background="white" borderRadius="4px">
     <Flex
       gap=".5rem"
-      justifyContent="right"
+      justify="right"
       position="absolute"
       top="1.5rem"
       right="1.5rem"
@@ -38,7 +38,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
     </Flex>
     <Box overflow="hidden">
       <Box className="viewport" ref={emblaRef}>
-        <Flex className="container" alignItems="stretch">
+        <Flex className="container" align="stretch">
           {testimonials.map((testimonial, i) => {
             return <Box
               key={i}
@@ -64,10 +64,10 @@ type IconContainerProps = {
 
 function IconContainer({children, hint, onClick} : IconContainerProps) {
   return <Flex
-    alignItems="center"
-    justifyContent="center"
+    align="center"
+    justify="center"
     borderRadius="50%"
-    backgroundColor="#eee"
+    background="#eee"
     height="2rem"
     width="2rem"
     onClick={onClick}
@@ -137,7 +137,7 @@ function RepositionSVG({children, hint, offset = 1}: RepositionSVGProps) {
 //
 //   return <>
 //     <Group position="apart">
-//       <Title order={2} mb=".5rem">Recent Testimonials</Title>
+//       <Title order={2} marginBottom=".5rem">Recent Testimonials</Title>
 //       <Group>
 //         <IconContainer hint="left" onClick={scrollPrev}>
 //           <ChevronLeft strokeWidth={1.5} size="1.5rem"/>

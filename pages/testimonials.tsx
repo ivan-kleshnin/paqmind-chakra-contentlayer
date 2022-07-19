@@ -57,7 +57,7 @@ function Testimonials({accounts, testimonials}: TestimonialsProps): JSX.Element 
   return <>
     <Box as="section" background="#eee">
       <WidthHolder main>
-        <Heading as="h2" size="md" mb="1rem">
+        <Heading as="h2" size="md" marginBottom="1rem">
           Testimonials to <Link href="#">Ivan Kleshnin</Link>
           {" "}
           <Text as="span" color="gray" fontSize="md">

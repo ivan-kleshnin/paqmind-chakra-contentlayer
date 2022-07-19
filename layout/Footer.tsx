@@ -18,7 +18,7 @@ export function Footer(): JSX.Element {
       <WidthHolder>
         <Grid gap="2rem" templateColumns={["1fr 1fr", "1fr 1fr", "4fr 3fr 3fr 2fr"]}>
           <div>
-            <Heading as="h4" size="xs" mb="1rem" lineHeight="calc(1.2 * 20px)">
+            <Heading as="h4" size="xs" marginBottom="1rem" lineHeight="calc(1.2 * 20px)">
               &copy; Paqmind, 2022
             </Heading>
             <List spacing=".75rem">
@@ -81,7 +81,7 @@ function GroupHeading({children}: {children: string}): JSX.Element {
   const theme = useTheme()
 
   return <>
-    <Heading as="h4" size="sm" mb="1rem" sx={{
+    <Heading as="h4" size="sm" marginBottom="1rem" sx={{
       fontVariant: "small-caps",
       letterSpacing: `calc(${theme.letterSpacings.wide} / 2)`,
     }}>

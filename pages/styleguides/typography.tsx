@@ -43,7 +43,7 @@ export default function TypographyPage(): JSX.Element {
 // HeadingsPanel
 function HeadingsPanel() {
   return <>
-    <Typography mt="3rem">
+    <Typography marginTop="3rem">
       <Heading as="h1" size="4xl">
         Heading H1, Size: 4xl, _ &times; _
       </Heading>
@@ -75,7 +75,7 @@ function HeadingsPanel() {
 // TextPanel
 function TextPanel() {
   return <>
-    <Typography mt="1rem">
+    <Typography marginTop="1rem">
       <Heading as="h1" size="xl">
         Heading-1
       </Heading>
@@ -148,7 +148,7 @@ function TextPanel() {
 // HtmlTagsPanel
 function HtmlTagsPanel() {
   return <>
-    <Typography mt="1rem">
+    <Typography marginTop="1rem">
       <h1>Basic h1</h1>
       <h2>Basic h2</h2>
       <h3>Basic h3</h3>
@@ -166,7 +166,7 @@ function HtmlTagsPanel() {
 function HtmlStringPanel() {
   return <>
     <Typography
-      mt="1rem"
+      marginTop="1rem"
       dangerouslySetInnerHTML={{__html: `
         <h1>Basic h1</h1>
         <h2>Basic h2</h2>

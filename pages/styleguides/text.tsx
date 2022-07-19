@@ -32,7 +32,7 @@ export default function Page() {
 //       </code></pre>
 //     </Typography>
 //   </>
-//   // return <Box m="2rem">
+//   // return <Box margin="2rem">
 //   //   <Title order={2}>From Tags</Title>
 //   //   <Group spacing={32}>
 //   //     {/*<TypographyStylesProvider>
@@ -68,7 +68,7 @@ export default function Page() {
 //   //     </Typography>
 //   //   </Group>
 //   //
-//   //   <Divider my="1.5rem"/>
+//   //   <Divider marginY="1.5rem"/>
 //   //
 //   //   <Title order={2}>From a String</Title>
 //   //   <Group spacing={32}>

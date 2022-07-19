@@ -35,7 +35,7 @@ function Content({page}: ContentProps): JSX.Element {
 
   return <>
     <Box as="section" background="#eee">
-      <WidthHolder main maxW="2xl" background="white">
+      <WidthHolder main maxWidth="2xl" background="white">
         <Typography>
           <Heading as="h1" size="lg">
             {page.title}

@@ -18,7 +18,7 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
     <Box
       background="white"
       borderRadius="4px"
-      p="1.5rem"
+      padding="1.5rem"
       border="1px solid lightgray"
       sx={{
         // position: "relative",
@@ -40,7 +40,7 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
             <>{title}</>
           }
         </h3>
-        <Flex gap=".5rem" color="gray" mt="-1rem" mb=".5rem">
+        <Flex gap=".5rem" color="gray" marginTop="-1rem" marginBottom=".5rem">
           {/*<span>By Ivan Kleshnin</span><span>&bull;</span>*/}<span>{new Date(postedAt).toLocaleDateString()}</span>
         </Flex>
         <Box
@@ -48,7 +48,7 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
         />
       </Typography>
       {(tags && tags.length)
-        ? <Tags mt="1rem" tags={tags} selectedTag={router.query.tag as string | undefined}/>
+        ? <Tags marginTop="1rem" tags={tags} selectedTag={router.query.tag as string | undefined}/>
         : <></>
       }
     </Box>
