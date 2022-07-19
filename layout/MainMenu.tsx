@@ -15,7 +15,11 @@ export function MainMenu() {
   const scrollDirection = useScrollDirection({
     startThreshold: parseInt(initialHeight) * 16,
   })
-  const [opened, setOpened] = React.useState(false)
+  const [opened, _setOpened] = React.useState(false)
+  const setOpened = (o: boolean) => {
+    menuHeight.current = initialHeight
+    _setOpened(o)
+  }
 
   const router = useRouter()
   React.useEffect(() => {
@@ -27,10 +31,12 @@ export function MainMenu() {
   }, [])
 
   const menuHeight = React.useRef<string>(initialHeight)
-  if (scrollDirection == 1) {
-    menuHeight.current = reducedHeight
-  } else if (scrollDirection == -1) {
-    menuHeight.current = initialHeight
+  if (!opened) {
+    if (scrollDirection == 1) {
+      menuHeight.current = reducedHeight
+    } else if (scrollDirection == -1) {
+     menuHeight.current = initialHeight
+    }
   }
 
   return <>
