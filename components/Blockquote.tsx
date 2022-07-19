@@ -17,7 +17,7 @@ export function Blockquote({children}: BlockquoteProps): JSX.Element {
       textAlign: "right",
     }
   }
-  return <Box as="blockquote" sx={styles}>
+  return <Box as="blockquote" className="chakra-blockquote" sx={styles}>
     {children}
   </Box>
 }
