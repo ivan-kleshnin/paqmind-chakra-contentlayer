@@ -2,7 +2,7 @@ import {
   Box, Heading, Grid, List, ListItem,
   useTheme,
 } from "@chakra-ui/react"
-import {BrandYoutube, BrandTelegram, BrandLinkedin} from "tabler-icons-react"
+import {BrandGithub, BrandYoutube, BrandTelegram, BrandLinkedin} from "tabler-icons-react"
 import * as React from "react"
 import {Link, WidthHolder} from "components"
 
@@ -56,7 +56,14 @@ export function Footer(): JSX.Element {
             </Heading>
             <List spacing=".75rem">
               <ListItem>
-                <Link href="/terms-of-use" asText>Terms of Use</Link>
+                <Link href="/terms-of-use" asText>
+                  Terms of Use
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link href="https://github.com/ivan-kleshnin/paqmind-chakra-contentlayer" asText>
+                  <BrandGithub strokeWidth={1} style={{display: "block"}}/>
+                </Link>
               </ListItem>
               {/*<ListItem>Privacy policy</ListItem>*/}
               {/*<ListItem>Offer</ListItem>*/}
