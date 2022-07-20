@@ -20,7 +20,12 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
-  return <Box className="commentCarousel" position="relative" background="white" borderRadius="4px">
+  return <Box
+    borderRadius="4px"
+    className="commentCarousel"
+    position="relative"
+    width="100%"
+  >
     <Flex
       gap=".5rem"
       justify="right"
@@ -28,6 +33,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
       top="1.5rem"
       right="1.5rem"
       zIndex={1}
+      width="100%"
     >
       <IconContainer hint="left" onClick={scrollPrev}>
         <ChevronLeft strokeWidth={1} size="1.5rem"/>
@@ -36,15 +42,19 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
         <ChevronRight strokeWidth={1} size="1.5rem"/>
       </IconContainer>
     </Flex>
-    <Box overflow="hidden">
-      <Box className="viewport" ref={emblaRef}>
-        <Flex className="container" align="stretch">
-          {testimonials.map((testimonial, i) => {
+    <Box width="100%" overflow="hidden">
+      <Box width="100%" className="viewport" ref={emblaRef}>
+        <Flex width="100%" className="container" align="stretch" gap="1.5rem">
+          {testimonials.slice(0, 3).map((testimonial, i) => {
             return <Box
               key={i}
+              className="item"
               flexShrink="0"
+              flexGrow="1"
               flexBasis="100%"
               height="100%"
+              minWidth="0"
+              overflow="hidden"
             >
               <CommentCard {...testimonial}/>
             </Box>
@@ -89,7 +99,7 @@ type RepositionSVGProps = {
 function RepositionSVG({children, hint, offset = 1}: RepositionSVGProps) {
   return <Box
     position="relative"
-    left={(hint == "left" ? -1 : 1) * offset}
+    left={(hint == "left" ? -1 : 1) * offset + "px"}
     sx={{
       "& > svg": {
         display: "block"

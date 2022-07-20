@@ -28,13 +28,13 @@ export function CommentCard({body, author}: CommentCardProps) {
               }
             </Text>
           </Heading>
-          <Text marginTop="-1rem!important" color="gray">
+          <Text marginTop="-1rem" color="gray">
             {author.title}
           </Text>
           <Text
             as="div"
-            marginTop=".5rem"
-            noOfLines={4}
+            marginTop="-1.5rem"
+            noOfLines={3}
             dangerouslySetInnerHTML={{__html: body}}
           />
         </Typography>
