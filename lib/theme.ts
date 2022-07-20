@@ -1,6 +1,8 @@
 import {extendTheme} from "@chakra-ui/react"
 
 export const theme = extendTheme({
+  // config: {initialColorMode: "light"},
+
   fonts: {
     heading: `'Source Serif Pro', serif`,
     body: `'Source Sans Pro', sans-serif`,
@@ -36,6 +38,24 @@ export const theme = extendTheme({
         },
       },
     },
+
+    // Text: {
+    //   baseStyle: {
+    //     color: "var(--chakra-colors-chakra-body-text)"
+    //     // color: props.colorMode == "light" ? "black" : "white",
+    //   },
+    //
+    //   // variants: {
+    //   //   default: (props: any) => {
+    //   //     console.log("variants | props:", props)
+    //   //     return {}
+    //   //   }
+    //   // },
+    //   //
+    //   // defaultProps: {
+    //   //   variant: "default",
+    //   // },
+    // },
 
     Link: {
       baseStyle: {
@@ -138,3 +158,5 @@ export const theme = extendTheme({
     },
   },
 })
+
+export type Theme = typeof theme

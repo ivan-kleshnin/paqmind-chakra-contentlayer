@@ -1,8 +1,9 @@
+// import {ColorModeScript} from "@chakra-ui/react"
 import createEmotionServer from "@emotion/server/create-instance"
 import * as React from "react"
-// import {ColorModeScript} from "@chakra-ui/react"
-import {cache} from "lib/emotion-cache"
 import NextDocument, {DocumentContext, Head, Html, Main, NextScript} from "next/document"
+import {cache} from "lib/emotion-cache"
+// import {theme} from "lib/theme"
 
 const {extractCritical} = createEmotionServer(cache)
 
@@ -32,7 +33,7 @@ export default class Document extends NextDocument {
         </Head>
 
         <body>
-          {/*<ColorModeScript/>*/}
+          {/*<ColorModeScript initialColorMode={theme.config.initialColorMode} />*/}
           <Main />
           <NextScript/>
         </body>

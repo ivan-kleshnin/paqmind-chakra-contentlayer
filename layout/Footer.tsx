@@ -16,6 +16,39 @@ export function Footer(): JSX.Element {
       borderTop="1px solid lightgray"
     >
       <WidthHolder>
+        {/*<LightMode>
+          <Text>test</Text>
+          <Button>test</Button>
+        </LightMode>
+
+        <DarkMode>
+          <Text>test</Text>
+          <Button>test</Button>
+        </DarkMode>
+
+         <div data-theme="dark">
+          <Text>dark theme test</Text>
+          <Button>dark theme test</Button>
+        </div>
+
+        <Box background="black" data-theme="dark">
+          <Text>zzz</Text>
+        </Box>
+
+        <LightMode>
+          <Text>test</Text>
+        </LightMode>
+        <DarkMode><Box background="#333">
+          <Text>test</Text>
+        </Box></DarkMode>
+
+        <ColorModeProvider value="light">
+          <Text>test</Text>
+        </ColorModeProvider>
+        <ColorModeProvider value="dark"><Box background="#333">
+          <Text>test</Text>
+        </Box></ColorModeProvider>*/}
+
         <Grid gap="2rem" templateColumns={["1fr 1fr", "1fr 1fr", "4fr 3fr 3fr 2fr"]}>
           <div>
             <Heading as="h4" size="xs" marginBottom="1rem" lineHeight="calc(1.2 * 20px)">
