@@ -1,4 +1,8 @@
-import {Avatar, Flex, Heading, Text} from "@chakra-ui/react"
+import {
+  Avatar, Box, Flex, Heading,
+  Modal, ModalOverlay, ModalContent, ModalCloseButton,
+  Text, useDisclosure
+} from "@chakra-ui/react"
 import {BrandGithub} from "tabler-icons-react"
 import {Account} from "contentlayer/generated"
 import React from "react"
@@ -12,10 +16,17 @@ export type CommentCardProps = {
 }
 
 export function CommentCard({body, author}: CommentCardProps) {
+  const {isOpen, onOpen, onClose} = useDisclosure()
+
+  function showFullTestimonial(event: any) {
+    event.preventDefault()
+    onOpen()
+  }
+
   return <>
     <Flex padding="1.5rem" border="1px solid lightgray" borderRadius="4px" background="white">
-      <Flex direction={["column", "row"]} gap="1rem">
-        <Avatar size="md" name="Dan Abrahmov" src={author.avatarUrl}/>
+      <Flex position="relative" direction={["column", "row"]} gap="1rem">
+        <Avatar size="md" name={author.fullname} src={author.avatarUrl}/>
         <Typography>
           <Heading as="h3" size="sm" display="flex" gap=".5rem" alignItems="center">
             {author.fullname}
@@ -37,8 +48,46 @@ export function CommentCard({body, author}: CommentCardProps) {
             noOfLines={3}
             dangerouslySetInnerHTML={{__html: body}}
           />
+          <Text marginTop="0" align="right">
+            <Link href="#" onClick={showFullTestimonial}>[Read more]</Link>
+          </Text>
         </Typography>
       </Flex>
     </Flex>
+
+    <Modal onClose={onClose} isOpen={isOpen} isCentered size="lg">
+      <ModalOverlay
+        background="blackAlpha.800"
+      />
+      <ModalContent>
+        <Box paddingX="2rem" paddingBottom="1rem" paddingTop="2rem" borderBottom="1px solid lightgray">
+          <Flex gap="1rem">
+            <Avatar size="sm" name={author.fullname} src={author.avatarUrl}/>
+            <Box>
+              <Heading as="h3" size="sm" display="flex" gap=".5rem" alignItems="center">
+                {author.fullname}
+                <Text as="span">
+                  {author.contacts.github
+                    ? <Link href={`https://github.com/${author.contacts.github}`}>
+                        <BrandGithub size="1rem"/>
+                      </Link>
+                    : null
+                  }
+                </Text>
+              </Heading>
+              <Text color="gray">
+                {author.title}
+              </Text>
+            </Box>
+          </Flex>
+        </Box>
+        <ModalCloseButton />
+        <Box paddingX="2rem" paddingBottom="2rem" paddingTop="1rem">
+          <Typography>
+            <Text marginY="-1rem" as="div" dangerouslySetInnerHTML={{__html: body}}/>
+          </Typography>
+        </Box>
+      </ModalContent>
+    </Modal>
   </>
 }
