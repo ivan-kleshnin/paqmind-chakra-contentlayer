@@ -16,11 +16,12 @@
 [x] Testimonials page
 [x] Fix FOUC
 [x] Deploy to Vercel
-[ ] Fix Carousel visual bugs
+[x] Fix some Carousel bugs
+[x] Find a way to fix Typography priority issues
  
 ## Backlog
 
-[x] Carousel height
+[ ] Fix carousel height for unequal slide heights
 [ ] Student map is in Russian
 [ ] Fix height for "no posts" case
 [ ] Fix carousel width (if possible)
