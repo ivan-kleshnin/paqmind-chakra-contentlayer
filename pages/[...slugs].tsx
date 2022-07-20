@@ -1,6 +1,4 @@
-import {
-  Box, Heading,
-} from "@chakra-ui/react"
+import {Box, Flex, Grid, Heading} from "@chakra-ui/react"
 import {
   type Page,
   allPages
@@ -40,7 +38,7 @@ function Content({page}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {page.title}
           </Heading>
-          <MDXContent/>
+          <MDXContent components={{Flex, Grid}}/>
         </Typography>
       </WidthHolder>
     </Box>

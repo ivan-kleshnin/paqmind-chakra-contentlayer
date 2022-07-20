@@ -1,4 +1,4 @@
-import {Box, Divider, Flex, Heading/*, Text*/} from "@chakra-ui/react"
+import {Box, Divider, Flex, Grid, Heading/*, Text*/} from "@chakra-ui/react"
 import {
   type Post,
   allPosts
@@ -42,7 +42,7 @@ function Content({post}: ContentProps): JSX.Element {
             <Heading as="h1" size="lg">
               {post.title}
             </Heading>
-            <MDXContent components={{Flex}}/>
+            <MDXContent components={{Flex, Grid}}/>
             <Divider marginY="1rem" variant="dashed"/>
           </Typography>
           <Tags tags={post.tags} selectedTag={router.query.tag as string | undefined}/>

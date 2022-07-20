@@ -1,4 +1,4 @@
-import {Box, Flex, Heading, Text} from "@chakra-ui/react"
+import {Box, Flex, Grid, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Post, type Testimonial,
   allAccounts, allPages, allPosts, allTestimonials,
@@ -44,7 +44,7 @@ function Content({home}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {home.title}
           </Heading>
-          <MDXContent/>
+          <MDXContent components={{Flex, Grid}}/>
         </Typography>
       </WidthHolder>
     </Box>

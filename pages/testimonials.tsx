@@ -1,4 +1,4 @@
-import {Alert, AlertIcon, Box, Flex, Heading, Text} from "@chakra-ui/react"
+import {Alert, AlertIcon, Box, Flex, Grid, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Testimonial,
   allPages, allTestimonials, allAccounts
@@ -40,7 +40,7 @@ function Content({page}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {page.title}
           </Heading>
-          <MDXContent/>
+          <MDXContent components={{Flex, Grid}}/>
         </Typography>
       </WidthHolder>
     </Box>

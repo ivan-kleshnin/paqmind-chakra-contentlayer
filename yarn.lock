@@ -891,21 +891,6 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
-"@fontsource/source-code-pro@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/source-code-pro/-/source-code-pro-4.5.10.tgz#30abb6e4e5caa84350493fe53c99388e03186b70"
-  integrity sha512-sdWZq4X3iCE/7J0FLU9e/PDlBv33gYSrDv8QDMzJCKneO8pYZZJjkD7873VT/NCsPMaqk3bGw4qAnjs2ERV8PQ==
-
-"@fontsource/source-sans-pro@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/source-sans-pro/-/source-sans-pro-4.5.10.tgz#24f90a6767137a01897c6c42ff2dfeb0ffed8528"
-  integrity sha512-8+MeEY0I3cBRmnzWBG3y4QsStbugPY3YGi20m71ElR7LUfSJt5UZNiCC6MI7V2wdsVGhiYORNW9J3aVo4LwFsw==
-
-"@fontsource/source-serif-pro@^4.5.8":
-  version "4.5.8"
-  resolved "https://registry.yarnpkg.com/@fontsource/source-serif-pro/-/source-serif-pro-4.5.8.tgz#41e8c83b5740c73524806b9a2571c60e20b4d003"
-  integrity sha512-dhkcOZIdYsmQA1FjSsYT8grH7r9db6S3IxEnJW3l9z8+fNNcP4qF/RymbHZ4cfcV+h1xBUhdgo+WIcRovRBegw==
-
 "@grpc/grpc-js@^1.3.7":
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.6.7.tgz#4c4fa998ff719fe859ac19fe977fdef097bb99aa"

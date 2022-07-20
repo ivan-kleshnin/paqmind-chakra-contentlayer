@@ -70,6 +70,6 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
 //   }
 // }}>
 //   <Typography>
-//     <MDXContent/>
+//     <MDXContent components={{Flex, Grid}}/>
 //   </Typography>
 // </Box>
