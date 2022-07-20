@@ -2,6 +2,7 @@ import useScrollPosition from "@react-hook/window-scroll"
 import * as R from "rambda"
 import * as React from "react"
 
+// useScrollYs
 export type UseScrollYsOptions = {
   startThreshold?: number
   downThreshold?: number
@@ -63,6 +64,7 @@ export function useScrollYs(options: UseScrollYsOptions = {}): [number[], -1 | 0
   }
 }
 
+// useScrollDirection
 export function useScrollDirection(options: UseScrollYsOptions = {}): -1 | 0 | 1 {
   const [_, direction] = useScrollYs(options)
   return direction

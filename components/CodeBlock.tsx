@@ -1,6 +1,7 @@
 import {Box, Code} from "@chakra-ui/react"
 import * as React from "react"
 
+// CodeBlock
 export type CodeBlockProps = {
   children: string
 }

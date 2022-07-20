@@ -2,6 +2,7 @@ import {Code, Flex} from "@chakra-ui/react"
 import * as React from "react"
 import {Link} from "components"
 
+// Tags
 export type TagsProps = {
   marginTop?: string
   tags?: string[]

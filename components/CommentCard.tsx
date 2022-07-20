@@ -4,6 +4,7 @@ import {Account} from "contentlayer/generated"
 import React from "react"
 import {Link, Typography} from "components"
 
+// CommentCard
 export type CommentCardProps = {
   body: string
   createdAt: string

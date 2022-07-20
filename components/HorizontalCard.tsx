@@ -3,7 +3,8 @@ import {useRouter} from "next/router"
 import React from "react"
 import {Link, Tags, Typography} from "components"
 
-interface HorizontalCardProps {
+// HorizontalCard
+type HorizontalCardProps = {
   postedAt: string
   title: string
   intro: string

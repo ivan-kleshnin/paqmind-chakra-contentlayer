@@ -1,6 +1,7 @@
 import {Box, useTheme} from "@chakra-ui/react"
 import * as React from "react"
 
+// Blockquote
 export type BlockquoteProps = {
   children: React.ReactNode
 }
