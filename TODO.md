@@ -18,13 +18,13 @@
 [x] Deploy to Vercel
 [x] Fix some Carousel bugs
 [x] Find a way to fix Typography priority issues
+[x] Fix carousel width!
  
 ## Backlog
 
 [ ] Fix carousel height for unequal slide heights
 [ ] Student map is in Russian
 [ ] Fix height for "no posts" case
-[ ] Fix carousel width (if possible)
 [ ] Explore CSS grain effect, CSS blur effect
 
 
