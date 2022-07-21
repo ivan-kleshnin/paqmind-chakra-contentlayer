@@ -1,4 +1,4 @@
-import {Alert, AlertIcon, Box, Flex, Grid, Heading, Text} from "@chakra-ui/react"
+import {Alert, AlertIcon, Box, Flex, Heading, Text} from "@chakra-ui/react"
 import {
   type Page, type Post,
   allPages, allPosts
@@ -7,10 +7,10 @@ import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps} from "next"
 import {useRouter} from "next/router"
 import Head from "next/head"
-import {useMDXComponent} from "next-contentlayer/hooks"
 import * as R from "rambda"
 import {FilterOff} from "tabler-icons-react"
 import {HorizontalCard, Link, Tags, Typography, WidthHolder} from "components"
+import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
 const allTags = R.sortBy(String, R.uniq(allPosts.flatMap(post => post.tags || [])))
@@ -36,7 +36,7 @@ type ContentProps = {
 }
 
 function Content({blog}: ContentProps): JSX.Element {
-  const MDXContent = useMDXComponent(blog.body.code)
+  const MDXContent = mdx.useComponent(blog.body.code)
 
   return <>
     <Box as="section" background="white">
@@ -45,7 +45,7 @@ function Content({blog}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {blog.title}
           </Heading>
-          <MDXContent components={{Flex, Grid}}/>
+          <MDXContent components={mdx.components}/>
         </Typography>
       </WidthHolder>
     </Box>

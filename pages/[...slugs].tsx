@@ -1,4 +1,4 @@
-import {Box, Flex, Grid, Heading} from "@chakra-ui/react"
+import {Box, Heading} from "@chakra-ui/react"
 import {
   type Page,
   allPages
@@ -6,8 +6,8 @@ import {
 import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps, GetStaticPaths} from "next"
 import Head from "next/head"
-import {useMDXComponent} from "next-contentlayer/hooks"
 import {Typography, WidthHolder} from "components"
+import * as mdx from "lib/mdx"
 
 // AnyPage
 type AnyPageProps = Payload // & some Next stuff
@@ -29,7 +29,7 @@ type ContentProps = {
 }
 
 function Content({page}: ContentProps): JSX.Element {
-  const MDXContent = useMDXComponent(page.body.code)
+  const MDXContent = mdx.useComponent(page.body.code)
 
   return <>
     <Box as="section" background="#eee">
@@ -38,7 +38,7 @@ function Content({page}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {page.title}
           </Heading>
-          <MDXContent components={{Flex, Grid}}/>
+          <MDXContent components={mdx.components}/>
         </Typography>
       </WidthHolder>
     </Box>

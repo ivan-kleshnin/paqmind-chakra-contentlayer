@@ -32,7 +32,7 @@ Let's start with the texture we use in the current site design.
 
 ### Quality 99%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/feathers.png" target="_blank">
       <img src="/blog/webp-is-awesome/feathers.png"/>
@@ -45,11 +45,11 @@ Let's start with the texture we use in the current site design.
     </a>
     <div>no visual difference<br/>166Kb &rarr; 62Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 95%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/feathers.png" target="_blank">
       <img src="/blog/webp-is-awesome/feathers.png"/>
@@ -62,11 +62,11 @@ Let's start with the texture we use in the current site design.
     </a>
     <div>no visual difference<br/>166Kb &rarr; 45Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 90%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div >
     <a href="/blog/webp-is-awesome/feathers.png" target="_blank">
       <img src="/blog/webp-is-awesome/feathers.png"/>
@@ -79,11 +79,11 @@ Let's start with the texture we use in the current site design.
     </a>
     <div>no visual difference<br/>166Kb &rarr; 29Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 75%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/feathers.png" target="_blank">
       <img src="/blog/webp-is-awesome/feathers.png"/>
@@ -96,11 +96,11 @@ Let's start with the texture we use in the current site design.
     </a>
     <div>not usable<br/>166Kb &rarr; 5Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 50%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/feathers.png" target="_blank">
       <img src="/blog/webp-is-awesome/feathers.png"/>
@@ -113,7 +113,7 @@ Let's start with the texture we use in the current site design.
     </a>
     <div>not usable<br/>166Kb &rarr; 2Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 My choice here is 90%. 166Kb &rarr; 29Kb: 83% leaner!
 
@@ -123,7 +123,7 @@ How the algorithm handles faces? Magnificently.
 
 ### Quality 99%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/avatar.png" target="_blank">
       <img src="/blog/webp-is-awesome/avatar.png"/>
@@ -136,11 +136,11 @@ How the algorithm handles faces? Magnificently.
     </a>
     <div>no visual difference<br/>72Kb &rarr; 17Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 95%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/avatar.png" target="_blank">
       <img src="/blog/webp-is-awesome/avatar.png"/>
@@ -153,11 +153,11 @@ How the algorithm handles faces? Magnificently.
     </a>
     <div>no visual difference<br/>72Kb &rarr; 13Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 90%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/avatar.png" target="_blank">
       <img src="/blog/webp-is-awesome/avatar.png"/>
@@ -170,11 +170,11 @@ How the algorithm handles faces? Magnificently.
     </a>
     <div>no visual difference<br/>72Kb &rarr; 9Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 75%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/avatar.png" target="_blank">
       <img src="/blog/webp-is-awesome/avatar.png"/>
@@ -187,11 +187,11 @@ How the algorithm handles faces? Magnificently.
     </a>
     <div>quality drops<br/>72Kb &rarr; 4Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 50%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/avatar.png" target="_blank">
       <img src="/blog/webp-is-awesome/avatar.png"/>
@@ -205,7 +205,7 @@ How the algorithm handles faces? Magnificently.
     <div>not usable<br/>72Kb &rarr; 3Kb</div>
     <div>not usable<br/>72Kb &rarr; 3Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 My choice here is 90% as well. 72Kb &rarr; 9Kb. 87% decrease. Holy Moly!
 By the way, playing with numbers a bit more, I was surprised that I was usually
@@ -217,7 +217,7 @@ One last example. Another texture tile.
 
 ### Quality 99%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/brown.png" target="_blank">
       <img src="/blog/webp-is-awesome/brown.png"/>
@@ -230,11 +230,11 @@ One last example. Another texture tile.
     </a>
     <div>no visual difference<br/>36Kb &rarr; 9Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 95%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/brown.png" target="_blank">
       <img src="/blog/webp-is-awesome/brown.png"/>
@@ -247,11 +247,11 @@ One last example. Another texture tile.
     </a>
     <div>quality drops<br/>36Kb &rarr; 5Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 90%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/brown.png" target="_blank">
       <img src="/blog/webp-is-awesome/brown.png"/>
@@ -264,11 +264,11 @@ One last example. Another texture tile.
     </a>
     <div>not usable<br/>36Kb &rarr; 2Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 75%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/brown.png" target="_blank">
       <img src="/blog/webp-is-awesome/brown.png"/>
@@ -281,11 +281,11 @@ One last example. Another texture tile.
     </a>
     <div>not usable<br/>36Kb &rarr; 0.32Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 ### Quality 50%
 
-<Grid templateColumns="1fr 1fr">
+<SimpleGrid spacing="2rem" columns={2}>
   <div>
     <a href="/blog/webp-is-awesome/brown.png" target="_blank">
       <img src="/blog/webp-is-awesome/brown.png"/>
@@ -298,7 +298,7 @@ One last example. Another texture tile.
     </a>
     <div>not usable<br/>36Kb &rarr; 0.24Kb</div>
   </div>
-</Grid>
+</SimpleGrid>
 
 My choice here is 99%. 36Kb &rarr; 9Kb. This little texture turned out to be a
 toughie to compress, with its crisp pixel-wide lines. This time I've got *only*

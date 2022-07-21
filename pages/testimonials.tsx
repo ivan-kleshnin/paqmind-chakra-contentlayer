@@ -1,4 +1,4 @@
-import {Alert, AlertIcon, Box, Flex, Grid, Heading, Text} from "@chakra-ui/react"
+import {Alert, AlertIcon, Box, Flex, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Testimonial,
   allPages, allTestimonials, allAccounts
@@ -6,8 +6,8 @@ import {
 import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps} from "next"
 import Head from "next/head"
-import {useMDXComponent} from "next-contentlayer/hooks"
 import {CommentCard, Link, Typography, WidthHolder} from "components"
+import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
 // TestimonialsPage
@@ -31,7 +31,7 @@ type ContentProps = {
 }
 
 function Content({page}: ContentProps): JSX.Element {
-  const MDXContent = useMDXComponent(page.body.code)
+  const MDXContent = mdx.useComponent(page.body.code)
 
   return <>
     <Box as="section" background="white">
@@ -40,7 +40,7 @@ function Content({page}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {page.title}
           </Heading>
-          <MDXContent components={{Flex, Grid}}/>
+          <MDXContent components={mdx.components}/>
         </Typography>
       </WidthHolder>
     </Box>

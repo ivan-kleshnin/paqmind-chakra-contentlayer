@@ -1,4 +1,4 @@
-import {Box, Divider, Flex, Grid, Heading/*, Text*/} from "@chakra-ui/react"
+import {Box, Divider, Heading/*, Text*/} from "@chakra-ui/react"
 import {
   type Post,
   allPosts
@@ -7,8 +7,8 @@ import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps, GetStaticPaths} from "next"
 import Head from "next/head"
 import {useRouter} from "next/router"
-import {useMDXComponent} from "next-contentlayer/hooks"
 import {Tags, Typography, WidthHolder} from "components"
+import * as mdx from "lib/mdx"
 
 type PostPageProps = {
   post: Post
@@ -32,7 +32,7 @@ type ContentProps = {
 
 function Content({post}: ContentProps): JSX.Element {
   const router = useRouter()
-  const MDXContent = useMDXComponent(post.body.code)
+  const MDXContent = mdx.useComponent(post.body.code)
 
   return <>
     <Box as="section" background="#eee">
@@ -42,7 +42,7 @@ function Content({post}: ContentProps): JSX.Element {
             <Heading as="h1" size="lg">
               {post.title}
             </Heading>
-            <MDXContent components={{Flex, Grid}}/>
+            <MDXContent components={mdx.components}/>
             <Divider marginY="1rem" variant="dashed"/>
           </Typography>
           <Tags tags={post.tags} selectedTag={router.query.tag as string | undefined}/>

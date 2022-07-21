@@ -1,4 +1,4 @@
-import {Box, Flex, Grid, Heading, Text} from "@chakra-ui/react"
+import {Box, Flex, Heading, Text} from "@chakra-ui/react"
 import {
   type Account, type Page, type Post, type Testimonial,
   allAccounts, allPages, allPosts, allTestimonials,
@@ -6,10 +6,10 @@ import {
 import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps} from "next"
 import Head from "next/head"
-import {useMDXComponent} from "next-contentlayer/hooks"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
 import {CommentCarousel, Link, HorizontalCard, Typography, WidthHolder} from "components"
+import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
 // HomePage
@@ -35,7 +35,7 @@ type ContentProps = {
 }
 
 function Content({home}: ContentProps): JSX.Element {
-  const MDXContent = useMDXComponent(home.body.code)
+  const MDXContent = mdx.useComponent(home.body.code)
 
   return <>
     <Box as="section" background="white">
@@ -44,7 +44,7 @@ function Content({home}: ContentProps): JSX.Element {
           <Heading as="h1" size="lg">
             {home.title}
           </Heading>
-          <MDXContent components={{Flex, Grid}}/>
+          <MDXContent components={mdx.components}/>
         </Typography>
       </WidthHolder>
     </Box>
