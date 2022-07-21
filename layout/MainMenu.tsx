@@ -49,7 +49,7 @@ export function MainMenu() {
       position="sticky"
       top="0"
       transition="height .25s"
-      zIndex="1"
+      zIndex={2}
     >
       <WidthHolder>
         <Flex justify="space-between" align="center" height="100%">

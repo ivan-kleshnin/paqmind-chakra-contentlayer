@@ -19,6 +19,12 @@
 [x] Fix some Carousel bugs
 [x] Find a way to fix Typography priority issues
 [x] Fix carousel width!
+[x] Use Chakra colors
+[x] Explore Dark mode
+[x] Finish "Chakra for Beginners" course
+[x] Start "Modern UIs with Chakra" course
+[x] Try dark footer
+[x] Try footer scrolling style like on Mantine docs
  
 ## Backlog
 

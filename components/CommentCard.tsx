@@ -55,7 +55,7 @@ export function CommentCard({body, author}: CommentCardProps) {
             dangerouslySetInnerHTML={{__html: body}}
           />
           <Text marginTop="0" align="right">
-            <Link href="#" onClick={showFullTestimonial}>[Read more]</Link>
+            <Link href="#" onClick={showFullTestimonial}>Read more</Link>
           </Text>
         </Typography>
       </Flex>

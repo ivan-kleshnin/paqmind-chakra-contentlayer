@@ -1,4 +1,4 @@
-import {Grid} from "@chakra-ui/react"
+import {Box, Grid} from "@chakra-ui/react"
 import Head from "next/head"
 import * as React from "react"
 import {MainMenu} from "./MainMenu"
@@ -21,7 +21,9 @@ export function Layout({children}: LayoutProps): JSX.Element {
       minHeight="100vh"
     >
       <MainMenu/>
-      {children}
+      <Box zIndex={1}>
+        {children}
+      </Box>
       <Footer/>
     </Grid>
   </>
