@@ -13,7 +13,8 @@ export function Footer(): JSX.Element {
     <Box
       as="footer"
       background="white"
-      borderTop="1px solid lightgray"
+      borderTop="1px solid"
+      borderTopColor="gray.300"
     >
       <WidthHolder>
         {/*<LightMode>

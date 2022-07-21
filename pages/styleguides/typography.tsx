@@ -5,7 +5,7 @@ import {Typography, WidthHolder} from "components"
 // TypographyPage
 export default function TypographyPage(): JSX.Element {
   return <>
-    <Box as="main" background="lightgray">
+    <Box as="main" background="gray.300">
       <WidthHolder main background="coral">
         <Tabs>
           <TabList className="list">

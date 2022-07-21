@@ -43,7 +43,8 @@ export function MainMenu() {
     <Box
       as="header"
       background="white"
-      borderBottom="1px solid lightgray"
+      borderBottom="1px solid"
+      borderBottomColor="gray.300"
       height={menuHeight.current}
       position="sticky"
       top="0"

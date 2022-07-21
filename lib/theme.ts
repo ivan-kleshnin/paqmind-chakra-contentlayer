@@ -1,6 +1,10 @@
 import {extendTheme} from "@chakra-ui/react"
 
 export const theme = extendTheme({
+  shadows: {
+    imgOnWhite: "0 0 .75rem -.25rem hsl(214, 20%, 69%)" // gray.300
+  },
+
   // config: {initialColorMode: "light"},
 
   fonts: {
@@ -20,10 +24,11 @@ export const theme = extendTheme({
 
     Blockquote: {
       baseStyle: {
-        backgroundColor: "#F8F0F0",
-        borderBottom: "2px solid hsl(0deg 40% 86%)",
+        backgroundColor: "yellow.100",
+        borderBottom: "2px solid",
+        borderBottomColor: "yellow.300",
         borderRadius: "4px",
-        color: "hsl(0deg 40% 50%)",
+        color: "yellow.800",
         fontFamily: "heading",
         fontSize: "lg",
         fontStyle: "italic",
@@ -35,7 +40,7 @@ export const theme = extendTheme({
           left: "-1.25rem",
           top: "-0.75rem",
           fontSize: "2.5rem",
-          color: "#f2e4e4",
+          color: "yellow.200",
           fontStyle: "normal",
         },
       },

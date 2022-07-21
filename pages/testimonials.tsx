@@ -55,7 +55,7 @@ type TestimonialsProps = {
 
 function Testimonials({accounts, testimonials}: TestimonialsProps): JSX.Element {
   return <>
-    <Box as="section" background="#eee">
+    <Box as="section" background="gray.100">
       <WidthHolder main>
         <Heading as="h2" size="md" marginBottom="1rem">
           Testimonials to <Link href="#">Ivan Kleshnin</Link>

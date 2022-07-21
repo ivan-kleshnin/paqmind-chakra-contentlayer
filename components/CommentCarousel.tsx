@@ -77,7 +77,7 @@ function IconContainer({children, hint, onClick} : IconContainerProps) {
     align="center"
     justify="center"
     borderRadius="50%"
-    background="#eee"
+    background="gray.100"
     height="2rem"
     width="2rem"
     onClick={onClick}

@@ -35,7 +35,7 @@ function Content({post}: ContentProps): JSX.Element {
   const MDXContent = mdx.useComponent(post.body.code)
 
   return <>
-    <Box as="section" background="#eee">
+    <Box as="section" background="gray.100">
       <WidthHolder position="relative" size="sm" main background="white">
         <article>
           <Typography>
@@ -50,7 +50,7 @@ function Content({post}: ContentProps): JSX.Element {
         {/*<Box as="aside" top="calc(1rem - 2px)" right="-200px" position="absolute">
           <Typography>
             <h1>&nbsp;</h1>
-            <Text as="div" color="gray" border="1px dashed lightgray" padding="1rem">
+            <Text as="div" color="gray" border="1px dashed black" padding="1rem">
               Time to read: 15 mins<br/>
               Posted: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time><br/>
               Updated: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time><br/>

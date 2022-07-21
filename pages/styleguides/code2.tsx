@@ -5,7 +5,7 @@ import {CodeBlock, Typography, WidthHolder} from "components"
 // CodePage
 export default function CodePage(): JSX.Element {
   return <>
-    <Box as="main" background="lightgray">
+    <Box as="main" background="gray.300">
       <WidthHolder main background="coral">
         <Tabs>
           <TabList>

@@ -26,7 +26,8 @@ export function CommentCard({body, author}: CommentCardProps) {
   return <>
     <Flex
       background="white"
-      borderBottom="2px solid lightgray"
+      borderBottom="2px solid"
+      borderBottomColor="gray.300"
       borderRadius="4px"
       padding="1.5rem"
     >
@@ -65,7 +66,13 @@ export function CommentCard({body, author}: CommentCardProps) {
         background="blackAlpha.800"
       />
       <ModalContent>
-        <Box paddingX="2rem" paddingBottom="1rem" paddingTop="2rem" borderBottom="1px solid lightgray">
+        <Box
+          borderBottom="1px solid"
+          borderBottomColor="gray.300"
+          paddingX="2rem"
+          paddingBottom="1rem"
+          paddingTop="2rem"
+        >
           <Flex gap="1rem">
             <Avatar size="sm" name={author.fullname} src={author.avatarUrl}/>
             <Box>

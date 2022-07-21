@@ -32,7 +32,7 @@ function Content({page}: ContentProps): JSX.Element {
   const MDXContent = mdx.useComponent(page.body.code)
 
   return <>
-    <Box as="section" background="#eee">
+    <Box as="section" background="gray.100">
       <WidthHolder main size="sm" background="white">
         <Typography>
           <Heading as="h1" size="lg">

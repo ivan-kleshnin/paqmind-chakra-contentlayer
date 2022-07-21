@@ -59,7 +59,7 @@ type RecentPostsProps = {
 
 function RecentPosts({recentPosts}: RecentPostsProps): JSX.Element {
   return <>
-    <Box as="section" background="#eee">
+    <Box as="section" background="gray.100">
       <WidthHolder main>
         <Heading as="h2" size="md" marginBottom="1rem">
           Recent Posts
@@ -103,7 +103,7 @@ function RecentTestimonials({accounts, recentTestimonials}: RecentTestimonialsPr
   })
 
   return <>
-    <Box as="section" background="#eee">
+    <Box as="section" background="gray.100">
       <WidthHolder main>
         <Heading as="h2" size="md" marginBottom="1rem">Recent Testimonials</Heading>
         <CommentCarousel testimonials={enrichedTestimonials}/>
@@ -122,13 +122,15 @@ function StudentsMap(): JSX.Element {
       <WidthHolder main background="white">
         <Heading as="h2" size="md" marginBottom="1rem">The map of our Students</Heading>
         <LazyLoad>
-          <img
+          <Box
+            as="img"
             src="/index/map-of-students.webp"
             width="100%"
-            style={{
+            sx={{
               borderRadius: "4px",
-              // borderBottom: "2px solid lightgray",
-              boxShadow: "0px 0px 16px -8px rgb(0 75 100 / 25%)",
+              // borderBottom: "2px solid",
+              // borderBottomColor: "gray.300",
+              boxShadow: "imgOnWhite",
           }}
           />
         </LazyLoad>
