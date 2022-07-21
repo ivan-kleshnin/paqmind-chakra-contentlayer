@@ -20,7 +20,7 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
       background="white"
       borderRadius="4px"
       padding="1.5rem"
-      border="1px solid lightgray"
+      borderBottom="2px solid lightgray"
       sx={{
         // position: "relative",
         // "&::before": {

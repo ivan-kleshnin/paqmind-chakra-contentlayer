@@ -24,7 +24,12 @@ export function CommentCard({body, author}: CommentCardProps) {
   }
 
   return <>
-    <Flex padding="1.5rem" border="1px solid lightgray" borderRadius="4px" background="white">
+    <Flex
+      background="white"
+      borderBottom="2px solid lightgray"
+      borderRadius="4px"
+      padding="1.5rem"
+    >
       <Flex position="relative" direction={["column", "row"]} gap="1rem">
         <Avatar size="md" name={author.fullname} src={author.avatarUrl}/>
         <Typography>

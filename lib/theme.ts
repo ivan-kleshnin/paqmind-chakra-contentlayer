@@ -21,7 +21,9 @@ export const theme = extendTheme({
     Blockquote: {
       baseStyle: {
         backgroundColor: "#F8F0F0",
+        borderBottom: "2px solid hsl(0deg 40% 86%)",
         borderRadius: "4px",
+        color: "hsl(0deg 40% 50%)",
         fontFamily: "heading",
         fontSize: "lg",
         fontStyle: "italic",
