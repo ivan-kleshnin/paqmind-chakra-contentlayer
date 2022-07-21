@@ -50,7 +50,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
               key={i}
               className="item"
               flexShrink="0"
-              flexGrow="1"
+              flexGrow="0"
               flexBasis="100%"
               height="100%"
               minWidth="0"

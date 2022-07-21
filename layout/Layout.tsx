@@ -15,7 +15,11 @@ export function Layout({children}: LayoutProps): JSX.Element {
     <Head>
       <title>Paqmind!</title>
     </Head>
-    <Grid templateRows="auto 1fr auto" minHeight="100vh">
+    <Grid
+      autoColumns="100%"
+      templateRows="auto 1fr auto"
+      minHeight="100vh"
+    >
       <MainMenu/>
       {children}
       <Footer/>
