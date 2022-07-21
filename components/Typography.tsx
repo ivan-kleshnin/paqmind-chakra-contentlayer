@@ -3,6 +3,7 @@ import {Box, useTheme} from "@chakra-ui/react"
 import * as React from "react"
 
 // TODO https://github.com/emotion-js/emotion/discussions/2824
+// TODO https://github.com/emotion-js/emotion/issues/2154
 
 // Typography
 export function Typography({children, ...rest}: any): JSX.Element {

@@ -48,15 +48,15 @@ const {extractCritical} = createEmotionServer(cache)
 export default class Document extends NextDocument {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await NextDocument.getInitialProps(ctx)
-    const styles = extractCritical(initialProps.html)
+    const {css, ids} = extractCritical(initialProps.html)
     return {
-      ...initialProps,
+      ...initialProps, // contains the same `html` as returned from `extractCritical`
       styles: [
         initialProps.styles,
         <style
           key="emotion-css"
-          dangerouslySetInnerHTML={{__html: styles.css}}
-          data-emotion-css={styles.ids.join(" ")}
+          dangerouslySetInnerHTML={{__html: css}}
+          data-emotion-css={ids.join(" ")}
         />,
       ],
     }
