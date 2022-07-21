@@ -36,7 +36,7 @@ function Content({post}: ContentProps): JSX.Element {
 
   return <>
     <Box as="section" background="#eee">
-      <WidthHolder position="relative" maxWidth="2xl" main background="white">
+      <WidthHolder position="relative" size="sm" main background="white">
         <article>
           <Typography>
             <Heading as="h1" size="lg">
