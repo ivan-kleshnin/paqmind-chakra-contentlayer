@@ -2,7 +2,7 @@
 id: 05bc31e2-f070-48ad-ac58-de0d48aa9140
 username: alexander-panchuk
 role: student
-fullname: Alexander Panchunk
+fullname: Alexander Panchuk
 title: Frontend Developer
 contacts:
   github: alexpanchuk

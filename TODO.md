@@ -25,11 +25,12 @@
 [x] Start "Modern UIs with Chakra" course
 [x] Try dark footer
 [x] Try footer scrolling style like on Mantine docs
+[x] Collapsible TopMenu with different transitions
  
 ## Backlog
 
+[ ] Student map is in Russian. Replace it with a globe of cities like on Vercel, or something...
 [ ] Fix carousel height for unequal slide heights
-[ ] Student map is in Russian
 [ ] Fix height for "no posts" case
 [ ] Explore CSS grain effect, CSS blur effect
 

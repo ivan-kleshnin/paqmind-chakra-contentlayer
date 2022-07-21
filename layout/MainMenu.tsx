@@ -10,11 +10,7 @@ import {useScrollDirection} from "hooks"
 
 // MainMenu
 export function MainMenu() {
-  const initialHeight = "5rem"
-  const reducedHeight = "4rem"
-  const scrollDirection = useScrollDirection({
-    startThreshold: parseInt(initialHeight) * 16,
-  })
+  // MOBILE MENU
   const [opened, _setOpened] = React.useState(false)
   const setOpened = (o: boolean) => {
     menuHeight.current = initialHeight
@@ -30,12 +26,21 @@ export function MainMenu() {
     }
   }, [])
 
+  // ANIMATION
+  const initialHeight = "5rem"
+  const reducedHeight = "0rem"
+  const transitionDuration = ".25s"
+
+  const scrollDirection = useScrollDirection({
+    startThreshold: parseInt(initialHeight) * 16,
+  })
+
   const menuHeight = React.useRef<string>(initialHeight)
   if (!opened) {
     if (scrollDirection == 1) {
       menuHeight.current = reducedHeight
     } else if (scrollDirection == -1) {
-     menuHeight.current = initialHeight
+      menuHeight.current = initialHeight
     }
   }
 
@@ -48,15 +53,25 @@ export function MainMenu() {
       height={menuHeight.current}
       position="sticky"
       top="0"
-      transition="height .25s"
+      transition={`height ${transitionDuration} ${menuHeight.current == reducedHeight ? "ease-in" : "ease-out"}`}
       zIndex={2}
     >
-      <WidthHolder>
-        <Flex justify="space-between" align="center" height="100%">
-          <LeftMenu/>
-          <RightMenu opened={opened} setOpened={setOpened}/>
-        </Flex>
-      </WidthHolder>
+      <Box
+        opacity={menuHeight.current == reducedHeight ? "0%" : "100%"}
+        transition={menuHeight.current == reducedHeight ? undefined : `opacity .1s linear ${transitionDuration}`}
+        height="100%"
+      >
+        <WidthHolder>
+          <Flex
+            align="center"
+            justify="space-between"
+            height="100%"
+          >
+            <LeftMenu/>
+            <RightMenu opened={opened} setOpened={setOpened}/>
+          </Flex>
+        </WidthHolder>
+      </Box>
     </Box>
   </>
 }
