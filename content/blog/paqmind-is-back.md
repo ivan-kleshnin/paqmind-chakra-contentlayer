@@ -184,8 +184,8 @@ and I'm an experienced guy, familiar with many UI libraries. Old and new, you na
 Evergreen, Fluent UI, Grommet, Headless UI, Next UI, Tailwind, Bulma, Foundation, etc. etc.
 
 Chakra UI is superior to all of them (IMO) because it provides a top notch set of low-level components
-with carefully crafted APIs, names, and very flexible design decisions. It doesn't feel like a set of Tetris figures you're trying to put
-together. Rather like a set of Lego pieces that are easy to put together. 
+with carefully crafted APIs, names, and very flexible design decisions. It doesn't feel like a set of Tetris figures. 
+Rather like a set of Lego pieces that are easy to put together. 
 
 Unlike Mantine, I can already recommend Chakra for any kind of product. I've seen no bugs yet
 and my experience were pretty smooth. So far it seems like the library I was looking for, and
