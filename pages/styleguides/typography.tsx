@@ -53,17 +53,20 @@ function HeadingsPanel() {
       <Heading as="h1" size="2xl">
         Heading H1, Size: 2xl, 16 &times; 1.25<sup>5</sup>
       </Heading>
-      <Heading as="h1" size="lg">
+      <Heading as="h1" size="xl">
         Heading H1, Size: xl, 16 &times; 1.25<sup>4</sup>
       </Heading>
+      <Heading as="h1" size="lg">
+        Heading H1, Size: xl, 16 &times; 1.25<sup>3</sup>
+      </Heading>
       <Heading as="h2" size="md">
-        Heading H2, Size: lg, 16 &times; 1.25<sup>3</sup>
+        Heading H2, Size: lg, 16 &times; 1.25<sup>2</sup>
       </Heading>
       <Heading as="h3" size="sm">
-        Heading H3, Size: md, 16 &times; 1.25<sup>2</sup>
+        Heading H3, Size: md, 16 &times; 1.25<sup>1</sup>
       </Heading>
       <Heading as="h4" size="xs">
-        Heading H4, Size: sm, 16 &times; 1.25<sup>1</sup>
+        Heading H4, Size: sm, 16 &times; 1.25<sup>0</sup>
       </Heading>
       <Text as="p">
         Paragraph: (16px)

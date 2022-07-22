@@ -128,22 +128,28 @@ export const theme = extendTheme({
       },
       sizes: {
         "4xl": {
-          fontSize: "76.29px", // 16 * 1.25 ^ 7
+          fontSize: "76px", // 16 * 1.25 ^ 7
+          letterSpacing: "-1.3px",
         },
         "3xl": {
-          fontSize: "61.04px", // 16 * 1.25 ^ 6
+          fontSize: "61px", // 16 * 1.25 ^ 6
+          letterSpacing: "-1.1px",
         },
         "2xl": {
-          fontSize: "48.83px", // 16 * 1.25 ^ 5
+          fontSize: "49px", // 16 * 1.25 ^ 5
+          letterSpacing: "-.9px",
         },
         "xl": {
-          fontSize: "39.06px", // 16 * 1.25 ^ 4
+          fontSize: "39px", // 16 * 1.25 ^ 4
+          letterSpacing: "-.7px",
         },
         "lg": {
-          fontSize: "31.25px", // 16 * 1.25 ^ 3 | h1
+          fontSize: "31px", // 16 * 1.25 ^ 3 | h1
+          letterSpacing: "-.5px",
         },
         "md": {
           fontSize: "25px", // 16 * 1.25 ^ 2 | h2
+          letterSpacing: "-.3px",
         },
         "sm": {
           fontSize: "20px", // 16 * 1.25 ^ 1 | h3
