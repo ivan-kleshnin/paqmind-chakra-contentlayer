@@ -72,8 +72,8 @@ function Posts({posts}: PostsProps): JSX.Element {
           Posts
           {" "}
           {filteredPosts.length == posts.length ?
-            <Text as="span" color="gray" fontSize="md">({posts.length})</Text> :
-            <Text as="span" color="gray" fontSize="md">({filteredPosts.length} of {posts.length})</Text>
+            <Text as="span" color="gray.500" fontSize="md">({posts.length})</Text> :
+            <Text as="span" color="gray.500" fontSize="md">({filteredPosts.length} of {posts.length})</Text>
           }
         </Heading>
         {allTags.length &&

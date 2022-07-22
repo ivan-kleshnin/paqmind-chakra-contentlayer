@@ -45,12 +45,11 @@ export function CommentCard({body, author}: CommentCardProps) {
               }
             </Text>
           </Heading>
-          <Text marginTop="-1rem" color="gray">
+          <Text marginTop="-1rem" marginBottom="-.5rem" color="gray.500">
             {author.title}
           </Text>
           <Text
             as="div"
-            marginTop="-1.5rem"
             noOfLines={3}
             dangerouslySetInnerHTML={{__html: body}}
           />
@@ -87,7 +86,7 @@ export function CommentCard({body, author}: CommentCardProps) {
                   }
                 </Text>
               </Heading>
-              <Text color="gray">
+              <Text color="gray.500">
                 {author.title}
               </Text>
             </Box>

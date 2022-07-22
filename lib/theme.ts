@@ -17,7 +17,8 @@ export const theme = extendTheme({
   components: {
     Code: {
       baseStyle: {
-        p: ".5rem",
+        paddingX: ".2rem", // don't merge to `padding` – priority...
+        paddingY: ".2rem",
       },
     },
 
@@ -168,9 +169,6 @@ export const theme = extendTheme({
       },
 
       ...globalTypography(theme),
-      // "pre > code": {
-      //   py: "1rem !important", // TODO priority issue
-      // }
     }),
   },
 })

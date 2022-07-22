@@ -42,8 +42,8 @@ export function HorizontalCard({postedAt, url, title, intro, tags}: HorizontalCa
             <>{title}</>
           }
         </h3>
-        <Flex gap=".5rem" color="gray" marginTop="-1rem" marginBottom=".5rem">
-          {/*<span>By Ivan Kleshnin</span><span>&bull;</span>*/}<span>{new Date(postedAt).toLocaleDateString()}</span>
+        <Flex gap=".5rem" color="gray.500" marginTop="-1rem" marginBottom="-.5rem">
+          <span>{new Date(postedAt).toLocaleDateString()}</span>
         </Flex>
         <Box
           dangerouslySetInnerHTML={{__html: intro}}

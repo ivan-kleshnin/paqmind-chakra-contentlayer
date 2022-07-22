@@ -27,7 +27,6 @@ export const globalTypography = (theme: any) => {
     ":where(.typography) code": {
       ...Code.baseStyle,
       ...Code.variants[Code.defaultProps.variant]({theme, colorScheme: Code.defaultProps.colorScheme}),
-      display: "inline-block",
     },
 
     "*:where(.typography) pre": {

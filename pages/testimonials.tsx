@@ -60,7 +60,7 @@ function Testimonials({accounts, testimonials}: TestimonialsProps): JSX.Element 
         <Heading as="h2" size="md" marginBottom="1rem">
           Testimonials to <Link href="#">Ivan Kleshnin</Link>
           {" "}
-          <Text as="span" color="gray" fontSize="md">
+          <Text as="span" color="gray.500" fontSize="md">
             ({testimonials.length})
           </Text>
         </Heading>
