@@ -26,9 +26,13 @@
 [x] Try dark footer
 [x] Try footer scrolling style like on Mantine docs
 [x] Collapsible TopMenu with different transitions
+[x] Refactor Typography to Typography2
+[x] Post metadata
  
 ## Backlog
 
+[ ] Correct time-to-read, there's some Rehype plugin 
+[ ] Auto TOC for blog posts? https://daily-dev-tips.com/posts/adding-a-toc-in-astro/#setting-up-the-framework
 [ ] Student map is in Russian. Replace it with a globe of cities like on Vercel, or something...
 [ ] Fix carousel height for unequal slide heights
 [ ] Fix height for "no posts" case
