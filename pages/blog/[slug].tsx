@@ -56,8 +56,10 @@ function Content({post}: ContentProps): JSX.Element {
         <Flex mt="1rem" mb={post.tags?.length ? ".9rem" : undefined} color="gray.500" gap=".5rem">
           <span>Posted: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time></span>
           &bull;
-          <span>Last update: <time dateTime={post.createdAt}>{new Date(post.createdAt).toLocaleDateString()}</time></span>
-          &bull;
+          {post.editedAt ? <>
+            <span>Last update: <time dateTime={post.editedAt}>{new Date(post.editedAt).toLocaleDateString()}</time></span>
+            &bull;
+          </> : null}
           <span>Author: <Link href="#">Ivan Kleshnin</Link></span>
         </Flex>
         <Tags tags={post.tags} selectedTag={router.query.tag as string | undefined}/>
