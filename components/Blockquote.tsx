@@ -12,10 +12,8 @@ export function Blockquote({children}: BlockquoteProps): JSX.Element {
   const styles = {
     ...Blockquote.baseStyle,
     "& cite": {
-      display: "block",
       fontSize: "sm",
-      marginTop: ".5rem",
-      textAlign: "right",
+      fontStyle: "italic",
     }
   }
   return <Box as="blockquote" className="chakra-blockquote" sx={styles}>

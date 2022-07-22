@@ -9,3 +9,7 @@ html, body, #__next {
 blockquote > p {
 	margin: 0 !important;
 }
+
+b, strong {
+	font-weight: 500;
+}

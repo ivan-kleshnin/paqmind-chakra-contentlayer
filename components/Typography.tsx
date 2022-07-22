@@ -109,10 +109,8 @@ export const globalTypography = (theme: any) => {
       ...Blockquote.baseStyle,
       my: "1rem",
       "cite": {
-        display: "block",
         fontSize: "sm",
-        marginTop: ".5rem",
-        textAlign: "right",
+        fontStyle: "italic",
       },
     },
 

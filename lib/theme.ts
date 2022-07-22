@@ -9,9 +9,10 @@ export const theme = extendTheme({
   // config: {initialColorMode: "light"},
 
   fonts: {
-    heading: `'Source Serif Pro', serif`,
+    heading: `'Alegreya Sans SC', sans-serif`,
     body: `'Source Sans Pro', sans-serif`,
     mono: `'Source Code Pro', monospace`,
+    quote: `'Alegreya Sans', sans-serif`,
   },
 
   components: {
@@ -26,24 +27,21 @@ export const theme = extendTheme({
 
     Blockquote: {
       baseStyle: {
-        backgroundColor: "yellow.100",
-        borderBottom: "2px solid",
-        borderBottomColor: "yellow.300",
         borderRadius: "4px",
-        color: "yellow.800",
-        fontFamily: "heading",
+        color: "orange.800",
+        fontFamily: "quote",
         fontSize: "lg",
         fontStyle: "italic",
-        padding: "1rem",
         position: "relative",
         _before: {
           content: "'“'",
           position: "absolute",
           left: "-1.25rem",
-          top: "-0.75rem",
-          fontSize: "2.5rem",
-          color: "yellow.200",
-          fontStyle: "normal",
+          top: "-1rem",
+          fontSize: "3rem",
+          color: "orange.700",
+          fontStyle: "italic",
+          opacity: "20%",
         },
       },
     },
@@ -119,7 +117,7 @@ export const theme = extendTheme({
     // https://type-scale.com/ 1.25 => "Major Third" scale
     Heading: {
       baseStyle: {
-        fontWeight: "semibold",
+        fontWeight: "medium",
         lineHeight: "1.2em",
         // _after: {
           // content: "''",
@@ -154,6 +152,7 @@ export const theme = extendTheme({
         },
         "sm": {
           fontSize: "20px", // 16 * 1.25 ^ 1 | h3
+          letterSpacing: "-.1px",
         },
         "xs": {
           fontSize: "16px", // 16 * 1.25 ^ 0 | h4 – p size, but bold & serif

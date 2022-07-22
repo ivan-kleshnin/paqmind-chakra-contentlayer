@@ -71,18 +71,25 @@ export default class Document extends NextDocument {
 
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=block"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=block"
           />
 
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=block"
+          />
+
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=block"
+          />
+
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,400;1,500&display=block"
           />
         </Head>
 
