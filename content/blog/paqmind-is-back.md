@@ -1,8 +1,8 @@
 ---
 title: Web Development changes since 2020
 createdAt: 2022-07-06
-editedAt: 2022-07-13
-tags: [Paqmind, Contentlayer, Mantine]
+editedAt: 2022-07-22
+tags: [Paqmind, Contentlayer, Mantine, Chakra-UI]
 intro: | 
   In web development, each year might feel like a decade. New tools, frameworks, services keep
   popping out at a freightening rate. We haven't blogged much since 2020, and now as we revive
@@ -138,41 +138,62 @@ All those little bells and whistles.
 Have you noticed the **typography quotes**? :smiling_face_with_3_hearts:
 While all the symbols in the code stay untouched:
 
-```
+```js
 console.log("Test: my sisters' friends' investments")
 ```
 
-The above emoji is also automated and shorcoded `:smiling_face_with_3_hearts:`. It's not a copy-pasted
-unicode character which can break when collaborating! Can you see why I called 2022 a Great year for us?!
+The above emoji is also automated and shorcoded as `:smiling_face_with_3_hearts:`. It's not a copy-pasted
+unicode character which can break when collaborating! Can you see why I said 2022 is a great year for us?!
 
 ## Mantine :lipstick:
 
-The last tool I'd like to give a mention is [Mantine](https://mantine.dev/). Component libraries
-are probably among the most time-consuming software projects (it's never enough widgets and features). 
+Another tool I'd like to specially mention is [Mantine](https://mantine.dev/). Component libraries
+are probably among the most time-consuming software projects: it's never *too many* widgets and features. 
 Some tools have progressed significantly in recent years. For example, [Material UI](https://mui.com/) 
-was rewritten from JSS to Emotion and now feels much more comfortable to use. Some tools continued to 
-grow steadily, like [Chakra](https://chakra-ui.com/). And finally there're some new players like Mantine
-which was selected to style this blog. It's a new library developed by a single person but the quality 
-and quantity of components is outstanding. Mantine is based on Emotion and therefore positions itself 
-as a direct MUI alternative.
+was rewritten from JSS to Emotion and now feels quite comfortable to use. Some tools continued to 
+grow steadily, like [Chakra](https://chakra-ui.com/) (more on that below). And finally there're some new players like Mantine
+which was initially selected to style this blog. It's a new library developed by a single person but the quality 
+and quantity of components is outstanding. Mantine is based on Emotion just as modern MUI.
 
 MUI is a very solid and mature styleguide but it's everywhere so we wanted to try something fresh.
-We made a comparison table where Mantine looked much better than Chakra: more widgets, hooks, helpers
-and all that for free. 
+I made a comparison table where Mantine & Chakra ended up as two favorites. Mantine seemed like
+a larger library with more components, hooks, helpers, so I decided to try it first...
 
-I'm going to describe my experience with Mantine in a separate article. On a brief spoiler note:
+I'm going to describe my experience with Mantine in a separate article. On a spoiler note:
 it's similar to other component libraries in a sense that it's might be great for prototyping but 
-feels way too rigid for a complete product. You'll have to write a lot of hacky code to reset unfortunate
-defaults and behaviors. The next major version, 5.0, should come up with a fully "unstyled" mode 
-so I'll give it another go then. On the positive side of things are documentation and sources which 
+feels way too rigid to support a non-generic design. You'll have to apply many hacks and work
+around certain bad defaults and behaviors. The next major version, 5.0, should come up with a fully "unstyled" mode 
+so I might give it another then. Documentation and sources can be named amonst positives – they are 
 are unusually clear and readable.
 
-For now I'm not recommending Mantine for commercial products (go check Github issues) but it's 
-definitely a project to keep an eye on.
+At the moment, I can't recommend Mantine for commercial products because of many bugs I encountered.
+But it's definitely a library to keep an eye on. And you can certainly try it for the pet projects,
+if you wish so.
+
+## Chakra UI :zap:
+
+Josh Comeau mentioned that Chakra is *something else* in his article ["You don't need a UI framework"](https://www.smashingmagazine.com/2022/05/you-dont-need-ui-framework/).
+To be fair, I did not initially get what's so special about it. A limited set of components
+(in comparison to alternatives), simplistic look, slower development cycles. But after I've been struggling with Mantine
+for another week I decided to check Chakra a closer look. And then it clicked!
+
+It's the most customizable and user-friendly UI framework I've ever used, by far. It's built on top of rich heritage
+laid by Styled-System and Theme-UI (the latter is still supported). Again, I will describe my experience
+in more details separately. For now I'll just say that I'm pretty impressed by Chakra
+and I'm an experienced guy, familiar with many UI libraries. Old and new, you name it: MUI, Bootstrap, Semantic UI, Ant Design,
+Evergreen, Fluent UI, Grommet, Headless UI, Next UI, Tailwind, Bulma, Foundation, etc. etc.
+
+Chakra UI is superior to all of them (IMO) because it provides a top notch set of low-level components
+with carefully crafted APIs, names, and very flexible design decisions. It doesn't feel like a set of Tetris figures you're trying to put
+together. Rather like a set of Lego pieces that are easy to put together. 
+
+Unlike Mantine, I can already recommend Chakra for any kind of product. I've seen no bugs yet
+and my experience were pretty smooth. So far it seems like the library I was looking for, and
+I'm betting on it.
 
 ## Links :chains:
 
-Some articles you may find interesting. What I find the most remarkable is how products of different
+Some articles you may find interesting. To me, the most remarkable is how products of different
 categories get more and more comparable, eventually becoming competitors to each other:
 
 - [DGraph-vs-Hasura](https://dgraph.io/compare-graphql/)
