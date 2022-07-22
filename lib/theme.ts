@@ -1,4 +1,5 @@
 import {extendTheme} from "@chakra-ui/react"
+import {globalTypography2} from "components"
 
 export const theme = extendTheme({
   shadows: {
@@ -155,14 +156,16 @@ export const theme = extendTheme({
   },
 
   styles: {
-    global: {
+    global: () => ({
       "pre": {
         padding: "0 !important", // TODO priority issue
       },
+
+      ...globalTypography2(theme),
       // "pre > code": {
       //   py: "1rem !important", // TODO priority issue
       // }
-    },
+    }),
   },
 })
 
