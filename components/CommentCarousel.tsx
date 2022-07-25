@@ -28,7 +28,7 @@ export function CommentCarousel({testimonials}: CommentCarouselProps): JSX.Eleme
   >
     <Flex
       gap=".5rem"
-      justify="right"
+      justify="end"
       position="absolute"
       top="1.5rem"
       right="1.5rem"
