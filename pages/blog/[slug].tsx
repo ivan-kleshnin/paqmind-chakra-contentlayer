@@ -10,6 +10,7 @@ import {useRouter} from "next/router"
 import {Link, Tags, Typography, WidthHolder} from "components"
 import * as mdx from "lib/mdx"
 
+// PostPage
 type PostPageProps = {
   post: Post
 }
