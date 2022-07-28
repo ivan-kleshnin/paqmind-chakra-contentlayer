@@ -218,3 +218,6 @@ function Logo() {
     <Link href="/" asText>PAQMIND</Link>
   </Heading>
 }
+
+// TODO https://github.com/nextauthjs/next-auth-example
+// TODO https://simplernerd.com/next-auth-custom-error-page/

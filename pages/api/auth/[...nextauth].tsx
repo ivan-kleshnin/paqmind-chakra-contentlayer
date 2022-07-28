@@ -10,9 +10,9 @@ export default NextAuth({
 
   adapter: PrismaAdapter(prisma),
 
-  pages: {
-    signIn: "/auth/signin",
-  },
+  // pages: {
+  //   signIn: "/auth/signin",
+  // },
 
   providers: [
     GithubProvider({
