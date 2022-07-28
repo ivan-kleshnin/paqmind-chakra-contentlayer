@@ -1,26 +1,29 @@
 import {Button, Box, Heading} from "@chakra-ui/react"
 import Head from "next/head"
 import {getProviders, signIn} from "next-auth/react"
+import * as React from "react"
 import {Layout} from "layout"
 import {Typography, WidthHolder} from "components"
 
-export default function SignInPage({providers}: any): JSX.Element {
+// SignInPage
+export default function SignInPage(): JSX.Element {
   return <Layout>
     <Head>
       <title>Sign In / Sign Up</title>
     </Head>
     <main>
-      <Content providers={providers}/>
+      <Content/>
     </main>
   </Layout>
 }
 
 // Content
-type ContentProps = {
-  providers: any
-}
+function Content(): JSX.Element {
+  const [providers, setProviders] = React.useState<any>({})
+  React.useEffect(() => {
+   getProviders().then(setProviders)
+  }, [])
 
-function Content({providers}: ContentProps): JSX.Element {
   return <>
     <Box as="section" background="white">
       <WidthHolder main background="white">
@@ -42,12 +45,4 @@ function Content({providers}: ContentProps): JSX.Element {
       </WidthHolder>
     </Box>
   </>
-}
-
-// SSR /////////////////////////////////////////////////////////////////////////////////////////////
-export async function getStaticProps() {
-  const providers = await getProviders()
-  return {
-    props: {providers},
-  }
 }

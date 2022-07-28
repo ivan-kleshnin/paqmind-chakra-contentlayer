@@ -20,6 +20,7 @@ export default NextAuth({
       // https://github.com/nextauthjs/next-auth/blob/main/packages/next-auth/src/providers/github.ts
       profile(profile) {
         return {
+          // TODO should contain all User fields
           id: profile.id.toString(),
           name: profile.name ?? profile.login,
           email: profile.email,
