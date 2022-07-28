@@ -41,11 +41,11 @@ model Session {
   @@map("sessions")
 }
 
-enum Role {
-	Admin
-  Student
-  Mentor
-}
+//enum Role {
+//	Admin
+//  Student
+//  Mentor
+//}
 
 model User {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
@@ -56,7 +56,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
-  role  Role @default(Student)
+  // role  Role @default(Student)
+  role String @default("student")
 
   @@map("users")
 }
