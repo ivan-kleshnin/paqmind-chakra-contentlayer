@@ -16,8 +16,16 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET!,
+
+      // https://github.com/nextauthjs/next-auth/blob/main/packages/next-auth/src/providers/github.ts
       profile(profile) {
-        return {...profile, role: "student"}
+        return {
+          id: profile.id.toString(),
+          name: profile.name ?? profile.login,
+          email: profile.email,
+          image: profile.avatar_url,
+          role: "student",
+        }
       },
     }),
   ],
