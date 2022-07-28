@@ -72,7 +72,7 @@ type IconContainerProps = {
   onClick: () => void
 }
 
-function IconContainer({children, hint, onClick} : IconContainerProps) {
+function IconContainer({children, hint, onClick}: IconContainerProps) {
   return <Flex
     align="center"
     justify="center"

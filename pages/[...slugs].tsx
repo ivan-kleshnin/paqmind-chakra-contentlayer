@@ -7,20 +7,21 @@ import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps, GetStaticPaths} from "next"
 import Head from "next/head"
 import {Typography, WidthHolder} from "components"
+import {Layout} from "layout"
 import * as mdx from "lib/mdx"
 
 // AnyPage
 type AnyPageProps = Payload // & some Next stuff
 
-export default function AnyPage({page} : AnyPageProps): JSX.Element {
-  return <>
+export default function AnyPage({page}: AnyPageProps): JSX.Element {
+  return <Layout>
     <Head>
       <title>{page.seoTitle || page.title}</title>
     </Head>
     <main>
       <Content page={page}/>
     </main>
-  </>
+  </Layout>
 }
 
 // Content

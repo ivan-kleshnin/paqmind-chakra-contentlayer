@@ -9,6 +9,7 @@ import Head from "next/head"
 import * as React from "react"
 import LazyLoad from "react-lazyload"
 import {CommentCarousel, Link, HorizontalCard, Typography, WidthHolder} from "components"
+import {Layout} from "layout"
 import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
@@ -16,7 +17,7 @@ import * as U from "lib/utils"
 type HomePageProps = Payload // & some Next stuff
 
 export default function HomePage({accounts, home, recentPosts, recentTestimonials}: HomePageProps): JSX.Element {
-  return <>
+  return <Layout>
     <Head>
       <title>{home.seoTitle || home.title}</title>
     </Head>
@@ -26,7 +27,7 @@ export default function HomePage({accounts, home, recentPosts, recentTestimonial
       <StudentsMap/>
       <RecentTestimonials accounts={accounts} recentTestimonials={recentTestimonials}/>
     </main>
-  </>
+  </Layout>
 }
 
 // Content

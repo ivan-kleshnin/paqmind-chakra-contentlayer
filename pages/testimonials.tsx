@@ -7,6 +7,7 @@ import {ParsedUrlQuery} from "querystring"
 import {GetStaticProps} from "next"
 import Head from "next/head"
 import {CommentCard, Link, Typography, WidthHolder} from "components"
+import {Layout} from "layout"
 import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
@@ -14,7 +15,7 @@ import * as U from "lib/utils"
 type TestimonialsPageProps = Payload // & some Next stuff
 
 export default function TestimonialsPage({accounts, page, testimonials}: TestimonialsPageProps): JSX.Element {
-  return <>
+  return <Layout>
     <Head>
       <title>{page.seoTitle || page.title}</title>
     </Head>
@@ -22,7 +23,7 @@ export default function TestimonialsPage({accounts, page, testimonials}: Testimo
       <Content page={page}/>
       <Testimonials accounts={accounts} testimonials={testimonials}/>
     </main>
-  </>
+  </Layout>
 }
 
 // Content

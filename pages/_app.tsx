@@ -7,7 +7,7 @@ import {CacheProvider} from "@emotion/react"
 // import "@fontsource/source-code-pro/400.css"
 import type {AppProps} from "next/app"
 import Head from "next/head"
-import {Layout} from "layout"
+import {SessionProvider} from "next-auth/react"
 import {theme} from "lib/theme"
 import "styles/reset.css"
 import "styles/prisma.css"
@@ -19,12 +19,12 @@ export default function MyApp({Component, pageProps}: AppProps) {
       <title>Paqmind</title>
       {/*<meta name="viewport" content="minimum-scale=1, initial-scale=1.25, width=device-width"/>*/}
     </Head>
-    <ChakraProvider theme={theme}>
-      <CacheProvider value={cache}>
-        <Layout>
+    <SessionProvider session={pageProps.session}>
+      <ChakraProvider theme={theme}>
+        <CacheProvider value={cache}>
           <Component {...pageProps}/>
-        </Layout>
-      </CacheProvider>
-    </ChakraProvider>
+        </CacheProvider>
+      </ChakraProvider>
+    </SessionProvider>
   </>
 }

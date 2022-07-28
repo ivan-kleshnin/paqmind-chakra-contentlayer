@@ -10,6 +10,7 @@ import Head from "next/head"
 import * as R from "rambda"
 import {FilterOff} from "tabler-icons-react"
 import {HorizontalCard, Link, Tags, Typography, WidthHolder} from "components"
+import {Layout} from "layout"
 import * as mdx from "lib/mdx"
 import * as U from "lib/utils"
 
@@ -19,7 +20,7 @@ const allTags = R.sortBy(String, R.uniq(allPosts.flatMap(post => post.tags || []
 type BlogPageProps = Payload // & some Next stuff
 
 export default function BlogPage({blog, posts}: BlogPageProps): JSX.Element {
-  return <>
+  return <Layout>
     <Head>
       <title>{blog.seoTitle || blog.title}</title>
     </Head>
@@ -27,7 +28,7 @@ export default function BlogPage({blog, posts}: BlogPageProps): JSX.Element {
       <Content blog={blog}/>
       <Posts posts={posts}/>
     </main>
-  </>
+  </Layout>
 }
 
 // Content

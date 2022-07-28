@@ -10,7 +10,7 @@ type AccountPageProps = {
   account: Account
 }
 
-export default function AccountPage({account} : AccountPageProps) : JSX.Element {
+export default function AccountPage({account}: AccountPageProps): JSX.Element {
   return <>
     <Head>
       <title>{account.title}</title>

@@ -8,6 +8,7 @@ import {GetStaticProps, GetStaticPaths} from "next"
 import Head from "next/head"
 import {useRouter} from "next/router"
 import {Link, Tags, Typography, WidthHolder} from "components"
+import {Layout} from "layout"
 import * as mdx from "lib/mdx"
 
 // PostPage
@@ -15,15 +16,15 @@ type PostPageProps = {
   post: Post
 }
 
-export default function PostPage({post} : PostPageProps): JSX.Element {
-  return <>
+export default function PostPage({post}: PostPageProps): JSX.Element {
+  return <Layout>
     <Head>
       <title>{post.seoTitle || post.title}</title>
     </Head>
     <main>
       <Content post={post}/>
     </main>
-  </>
+  </Layout>
 }
 
 // Content

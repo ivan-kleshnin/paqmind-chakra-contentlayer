@@ -1,12 +1,18 @@
-import {CloseIcon, HamburgerIcon} from "@chakra-ui/icons"
+import {ChevronDownIcon, CloseIcon, HamburgerIcon} from "@chakra-ui/icons"
+// import {useDisclosure} from "@chakra-ui/hooks"
 import {
-  Box, Divider, Flex, Heading,
+  Avatar, Box, Button, Divider, Flex, Heading,
+  Menu, MenuButton, MenuList, MenuItem, MenuDivider,
+  // Modal, ModalOverlay, ModalHeader, ModalContent, ModalCloseButton, ModalBody,
   useTheme,
 } from "@chakra-ui/react"
 import {useRouter} from "next/router"
+import {useSession} from "next-auth/react"
 import * as React from "react"
 import {Link, WidthHolder} from "components"
 import {useScrollDirection} from "hooks"
+// import IframeResizer from "iframe-resizer-react"
+import {signIn, signOut} from "next-auth/react"
 
 // MainMenu
 export function MainMenu() {
@@ -96,18 +102,71 @@ function LeftMenu() {
 
 // RightMenu
 function RightMenu({opened, setOpened}: any): JSX.Element {
+  const session = useSession()
+  // const signinModal = useDisclosure()
+
   return <>
     <Flex align="center" gap="2rem">
-      <Link href="#" asText>
-        <span onClick={() => alert("This functionality is temporarily unavailable!")}>
-          Sign In / Sign Up
-        </span>
-      </Link>
+      <div>
+        {session.data &&
+          <Flex gap="1rem" align="center">
+            <Avatar size="sm" name={session.data.user?.name || "Anonymous"} src={session.data.user?.image || undefined}/>
+            <Menu>
+              <MenuButton variant="unstyled" as={Button} rightIcon={<ChevronDownIcon/>}>
+                {session.data.user?.name || "Anonymous"}
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Profile 🚧</MenuItem>
+                <MenuItem>Settings 🚧</MenuItem>
+                <MenuDivider/>
+                <MenuItem onClick={() => signOut()}>Sign Out</MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+        }
+        {session.status != "authenticated" &&
+          <Link href="#" asText onClick={() => signIn()}>
+            Sign In / Sign Up
+          </Link>
+        }
+      </div>
       <Box display={["block", "block", "none"]}>
         <BurgerIcon opened={opened} setOpened={setOpened}/>
         <MobileMenu opened={opened}/>
       </Box>
     </Flex>
+
+    {/*<Modal {...signinModal} isCentered size="lg">
+      <ModalOverlay
+        background="blackAlpha.800"
+      />
+      <ModalContent>
+        <ModalHeader
+          paddingX="1.5rem"
+          paddingTop="1.5rem"
+          paddingBottom="1rem"
+          borderBottom="1px solid"
+          borderBottomColor="gray.300"
+        >
+          <div>Sign In / Sign Up</div>
+          <ModalCloseButton />
+        </ModalHeader>
+        <ModalBody
+          padding="1.5rem"
+        >
+          !height &&
+            <Box>
+              <SkeletonText noOfLines={4} spacing="1rem"/>
+            </Box>
+
+          <IframeResizer
+            log
+            src="/frames/signin"
+            style={{ width: '1px', minWidth: '100%'}}
+          />
+        </ModalBody>
+      </ModalContent>
+    </Modal>*/}
   </>
 }
 
