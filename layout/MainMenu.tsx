@@ -112,7 +112,7 @@ function RightMenu({opened, setOpened}: any): JSX.Element {
           <Flex gap="1rem" align="center">
             <Avatar size="sm" name={session.data.user?.name || "Anonymous"} src={session.data.user?.image || undefined}/>
             <Menu>
-              <MenuButton variant="unstyled" as={Button} rightIcon={<ChevronDownIcon/>}>
+              <MenuButton variant="ghost" as={Button} rightIcon={<ChevronDownIcon/>}>
                 {session.data.user?.name || "Anonymous"}
               </MenuButton>
               <MenuList>
