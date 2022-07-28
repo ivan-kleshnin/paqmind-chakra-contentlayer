@@ -129,33 +129,41 @@ export const theme = extendTheme({
         "4xl": {
           fontSize: "76px", // 16 * 1.25 ^ 7
           letterSpacing: "-1.3px",
+          wordSpacing: "0.1em",
         },
         "3xl": {
           fontSize: "61px", // 16 * 1.25 ^ 6
           letterSpacing: "-1.1px",
+          wordSpacing: "0.1em",
         },
         "2xl": {
           fontSize: "49px", // 16 * 1.25 ^ 5
           letterSpacing: "-.9px",
+          wordSpacing: "0.1em",
         },
         "xl": {
           fontSize: "39px", // 16 * 1.25 ^ 4
           letterSpacing: "-.7px",
+          wordSpacing: "0.1em",
         },
         "lg": {
           fontSize: "31px", // 16 * 1.25 ^ 3 | h1
           letterSpacing: "-.5px",
+          wordSpacing: "0.1em",
         },
         "md": {
           fontSize: "25px", // 16 * 1.25 ^ 2 | h2
           letterSpacing: "-.3px",
+          wordSpacing: "0.1em",
         },
         "sm": {
           fontSize: "20px", // 16 * 1.25 ^ 1 | h3
           letterSpacing: "-.1px",
+          wordSpacing: "0.1em",
         },
         "xs": {
           fontSize: "16px", // 16 * 1.25 ^ 0 | h4 – p size, but bold & serif
+          wordSpacing: "0.1em",
         },
       }
     },
