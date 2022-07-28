@@ -125,7 +125,7 @@ function RightMenu({opened, setOpened}: any): JSX.Element {
           </Flex>
         }
         {session.status != "authenticated" &&
-          <Link href="#" asText onClick={() => signIn()}>
+          <Link href="#" asText onClick={(event) => { event.preventDefault(); signIn() }}>
             Sign In / Sign Up
           </Link>
         }

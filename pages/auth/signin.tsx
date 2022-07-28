@@ -34,7 +34,7 @@ function Content(): JSX.Element {
           <div>
             {Object.values(providers).map((provider: any) =>
               <div key={provider.name}>
-               <Button onClick={() => signIn(provider.id)}>
+               <Button onClick={() => signIn(provider.id, {callbackUrl: "https://en.paqmind.com/api/auth/callback/github"})}>
                  With {provider.name}
                </Button>
               </div>
