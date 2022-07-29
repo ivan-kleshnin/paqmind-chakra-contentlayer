@@ -1,0 +1,89 @@
+version: "3.4"
+
+x-common-app:
+  environment: &next-env
+    HOST: http://paqmind.local
+    NEXT_URL: http://next:3000
+    MONGO_URL: mongodb://mongo:27017/paqmind
+    NODE_ENV: development
+
+volumes:
+  mongo:
+
+services:
+  nginx:
+    container_name: paqmind-nginx
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - next
+
+  next:
+    container_name: paqmind-next
+    build: ./next
+    command: yarn dev
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      <<: *next-env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./next/components:/usr/src/app/components
+      - ./next/content:/usr/src/app/content
+      - ./next/hooks:/usr/src/app/hooks
+      - ./next/layout:/usr/src/app/layout
+      - ./next/lib:/usr/src/app/lib
+      - ./next/pages:/usr/src/app/pages
+      - ./next/prisma:/usr/src/app/prisma
+      - ./next/public:/usr/src/app/public
+      - ./next/styles:/usr/src/app/styles
+
+  mongo: # modelled after https://zgadzaj.com/development/docker/docker-compose/turning-standalone-mongodb-server-into-a-replica-set-with-docker-compose
+    container_name: paqmind-mongo
+    image: mongo
+    hostname: mongo
+    volumes:
+      - mongo:/data/db
+      # - ./mongo/mongod.conf:/etc/mongod.conf
+      # - ./mongo/initdb.d/:/docker-entrypoint-initdb.d/
+      # - ./mongo/data/db/:/data/db/
+      # - ./mongo/data/log/:/var/log/mongodb/
+    environment:
+      # MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      # MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: paqmind
+      MONGO_REPLICA_SET_NAME: rs0
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo --quiet) -eq 1
+      interval: 10s
+      start_period: 30s
+    command: mongod --replSet rs0 --bind_ip_all
+
+# OR https://github.com/prisma/prisma/issues/8266 (replica baked-in) (UPDATE won't run on Apple M1, at least latest @_@)
+#services:
+#  mongo:
+#    image: 'bitnami/mongodb:latest'
+#    environment:
+#      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+#      - MONGODB_REPLICA_SET_MODE=primary
+#      - MONGODB_ROOT_USER=anyuser
+#      - MONGODB_ROOT_PASSWORD=anypassword
+#      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+#    ports:
+#      - '27017:27017'
+#    volumes:
+#      - 'mongo-db:/bitnami/mongodb'
+#
+#volumes:
+#  mongo-db:
+
+# other existing mongodb replica images:
+# https://hub.docker.com/r/flqw/docker-mongo-local-replicaset
+# https://registry.hub.docker.com/r/candis/mongo-replica-set

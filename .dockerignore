@@ -1,0 +1,16 @@
+# COMMON
+.idea/
+node_modules/
+
+# DEBUG
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# NEXT
+.next/
+out/
+
+# OTHER
+ignore/

@@ -1,6 +1,6 @@
 ---
 title: WEBP is awesome
-createdAt: 2019-09-9
+createdAt: 2019-09-09
 editedAt: 2019-09-23
 tags: [Performance]
 intro: |
