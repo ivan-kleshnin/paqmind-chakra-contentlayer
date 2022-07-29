@@ -142,7 +142,7 @@ While all the symbols in the code stay untouched:
 console.log("Test: my sisters' friends' investments")
 ```
 
-The above emoji is also automated and shorcoded as `:smiling_face_with_3_hearts:`. It's not a copy-pasted
+The above emoji is also automated and shortened as `:smiling_face_with_3_hearts:`. It's not a copy-pasted
 unicode character which can break when collaborating! Can you see why I said 2022 is a great year for us?!
 
 ## Mantine :lipstick:
