@@ -7,7 +7,7 @@ title: Frontend Developer
 contacts:
   vk: id162798972
   github: aleksandrdorofeev
-avatarUrl: /accounts/alexandr-dorofeev.png	
+avatarUrl: /accounts/alexandr-dorofeev.png
 createdAt: 2020-05-13 13:04:11.543537	
 editedAt: 2020-09-07 09:14:57.633262	
 bonus: 0

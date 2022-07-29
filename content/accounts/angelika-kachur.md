@@ -1,10 +1,10 @@
 ---
-id: 0d1e8254-4f26-4519-9713-77a1acc55a52
+id: 1da644da-3612-46ab-a2c0-e9662564a0ce
 username: angelika-kachur
 role: student
 fullname: Angelika Kachur
-title: Frontend Developer	
-contacts: 
+title: Frontend Developer
+contacts:
   github: angelika-kachur	
 avatarUrl: /accounts/angelika-kachur.png	
 createdAt: 2020-05-13 13:04:10.431235	

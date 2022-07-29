@@ -59,8 +59,9 @@ avatarUrl: https://ik.imagekit.io/paqmind/ivan-kleshnin-new-sm-f_xRPSJ-6CfPa.png
 avatarUrl2: https://ik.imagekit.io/paqmind/ivan-kleshnin-new_W1LYPGKJS6su.png
 createdAt: 2020-05-13 13:04:10.155598	
 editedAt: 2020-10-19 11:30:53.174845	
-bonus: 0	
+bonus: 0
 ---
+
 Моя карьера в веб-разработке началась с PHP, MySQL и ModX CMS. После университета,
 мы с женой ушли на фриланс; тогда мало кто вообще слышал о таком слове. Разрабатывали,
 в основном, небольшие сайты. Наш первый коммерческий проект [BeedsCafe](http://beedscafe.com)      

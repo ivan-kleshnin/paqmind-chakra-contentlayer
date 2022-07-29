@@ -7,7 +7,7 @@ title: Web Developer
 contacts: 
   email: laravel.vitaly.zibulski2017@gmail.com
   github: vitalyzibulski
-avatarUrl: /accounts/vitaly-zibulski.png	
+avatarUrl: /accounts/vitaly-zibulski.png
 createdAt: 2020-05-13 13:04:12.359736	
 editedAt: 2020-09-12 12:36:41.760052	
 bonus: 10

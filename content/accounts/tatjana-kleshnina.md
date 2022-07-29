@@ -2,7 +2,7 @@
 id: d177891c-b710-48fa-999e-6d7172026b2a	
 username: tatjana-kleshnina	
 role: mentor
-fullname: Татьяна Клешнина	
+fullname: Tatiana Kleshnina	
 title: Ментор по менеджменту продукта
 contacts: 
   email: scabbiaza@ya.ru
@@ -44,6 +44,7 @@ createdAt: 2020-05-13 13:04:10.293275
 editedAt: 2020-10-19 07:03:07.234043	
 bonus: 0
 ---
+
 Страница в разработке.
 
 Опытный инженер-программист и веб-разработчик с опытом работы более 15 лет.
