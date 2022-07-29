@@ -14,14 +14,17 @@ import * as U from "lib/utils"
 // TestimonialsPage
 type TestimonialsPageProps = Payload // & some Next stuff
 
-export default function TestimonialsPage({accounts, page, testimonials}: TestimonialsPageProps): JSX.Element {
+export default function TestimonialsPage(props: TestimonialsPageProps): JSX.Element {
+  const {accounts, page, accountTestimonials, courseTestimonials} = props
+
   return <Layout>
     <Head>
       <title>{page.seoTitle || page.title}</title>
     </Head>
     <main>
       <Content page={page}/>
-      <Testimonials accounts={accounts} testimonials={testimonials}/>
+      <AccountTestimonials accounts={accounts} testimonials={accountTestimonials}/>
+      <CourseTestimonials accounts={accounts} testimonials={courseTestimonials}/>
     </main>
   </Layout>
 }
@@ -48,18 +51,40 @@ function Content({page}: ContentProps): JSX.Element {
   </>
 }
 
-// Testimonials
-type TestimonialsProps = {
+// AccountTestimonials
+type AccountTestimonialsProps = {
   accounts: Account[]
   testimonials: Testimonial[]
 }
 
-function Testimonials({accounts, testimonials}: TestimonialsProps): JSX.Element {
+function AccountTestimonials({accounts, testimonials}: AccountTestimonialsProps): JSX.Element {
   return <>
     <Box as="section" background="gray.100">
       <WidthHolder main>
         <Heading as="h2" size="md" marginBottom="1rem">
-          Testimonials to <Link href="#">Ivan Kleshnin</Link>
+          Testimonials to mentor <Link href="#">Ivan Kleshnin</Link>
+          {" "}
+          <Text as="span" color="gray.500" fontSize="md">
+            ({testimonials.length})
+          </Text>
+        </Heading>
+        <Flex direction="column" gap="1rem">
+          <FilteredTestimonials accounts={accounts} testimonials={testimonials}/>
+        </Flex>
+      </WidthHolder>
+    </Box>
+  </>
+}
+
+// CourseTestimonials
+type CourseTestimonialsProps = AccountTestimonialsProps
+
+function CourseTestimonials({accounts, testimonials}: CourseTestimonialsProps): JSX.Element {
+  return <>
+    <Box as="section" background="gray.100" borderTop="2px solid white">
+      <WidthHolder main>
+        <Heading as="h2" size="md" marginBottom="1rem">
+          Testimonials to the course <Link href="#">React Fundamentals</Link>
           {" "}
           <Text as="span" color="gray.500" fontSize="md">
             ({testimonials.length})
@@ -74,7 +99,9 @@ function Testimonials({accounts, testimonials}: TestimonialsProps): JSX.Element 
 }
 
 // FilteredTestimonials
-function FilteredTestimonials({accounts, testimonials}: TestimonialsProps): JSX.Element {
+type FilteredTestimonialsProps = AccountTestimonialsProps
+
+function FilteredTestimonials({accounts, testimonials}: FilteredTestimonialsProps): JSX.Element {
   if (!testimonials.length) {
     return <Alert color="info">
       <AlertIcon />
@@ -100,13 +127,12 @@ function FilteredTestimonials({accounts, testimonials}: TestimonialsProps): JSX.
   </>
 }
 
-
-
 // SSR /////////////////////////////////////////////////////////////////////////////////////////////
 type Payload = {
   accounts: Account[]
   page: Page
-  testimonials: Testimonial[]
+  accountTestimonials: Testimonial[]
+  courseTestimonials: Testimonial[]
 }
 
 type Params = ParsedUrlQuery
@@ -120,13 +146,16 @@ export const getStaticProps: GetStaticProps<Payload, Params> = async () => {
   }
 
   const accounts = allAccounts
-  const testimonials = [...allTestimonials].sort(U.byCreatedAtDesc)
+  const accountTestimonials = [...allTestimonials].filter(t => t.toAccountId).sort(U.byCreatedAtDesc)
+  const courseTestimonials = [...allTestimonials].filter(t => t.toCourseId).sort(U.byCreatedAtDesc)
+  // No grouping so far
 
   return {
     props: {
       accounts,
       page,
-      testimonials,
+      accountTestimonials,
+      courseTestimonials,
     }
   }
 }

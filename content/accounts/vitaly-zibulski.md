@@ -1,10 +1,10 @@
 ---
 id: 63aed1eb-0fc9-433d-bf39-0186b651efe2
-username: vitaly-zibulski	
+username: vitaly-zibulski
 role: student
 fullname: Vitaly Zibulski
 title: Web Developer
-contacts: 
+contacts:
   email: laravel.vitaly.zibulski2017@gmail.com
   github: vitalyzibulski
 avatarUrl: /accounts/vitaly-zibulski.png

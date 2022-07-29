@@ -28,6 +28,7 @@
 [x] Collapsible TopMenu with different transitions
 [x] Refactor Typography to Typography2
 [x] Post metadata
+[x] Explore CSS grain effect, CSS blur effect
  
 ## Backlog
 
@@ -36,7 +37,6 @@
 [ ] Student map is in Russian. Replace it with a globe of cities like on Vercel, or something...
 [ ] Fix carousel height for unequal slide heights
 [ ] Fix height for "no posts" case
-[ ] Explore CSS grain effect, CSS blur effect
 
 
 

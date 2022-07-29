@@ -97,7 +97,7 @@ const Account = defineDocumentType(() => ({
 
 const Testimonial = defineDocumentType(() => ({
   name: "Testimonial",
-  filePathPattern: "testimonials/to-accounts/*.md",
+  filePathPattern: "testimonials/{to-accounts,to-courses}/*.md",
   fields: {
     id: {
       type: "string", required: true,
@@ -108,7 +108,11 @@ const Testimonial = defineDocumentType(() => ({
     },
 
     toAccountId: {
-      type: "string", required: true,
+      type: "string",
+    },
+
+    toCourseId: {
+      type: "string",
     },
 
     createdAt: {

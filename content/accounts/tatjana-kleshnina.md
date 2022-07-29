@@ -4,7 +4,7 @@ username: tatjana-kleshnina
 role: mentor
 fullname: Tatiana Kleshnina	
 title: Ментор по менеджменту продукта
-contacts: 
+contacts:
   email: scabbiaza@ya.ru
   skype: paqmind
   github: scabbiaza
@@ -39,7 +39,7 @@ languages:
   - [Slovak, 1.5/5]
 maritalStatus: married
 studentsProjects: []
-avatarUrl: /content/accounts/assets/tatjana-kleshnina-220.png
+avatarUrl: /accounts/tatjana-kleshnina-220.png
 createdAt: 2020-05-13 13:04:10.293275	
 editedAt: 2020-10-19 07:03:07.234043	
 bonus: 0
