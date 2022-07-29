@@ -1,6 +1,7 @@
 import {PrismaAdapter} from "@next-auth/prisma-adapter"
 import {PrismaClient} from "@prisma/client"
 import NextAuth from "next-auth"
+import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
 
 const prisma = new PrismaClient()
@@ -17,6 +18,13 @@ export default NextAuth({
   // },
 
   providers: [
+    EmailProvider({
+      server: process.env.SMTP_URI,
+      from: process.env.SMTP_FROM,
+      // maxAge: 24 * 60 * 60, // How long email links are valid for (default 24h)
+      // sendVerificationRequest //	Hook into verification request sending : (params) => Promise<undefined>
+    }),
+
     GithubProvider({
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET!,
