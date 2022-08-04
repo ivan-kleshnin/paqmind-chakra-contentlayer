@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("MONGO_URL")
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
 }
 
 model Account {
-  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String  @id @default(uuid())
   userId             String
   type               String
   provider           String
@@ -33,7 +33,7 @@ model Account {
 }
 
 model Session {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(uuid())
   sessionToken String   @unique
   userId       String
   expires      DateTime
@@ -49,7 +49,7 @@ model Session {
 //}
 
 model User {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  id            String    @id @default(uuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
@@ -57,36 +57,28 @@ model User {
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
-  // role  Role @default(Student)
   role String @default("student")
 
   @@map("users")
 }
 
 model VerificationToken {
-	id         String @id @default(auto()) @map("_id") @db.ObjectId
   identifier String
-  token      String @unique
+  token      String
   expires    DateTime
 
-  @@unique([identifier, token])
+  @@id([identifier, token])
 
   @@map("verificationTokens")
 }
 
-//model User {
-//  id    Int     @id @default(autoincrement())
-//  email String  @unique
-//  name  String?
-//  posts Post[]
-//  role  String @default("student") // 'admin' | 'student' | 'mentor'
-//}
-
 model Post {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id        String  @id @default(uuid())
   title     String
   content   String?
   published Boolean @default(false)
   author    User    @relation(fields: [authorId], references: [id])
   authorId  String
+
+  @@map("posts")
 }

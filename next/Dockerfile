@@ -1,13 +1,8 @@
 FROM node:16.13.1
-# -alpine (or apk) is incompatible with Prisma: https://github.com/prisma/prisma/issues/13717#issuecomment-1151080267
 
 WORKDIR /usr/src/app/
 
-# RUN apk add --update openssl openssl-dev libc6-compat
-# RUN sudo apt install openssl openssl-dev libc6
-
 COPY package.json yarn.lock ./
-# COPY ./content/ ./content/
 COPY ./prisma/ ./prisma/
 
 RUN yarn install

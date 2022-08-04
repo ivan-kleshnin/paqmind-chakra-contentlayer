@@ -21,35 +21,31 @@ stop:
 sh-next: # Shell to the next container
 	@docker exec -it paqmind-next sh
 
-sh-mongo: # Shell to the mongo container
-	@docker exec -it paqmind-mongo sh
+sh-postgres: # Shell to the postgres container
+	@docker exec -it paqmind-postgres sh
 
-# SEED
-seed-mongo:
-	@docker exec -it paqmind-mongo \
-    mongoimport --db paqmind --collection users --type json --file seed/users.json --jsonArray --drop
-# Then $ mongo
+# DB
+db-push:
+	@docker exec -it paqmind-next sh -c "npx prisma db push"
+# seed-postgres:
+#	@docker exec -it paqmind-postgres \
+#    mongoimport --db paqmind --collection users --type json --file seed/users.json --jsonArray --drop
+# Then $ psql
 # Then > show dbs | > show collections
 
 # LOGS
 log-next:
 	@docker logs paqmind-next -f
 
-log-mongo:
-	@docker logs paqmind-mongo -f
+log-postgres:
+	@docker logs paqmind-postgres -f
 
 # LOCAL MACHINE ------------------------------------------------------------------------------------
-cleanup:
-	@docker system prune -a -f
+prune-images:
+	@docker system prune -f --all
 
-cleanup-volumes:
-	@docker system prune -a -f --volumes
+prune-volumes:
+	@docker system prune -f --volumes
 
 kill-all:
 	@docker kill $(docker ps -q)
-
-mongod:
-	@cd /usr/local/mongodb/bin && ./mongod --dbpath /usr/local/mongodb/data/db > ../logs/mongod.log 2>&1 &
-
-mongo:
-	@/usr/local/mongodb/bin/mongo
