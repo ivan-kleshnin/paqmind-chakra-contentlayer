@@ -31,7 +31,12 @@
 [x] Explore CSS grain effect, CSS blur effect
 [x] Initial experiments with Hasura 
 [x] Experiment with dbdiagram
-[ ] Explore Postgres Adapter instead of Prisma
+
+[x] 1. Explore Hasura 
+[ ] 2. Switch to JWT-based sessions
+[ ] 3. Explore Postgtres Adapter
+[ ] 4. Get rid of Prisma
+[ ] 5. Implement an adapter for Hasura based on 3 existing versions (Hasura, Prisma, Postgres)
 
 ## Backlog
 
