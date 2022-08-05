@@ -1,13 +1,10 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("POSTGRES_URL")
+  url      = env("POSTGRES_URL2")
 }
 
 model Account {
@@ -28,7 +25,6 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-
   @@map("accounts")
 }
 
@@ -54,10 +50,10 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  role          String    @default("student")
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
-  role String @default("student")
 
   @@map("users")
 }
@@ -68,7 +64,6 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
-
   @@map("verificationTokens")
 }
 

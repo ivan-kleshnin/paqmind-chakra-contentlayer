@@ -11,6 +11,9 @@ export default NextAuth({
 
   secret: process.env.AUTH_SECRET,
 
+  // TODO Hasura can authorize via JWT or a Webhook
+  // session: {strategy: "jwt"},
+
   adapter: PrismaAdapter(prisma),
 
   // pages: {
@@ -23,6 +26,8 @@ export default NextAuth({
       from: process.env.SMTP_FROM,
       // maxAge: 24 * 60 * 60, // How long email links are valid for (default 24h)
       // sendVerificationRequest //	Hook into verification request sending : (params) => Promise<undefined>
+
+      // TODO profile?
     }),
 
     GithubProvider({

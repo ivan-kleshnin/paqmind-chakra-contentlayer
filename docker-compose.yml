@@ -8,7 +8,7 @@ services:
     container_name: paqmind-nginx
     image: nginx:stable-alpine
     restart: unless-stopped
-#    env_file: [.env]
+#    env_file: .env
     ports:
       - "80:80"
     volumes:
@@ -24,7 +24,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    env_file: [.env]
+    env_file: .env
     ports:
       - "3000:3000"
     volumes:
@@ -38,39 +38,23 @@ services:
       - ./next/public:/usr/src/app/public
       - ./next/styles:/usr/src/app/styles
 
-#  hasura:
-#    container_name: paqmind-hasura
-#    image: hasura/graphql-engine:v2.9.0
-#    ports:
-#      - "8080:8080"
-#    restart: unless-stopped
-#    depends_on:
-#      - postgres
-#    environment:
-#      HASURA_GRAPHQL_DEFAULT_NAMING_CONVENTION: graphql-default
-#      HASURA_GRAPHQL_METADATA_DATABASE_URL: ${POSTGRES_DB}
-#      PG_DATABASE_URL: ${POSTGRES_DB}
-#      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
-#      HASURA_GRAPHQL_DEV_MODE: "true"
-#      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-#      ## uncomment next line to set an admin secret
-#      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-
   postgres:
     container_name: paqmind-postgres
     image: "postgres:14-alpine"
     restart: unless-stopped
     volumes:
-      - postgres:/var/lib/postgresql
-    env_file: [.env]
+      - postgres:/var/lib/postgresql/data
+    env_file: .env
     environment:
       PGUSER: paqmind
     ports:
       - "5432:5432"
     healthcheck: # TODO consider to move to Dockerfile
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 10s
-      timeout: 5s
+      test: ["CMD-SHELL", "pg_isready -U paqmind"]
+      interval: 15s
+      timeout: 10s
       retries: 5
-
+      start_period: 30s
+    # TODO does not work properly, try host
+    # or https://github.com/docker-library/healthcheck/tree/master/postgres
 
