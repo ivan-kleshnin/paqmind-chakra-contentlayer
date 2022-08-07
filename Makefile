@@ -41,12 +41,16 @@ prisma-migrate-deploy:
 db-dump:
 	@docker exec -it paqmind-postgres sh -c "pg_dump paqmind > ./paqmind.sql"
 #	@docker exec -it paqmind-postgres sh -c "pg_dump -Fc paqmind > ./paqmind.sql"
-	@docker cp paqmind-postgres:./paqmind.sql ./postgres/paqmind.sql
+	@docker cp paqmind-postgres:./paqmind.sql ./postgres/paqmind2.sql
 
 db-restore:
 	@docker cp ./postgres/paqmind.sql paqmind-postgres:./paqmind2.sql
 #	@docker exec -it paqmind-postgres sh -c "pg_restore --clean -d paqmind ./paqmind2.sql"
 	@docker exec -it paqmind-postgres sh -c "dropdb paqmind --force && createdb paqmind && psql < ./paqmind.sql"
+
+db-restore-temp:
+	@docker cp ./postgres/dbdiagram-and-jakobmaier.sql paqmind-postgres:./temp.sql
+	@docker exec -it paqmind-postgres sh -c "dropdb paqmind --force && createdb paqmind && psql < ./temp.sql"
 
 # seed-postgres:
 #	@docker exec -it paqmind-postgres \

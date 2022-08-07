@@ -33,10 +33,12 @@
 [x] Experiment with dbdiagram
 
 [x] 1. Explore Hasura 
-[ ] 2. Switch to JWT-based sessions
-[ ] 3. Explore Postgtres Adapter
-[ ] 4. Get rid of Prisma
-[ ] 5. Implement an adapter for Hasura based on 3 existing versions (Hasura, Prisma, Postgres)
+[x] 2. Switch to JWT-based sessions
+[x] 3. Explore Postgtres Adapter
+[x] 4. Get rid of Prisma
+[x] 5. Explore https://github.com/porsager/postgres -- initially looks great!
+[x] 6. Use postgres to make a PostgresAdapter
+[ ] 7. Implement an adapter for Hasura based on 3 existing versions (Hasura, Prisma, Postgres)
 
 ## Backlog
 

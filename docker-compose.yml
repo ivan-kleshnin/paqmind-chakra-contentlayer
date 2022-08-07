@@ -19,7 +19,7 @@ services:
   next:
     container_name: paqmind-next
     build: ./next
-    command: yarn push-dev
+    command: yarn dev
     restart: unless-stopped
     depends_on:
       postgres:

@@ -103,6 +103,7 @@ function LeftMenu() {
 // RightMenu
 function RightMenu({opened, setOpened}: any): JSX.Element {
   const session = useSession()
+  console.log("session:", session)
   // const signinModal = useDisclosure()
 
   return <>
