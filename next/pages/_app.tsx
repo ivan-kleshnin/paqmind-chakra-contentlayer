@@ -10,7 +10,7 @@ import Head from "next/head"
 import {SessionProvider} from "next-auth/react"
 import {theme} from "lib/theme"
 import "styles/reset.css"
-import "styles/prisma.css"
+import "styles/prism.css"
 import {cache} from "lib/emotion-cache"
 
 export default function MyApp({Component, pageProps}: AppProps) {

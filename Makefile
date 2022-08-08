@@ -21,23 +21,6 @@ stop: # Stop all containers and remove orphans
 sh-%: # Shell to (postgres|hasura|next|nginx) containers e.g. $ make sh-next
 	@docker exec -it paqmind-$* sh
 
-# DB
-prisma-db-pull:
-	@docker exec -it paqmind-next sh -c "npx prisma db pull"
-	@docker cp 8093098637ec:/usr/src/app/prisma/schema.prisma ./next/prisma/schema2.prisma
-
-xxx:
-	@docker cp ./next/prisma/schema.prisma 8093098637ec:/usr/src/app/prisma/schema.prisma
-
-prisma-db-push:
-	@docker exec -it paqmind-next sh -c "npx prisma db push"
-
-prisma-migrate-dev:
-	@docker exec -it paqmind-next sh -c "npx prisma migrate dev"
-
-prisma-migrate-deploy:
-	@docker exec -it paqmind-next sh -c "npx prisma migrate deploy"
-
 db-dump:
 	@docker exec -it paqmind-postgres sh -c "pg_dump paqmind > ./paqmind.sql"
 #	@docker exec -it paqmind-postgres sh -c "pg_dump -Fc paqmind > ./paqmind.sql"

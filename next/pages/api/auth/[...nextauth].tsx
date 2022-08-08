@@ -1,14 +1,9 @@
-// import {PrismaClient} from "@prisma/client"
 import NextAuth from "next-auth"
 import EmailProvider from "next-auth/providers/email"
 import GithubProvider from "next-auth/providers/github"
-import {PostgresAdapter} from "lib/prisma"
+import {PostgresAdapter} from "lib/next-auth"
 
-// const prisma = new PrismaClient()
-
-console.log("process.env.AUTH_SECRET", process.env.AUTH_SECRET)
-console.log("process.env.JWT_SECRET", process.env.JWT_SECRET)
-
+// https://next-auth.js.org/configuration/options
 export default NextAuth({
   // debug: true,
 
@@ -37,6 +32,7 @@ export default NextAuth({
   //   signIn: "/auth/signin",
   // },
 
+  // https://next-auth.js.org/configuration/providers/oauth
   providers: [
     EmailProvider({
       server: process.env.SMTP_URI,
@@ -65,29 +61,40 @@ export default NextAuth({
   ],
 
   callbacks: {
-    async signIn(...args) {
-      console.log("@ callbacks.(should)SignIn", args)
+    async signIn(/*...args*/) {
+      console.log("@ callbacks.(should)SignIn"/*, args*/)
       return true
     },
 
-    async jwt({token, user, account, profile /*, isNewUser*/}) {
-      console.log("@ callbacks.jwt", {token, user, account, profile})
-      return user
-        ? {...token, role: user.role}
-        : token
+    async jwt({token, user/*, account, profile*/ /*, isNewUser*/}) {
+      console.log("@ callbacks.jwt"/*, {token, user, account, profile}*/)
+
+      if (user) {
+        return {
+          ...token,
+          role: user.role,
+          "https://hasura.io/jwt/claims": {
+            "x-hasura-allowed-roles": ["student"],
+            "x-hasura-default-role": "student",
+            "x-hasura-role": user.role,
+            "x-hasura-user-id": token.sub,
+          },
+        }
+      } else {
+        return token
+      }
     },
 
     async session({session, token}: any) {
-      console.log("@ callbacks.session", {session, token})
+      console.log("@ callbacks.session"/*, {session, token}*/)
       return {
         ...session,
         user: {
           ...session.user,
+          id: token.sub,
           role: token?.role,
         },
       }
     },
   },
 })
-
-// TODO check https://next-auth.js.org/adapters/mongodb adapter as well, for extra reference

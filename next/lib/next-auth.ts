@@ -5,7 +5,7 @@ import type {User, PartialUser, Account} from "lib/models"
 export const PostgresAdapter = function PostgresAdapter(): Adapter {
   return {
     async createUser(data: PartialUser) {
-      console.log("@ PostgresAdapter.createUser", data)
+      console.log("@ PostgresAdapter.createUser"/*, data*/)
       const [user] = await sql<User[]>`
         INSERT INTO users (name, email, email_verified, image, role) 
         VALUES (
@@ -21,7 +21,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     },
 
     async getUser(id) {
-      console.log("@ PostgresAdapter.getUser", id)
+      console.log("@ PostgresAdapter.getUser"/*, id*/)
       const [user] = await sql<User[]>`
         SELECT * FROM users 
         WHERE id = ${id}
@@ -30,7 +30,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     },
 
     async getUserByEmail(email) {
-      console.log("@ PostgresAdapter.getUserByEmail", email)
+      console.log("@ PostgresAdapter.getUserByEmail"/*, email*/)
       const [user] = await sql<User[]>`
         SELECT * FROM users 
         WHERE email = ${email}
@@ -39,7 +39,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     },
 
     async getUserByAccount({provider, providerAccountId}) {
-      console.log("@ PostgresAdapter.getUserByAccount", {providerAccountId, provider})
+      console.log("@ PostgresAdapter.getUserByAccount"/*, {providerAccountId, provider}*/)
       const [user] = await sql<User[]>`
         SELECT users.* FROM users 
         JOIN accounts ON users.id = accounts.user_id 
@@ -51,7 +51,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
 
     async updateUser(user) {
       // Called, e.g, when signing-in a second time with email: user is updated with `emailVerified = true`
-      console.log("@ PostgresAdapter.updateUser", user)
+      console.log("@ PostgresAdapter.updateUser"/*, user*/)
       const [updatedUser] = await sql<User[]>`
         UPDATE users
         SET email_verified = ${user.emailVerified || null}
@@ -62,7 +62,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     },
 
     async linkAccount(account) {
-      console.log("@ PostgresAdapter.linkAccount", account)
+      console.log("@ PostgresAdapter.linkAccount"/*, account*/)
       await sql<Account[]>`
         INSERT INTO accounts 
         (
@@ -97,7 +97,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
 
     // Necessary for EmailProvider
     async createVerificationToken(token) {
-      console.log("@ PostgresAdapter.createVerificationToken", token)
+      console.log("@ PostgresAdapter.createVerificationToken"/*, token*/)
 
       await sql<VerificationToken[]>`
         INSERT INTO verification_tokens (identifier, token, expires)
@@ -107,7 +107,7 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     },
 
     async useVerificationToken({identifier, token}) {
-      console.log("@ PostgresAdapter.useVerificationToken", {identifier, token})
+      console.log("@ PostgresAdapter.useVerificationToken"/*, {identifier, token}*/)
       const [updatedToken] = await sql<VerificationToken[]>`
         DELETE FROM verification_tokens
         WHERE identifier = ${identifier} 
@@ -193,112 +193,5 @@ export const PostgresAdapter = function PostgresAdapter(): Adapter {
     // - unlinkAccount
   }
 }
-
-// export function PrismaAdapter(p: PrismaClient): Adapter {
-//   return {
-//     createUser: (data) => {
-//       console.log("@ PrismaAdapter.createUser")
-//       return p.user.create({data})
-//     },
-//
-//     getUser: (id) => {
-//       console.log("@ PrismaAdapter.getUser")
-//       const r = p.user.findUnique({where: {id}})
-//       console.log("result:", r)
-//       return r
-//     },
-//
-//     getUserByEmail: (email) => {
-//       console.log("@ PrismaAdapter.getUserByEmail")
-//       const r = p.user.findUnique({where: {email}})
-//       console.log("result:", r)
-//       return r
-//     },
-//
-//     async getUserByAccount(provider_providerAccountId) {
-//       console.log("@ PrismaAdapter.getUserByAccount", provider_providerAccountId)
-//       const account = await p.account.findUnique({
-//         where: {provider_providerAccountId},
-//         select: {user: true},
-//       })
-//       const r = account?.user ?? null
-//       console.log("result:", r)
-//       return r
-//     },
-//
-//     updateUser: ({id, ...data}) => {
-//       console.log("@ PrismaAdapter.updateUser")
-//       return p.user.update({where: {id}, data})
-//     },
-//
-//     deleteUser: (id) => {
-//       console.log("@ PrismaAdapter.deleteUser")
-//       return p.user.delete({where: {id}})
-//     },
-//
-//     linkAccount: (data) => {
-//       console.log("@ PrismaAdapter.linkAccount", data)
-//       return p.account.create({data}) as any
-//     },
-//
-//     unlinkAccount: (provider_providerAccountId) => {
-//       console.log("@ PrismaAdapter.unlinkAccount", provider_providerAccountId)
-//       return p.account.delete({where: {provider_providerAccountId}}) as any
-//     },
-//
-//     async getSessionAndUser(sessionToken): Promise<any> {
-//       console.log("@ PrismaAdapter.getSessionAndUser", sessionToken)
-//       const userAndSession = await p.session.findUnique({
-//         where: {sessionToken},
-//         include: {user: true},
-//       })
-//       if (!userAndSession) return null
-//       const {user, ...session} = userAndSession
-//       return {user, session}
-//     },
-//
-//     createSession: (data): any => {
-//       console.log("@ PrismaAdapter.createSession", data)
-//       return p.session.create({data})
-//     },
-//
-//     updateSession: (data): any => {
-//       console.log("@ PrismaAdapter.updateSession", data)
-//       return p.session.update({
-//         where: {sessionToken: data.sessionToken},
-//         data
-//       })
-//     },
-//
-//     deleteSession: (sessionToken): any => {
-//       console.log("@ PrismaAdapter.deleteSession", sessionToken)
-//       return p.session.delete({where: {sessionToken}})
-//     },
-//
-//     async createVerificationToken(data) {
-//       console.log("@ PrismaAdapter.createVerificationToken", data)
-//       // @ts-ignore
-//       const {id: _, ...verificationToken} = await p.verificationToken.create({
-//         data,
-//       })
-//       return verificationToken
-//     },
-//
-//     async useVerificationToken(identifier_token) {
-//       console.log("@ PrismaAdapter.useVerificationToken", identifier_token)
-//       try {
-//         // @ts-ignore
-//         const {id: _, ...verificationToken} = await p.verificationToken.delete({where: {identifier_token}})
-//         return verificationToken
-//       } catch (error) {
-//         // If token already used/deleted, just return null
-//         // https://www.prisma.io/docs/reference/api-reference/error-reference#p2025
-//         if ((error as Prisma.PrismaClientKnownRequestError).code === "P2025")
-//           return null
-//         throw error
-//       }
-//     },
-//   }
-// }
 
 // Remaining issues: https://github.com/nextauthjs/next-auth/discussions/2808

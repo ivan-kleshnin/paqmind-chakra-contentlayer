@@ -103,8 +103,9 @@ function LeftMenu() {
 // RightMenu
 function RightMenu({opened, setOpened}: any): JSX.Element {
   const session = useSession()
-  console.log("session:", session)
   // const signinModal = useDisclosure()
+
+  console.log("session:", session)
 
   return <>
     <Flex align="center" gap="2rem">
